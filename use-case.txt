@@ -1,14 +1,24 @@
-ID:
-Name:
-Overview:
-Primary Actor:
-Supporting Actors: 
-Type: primary|secondary|optional
-Preconditions:
-Postconditions:
-Success Scenario:
-Main Flow: 
+ID: GSU-0001
+Name: Hire Trainer
+Overview: When a new trainer is hired, personal and work information is entered into the system
+Primary Actor: Manager
+Supporting Actors: Trainer
+Type: primary
+Preconditions: Manager is logged into system and authenticated
+Postconditions: Information is succesfully stored in the system. Personal information includes name, last name, address,    phone, email, ID, and health insurance provider. Work information includes work hours and qualifications.
+
+Success Scenario (Main Flow):
+1. Manager authenticates and logs into system
+2. Manager enters information of new trainer
+3. System records personal and work information entered
+4. System informs manager of succesful entry
+
 Extensions:
+a. At any time, the process is suspended by manager
+  1.
+b. At any time, system fails
+  1.
+
 Cross References:
 
 - Nonfunctional Requirements -
