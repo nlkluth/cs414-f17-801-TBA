@@ -49,4 +49,106 @@ Cross References:
 
 - Nonfunctional Requirements -
 
+ID: GSU-0003
+Name: Inventory Equipment
+Overview: All the equipment of the gym needs to be entered into the inventory
+Primary Actor: Manager
+Type: primary
+Preconditions: Manager is logged into system and authenticated
+Postconditions: Information is succesfully stored in the system. For each machine, the system must register name, a picture, and quantity.
 
+Success Scenario (Main Flow):
+1. Manager authenticates and logs into system
+2. Manager enters information of machine
+3. System records personal and work information entered
+4. System informs manager of succesful entry
+
+Extensions:
+a. At any time, the process is suspended by manager
+  1.
+b. At any time, system fails
+  1.
+
+Cross References:
+
+- Nonfunctional Requirements -
+
+ID: GSU-0004
+Name: Modification of trainers
+Overview: A manager can modify trainer information
+Primary Actor: Manager
+Secondary Actor: Trainer
+Type: primary
+Preconditions: Manager is logged into system and authenticated
+Postconditions: Information is succesfully stored in the system. Personal information includes name, last name, address, phone, email, ID, and health insurance provider. Work information includes work hours and qualifications.
+
+Success Scenario (Main Flow):
+1. Manager authenticates and logs into system
+2. Manager finds entry of Trainer
+3. Manager enters a modification state
+4. Manager updates record for trainer
+5. System records personal and work information entered
+6. System informs manager of succesful update to entry
+
+Extensions:
+a. At any time, the process is suspended by manager
+  1.
+b. At any time, system fails
+  1.
+
+Cross References:
+
+- Nonfunctional Requirements -
+
+ID: GSU-0005
+Name: Modification of customers
+Overview: A manager can modify customer information
+Primary Actor: Manager
+Secondary Actor: Customer
+Type: primary
+Preconditions: Manager is logged into system and authenticated
+Postconditions: Information is succesfully stored in the system. Personal information includes name, last name, address, phone, email, ID, and health insurance provider. The membership of a customer is either active or inactive.
+
+Success Scenario (Main Flow):
+1. Manager authenticates and logs into system
+2. Manager finds entry of Customer
+3. Manager enters a modification state
+4. Manager updates record for Customer
+5. System records personal and work information entered
+6. System informs manager of succesful update to entry
+
+Extensions:
+a. At any time, the process is suspended by manager
+  1.
+b. At any time, system fails
+  1.
+
+Cross References:
+
+- Nonfunctional Requirements -
+
+ID: GSU-0006
+Name: Modification of equipment
+Overview: A manager can modify equipment information
+Primary Actor: Manager
+Type: primary
+Preconditions: Manager is logged into system and authenticated
+Postconditions: Information is succesfully stored in the system. For each machine, the system must register name, a picture, and quantity.
+
+Success Scenario (Main Flow):
+1. Manager authenticates and logs into system
+2. Manager finds entry of an Equipment
+3. Manager enters a modification state
+4. Manager updates record for Equipment
+5. System records personal and work information entered
+6. System informs manager of succesful update to entry
+
+Extensions:
+a. At any time, the process is suspended by manager
+  1.
+b. At any time, system fails
+  1.
+
+Cross References:
+
+- Nonfunctional Requirements -
