@@ -22,3 +22,31 @@ b. At any time, system fails
 Cross References:
 
 - Nonfunctional Requirements -
+
+
+ID: GSU-0002
+Name: Register Customer
+Overview: When a new customer is registered, personal and work information is entered into the system
+Primary Actor: Manager
+Supporting Actors: Customer
+Type: primary
+Preconditions: Manager is logged into system and authenticated
+Postconditions: Information is succesfully stored in the system. Personal information includes name, last name, address, phone, email, ID, and health insurance provider. The membership of a customer is either active or inactive.
+
+Success Scenario (Main Flow):
+1. Manager authenticates and logs into system
+2. Manager enters information of new customer
+3. System records personal and work information entered
+4. System informs manager of succesful entry
+
+Extensions:
+a. At any time, the process is suspended by manager
+  1.
+b. At any time, system fails
+  1.
+
+Cross References:
+
+- Nonfunctional Requirements -
+
+
