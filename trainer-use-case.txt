@@ -13,10 +13,16 @@ Success Scenario (Main Flow):
 4. System informs trainer of succesful entry
 
 Extensions:
-a. At any time, the process is suspended by trainer
-  1.
+a. At any time, the process is cancelled by trainer
+  1. System exits and discards changes
 b. At any time, system fails
-  1.
+  1. System displays error
+  2. Trainer restarts entering information
+c. Equipment is not in the system
+  1. System rejects entry and shows error
+d. Trainer fails to authenticate
+  1. System imforms manager of lack of authentication
+  2. System prompts manager to try again
 
 Cross References: GSU-003
 
@@ -39,14 +45,22 @@ Success Scenario (Main Flow):
 6. System informs trainer of succesful entry
 
 Extensions:
-a. At any time, the process is suspended by trainer
-  1.
+a. At any time, the process is cancelled by trainer
+  1. System exits and discards changes
 b. At any time, system fails
-  1.
+  1. System displays error
+  2. Trainer restarts entering information
+c. Equipment is not in the system
+  1. System rejects entry and shows error
+d. Trainer fails to authenticate
+  1. System imforms manager of lack of authentication
+  2. System prompts manager to try again
 
 Cross References: GSU-003
-
-- Nonfunctional Requirements -
+ 
+- Open Issues -
+  - Should system keep log of modifications?
+  - How should a failed equipment lookup be handled?
 
 ID: GSU-0009
 Name: Assign routine
@@ -66,14 +80,19 @@ Success Scenario (Main Flow):
 6. System informs trainer of succesful entry
 
 Extensions:
-a. At any time, the process is suspended by trainer
-  1.
+a. At any time, the process is cancelled by trainer
+  1. System exits and discards changes
 b. At any time, system fails
-  1.
+  1. System displays error
+  2. Trainer restarts entering information
+c. Customer is not in the system
+  1. System rejects entry and shows error
+d. Trainer fails to authenticate
+  1. System imforms manager of lack of authentication
+  2. System prompts manager to try again
 
-Cross References:
-
-- Nonfunctional Requirements -
+- Open Issues -
+  - How should a failed equipment lookup be handled?
 
 ID: GSU-0010
 Name: Customer and Routine search
@@ -92,11 +111,14 @@ Success Scenario (Main Flow):
 4. Information is displayed to the trainer
 
 Extensions:
-a. At any time, the process is suspended by trainer
-  1.
+a. At any time, the process is cancelled by trainer
+  1. System exits and discards changes
 b. At any time, system fails
-  1.
+  1. System displays error
+  2. Trainer restarts entering information
+c. Trainer fails to authenticate
+  1. System imforms manager of lack of authentication
+  2. System prompts manager to try again
 
-Cross References:
-
-- Nonfunctional Requirements -
+- Open Issues -
+  - "No results" scenario?
