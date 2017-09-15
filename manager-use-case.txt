@@ -14,15 +14,19 @@ Success Scenario (Main Flow):
 4. System informs manager of succesful entry
 
 Extensions:
-a. At any time, the process is suspended by manager
-  1.
+a. At any time, the process is cancelled by manager
+  1. System exits and discards changes
 b. At any time, system fails
-  1.
+  1. System displays error
+  2. Manager restarts entering information
+c. Manager fails to authenticate
+  1. System imforms manager of lack of authentication
+  2. System prompts manager to try again
 
 Cross References:
 
-- Nonfunctional Requirements -
-
+- Open Issues -
+  - For perseonal information, should system execute a logout after a certain period of inactivity?
 
 ID: GSU-0002
 Name: Register Customer
@@ -40,14 +44,16 @@ Success Scenario (Main Flow):
 4. System informs manager of succesful entry
 
 Extensions:
-a. At any time, the process is suspended by manager
-  1.
+a. At any time, the process is cancelled by manager
+  1. System exits and discards changes
 b. At any time, system fails
-  1.
+  1. System displays error
+  2. Manager restarts entering information
+c. Manager fails to authenticate
+  1. System imforms manager of lack of authentication
+  2. System prompts manager to try again
 
-Cross References:
-
-- Nonfunctional Requirements -
+Cross References: See open issues on GSU-0001
 
 ID: GSU-0003
 Name: Inventory Equipment
@@ -64,14 +70,17 @@ Success Scenario (Main Flow):
 4. System informs manager of succesful entry
 
 Extensions:
-a. At any time, the process is suspended by manager
-  1.
+a. At any time, the process is cancelled by manager
+  1. System exits and discards changes
 b. At any time, system fails
-  1.
+  1. System displays error
+  2. Manager restarts entering information
+c. Manager fails to authenticate
+  1. System imforms manager of lack of authentication
+  2. System prompts manager to try again
 
-Cross References:
-
-- Nonfunctional Requirements -
+- Open Issues -
+  - Should system correct any duplicate entries?
 
 ID: GSU-0004
 Name: Modification of trainers
@@ -91,14 +100,17 @@ Success Scenario (Main Flow):
 6. System informs manager of succesful update to entry
 
 Extensions:
-a. At any time, the process is suspended by manager
-  1.
+a. At any time, the process is cancelled by manager
+  1. System exits and discards changes
 b. At any time, system fails
-  1.
+  1. System displays error
+  2. Manager restarts entering information
+c. Manager fails to authenticate
+  1. System imforms manager of lack of authentication
+  2. System prompts manager to try again
 
-Cross References:
-
-- Nonfunctional Requirements -
+- Open Issues -
+  - Should system track revisions?
 
 ID: GSU-0005
 Name: Modification of customers
@@ -118,14 +130,17 @@ Success Scenario (Main Flow):
 6. System informs manager of succesful update to entry
 
 Extensions:
-a. At any time, the process is suspended by manager
-  1.
+a. At any time, the process is cancelled by manager
+  1. System exits and discards changes
 b. At any time, system fails
-  1.
+  1. System displays error
+  2. Manager restarts entering information
+c. Manager fails to authenticate
+  1. System imforms manager of lack of authentication
+  2. System prompts manager to try again
 
-Cross References:
-
-- Nonfunctional Requirements -
+- Open Issues -
+  - See GSU-0004 open issues
 
 ID: GSU-0006
 Name: Modification of equipment
@@ -144,11 +159,14 @@ Success Scenario (Main Flow):
 6. System informs manager of succesful update to entry
 
 Extensions:
-a. At any time, the process is suspended by manager
-  1.
+a. At any time, the process is cancelled by manager
+  1. System exits and discards changes
 b. At any time, system fails
-  1.
+  1. System displays error
+  2. Manager restarts entering information
+c. Manager fails to authenticate
+  1. System imforms manager of lack of authentication
+  2. System prompts manager to try again
 
-Cross References:
-
-- Nonfunctional Requirements -
+- Open Issues -
+  - See GSU-0004 open issues
