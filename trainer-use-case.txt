@@ -29,7 +29,7 @@ Cross References: GSU-003
 - Nonfunctional Requirements -
 
 ID: GSU-0008
-Name: Modification of workout routine(use verb?)
+Name: Modify workout routine
 Overview: A trainer can modify a workout routine
 Primary Actor: Trainer
 Type: primary
