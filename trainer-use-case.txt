@@ -7,7 +7,7 @@ Preconditions: Trainer is logged into system and authenticated. Equipment to be 
 Postconditions: Information is succesfully stored in the system. Each routine consists of a name and series of exercises. An exercise has a unique name and might require the use of a machine in the equipment inventory. An exercise can have a duration (in time) or a number of sets and repetitions per set.
 
 Success Scenario (Main Flow):
-1. Trainer authenticates and logs into system
+1. Trainer authenticates and logs into system(~~)
 2. Trainer enters information of new workout
 3. System records personal and work information entered
 4. System informs trainer of succesful entry
@@ -20,7 +20,7 @@ b. At any time, system fails
   2. Trainer restarts entering information
 c. Equipment is not in the system
   1. System rejects entry and shows error
-d. Trainer fails to authenticate
+(~~)d. Trainer fails to authenticate
   1. System imforms manager of lack of authentication
   2. System prompts manager to try again
 
@@ -29,17 +29,17 @@ Cross References: GSU-003
 - Nonfunctional Requirements -
 
 ID: GSU-0008
-Name: Modification of workout routine
-Overview: A trainer can modify a workout routine (set of exercises)
+Name: Modification of workout routine(use verb?)
+Overview: A trainer can modify a workout routine
 Primary Actor: Trainer
 Type: primary
-Preconditions: Trainer is logged into system and authenticated. Equipment to be used is in the system. Record to by modified is in the system
+Preconditions: Trainer is logged into system and authenticated. Equipment to be used is in the system. Record to by modified is in the system(??)
 Postconditions: Information is succesfully stored in the system. Each routine consists of a name and series of exercises. An exercise has a unique name and might require the use of a machine in the equipment inventory. An exercise can have a duration (in time) or a number of sets and repetitions per set.
 
 Success Scenario (Main Flow):
-1. Trainer authenticates and logs into system
-2. Manager finds entry of Trainer
-3. Manager enters a modification state
+1. Trainer authenticates and logs into system(~~)
+2. Manager finds entry of Trainer(should be Trainer?)
+3. Manager enters a modification state(should be Trainer?)
 4. Trainer update information of existing workout
 5. System records personal and work information entered
 6. System informs trainer of succesful entry
@@ -52,7 +52,7 @@ b. At any time, system fails
   2. Trainer restarts entering information
 c. Equipment is not in the system
   1. System rejects entry and shows error
-d. Trainer fails to authenticate
+(~~)d. Trainer fails to authenticate
   1. System imforms manager of lack of authentication
   2. System prompts manager to try again
 
@@ -69,10 +69,10 @@ Primary Actor: Trainer
 Secondary Actor: Customer
 Type: primary
 Preconditions: Trainer is logged into system and authenticated. Workout is in the system. Customer is in the system.
-Postconditions: Information is succesfully stored in the system. Customer is now associated with that workout
+Postconditions: Information is succesfully stored in the system. Customer is now associated with that workout.(plural?)
 
 Success Scenario (Main Flow):
-1. Trainer authenticates and logs into system
+1. Trainer authenticates and logs into system(~~)
 2. Trainer finds record of customer
 3. Trainer finds record of workout routine
 4. Trainer creates assignment between customer and workout routine
@@ -87,7 +87,7 @@ b. At any time, system fails
   2. Trainer restarts entering information
 c. Customer is not in the system
   1. System rejects entry and shows error
-d. Trainer fails to authenticate
+(~~)d. Trainer fails to authenticate
   1. System imforms manager of lack of authentication
   2. System prompts manager to try again
 
@@ -95,17 +95,17 @@ d. Trainer fails to authenticate
   - How should a failed equipment lookup be handled?
 
 ID: GSU-0010
-Name: Customer and Routine search
-Overview: A trainer can search for customers to see assigned workouts and search for workouts to see assigne customers
+Name: Search Customer and Routine search
+Overview: A trainer can search for customers to see assigned workouts and search for workouts to see assigne customers(instruction said "can be",so maybe not the meaning?)
 Primary Actor: Trainer
 Type: primary
 Preconditions: Trainer is logged into system and authenticated. Workout is in the system. Customer is in the system.
 Postconditions: Information is succesfully retreived and presented to trainer.
 
 Success Scenario (Main Flow):
-1. Trainer authenticates and logs into system
-2a. Trainer searches for record of Customer
-3a. Trainer finds customer and checks assigned workout routines
+1. Trainer authenticates and logs into system(~~)
+2a. Trainer searches for record of Customer(not branching,maybe put into the Extensions section)
+3a. Trainer finds customer and checks assigned workout routines(not branching,maybe put into the Extensions section)
 2b. Trainer searches for record of workout Routine
 3b. Trainer finds workout Routine and checks for list of assigned Customers
 4. Information is displayed to the trainer
@@ -116,7 +116,7 @@ a. At any time, the process is cancelled by trainer
 b. At any time, system fails
   1. System displays error
   2. Trainer restarts entering information
-c. Trainer fails to authenticate
+(~~)c. Trainer fails to authenticate
   1. System imforms manager of lack of authentication
   2. System prompts manager to try again
 
