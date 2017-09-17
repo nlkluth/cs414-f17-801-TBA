@@ -5,13 +5,15 @@ Primary Actor: Manager
 Supporting Actors: Trainer
 Type: primary
 Preconditions: Manager is logged into system and authenticated
-Postconditions: Information is succesfully stored in the system. Personal information includes name, last name, address,    phone, email, ID, and health insurance provider. Work information includes work hours and qualifications.
+Postconditions: Information is succesfully stored in the system. Personal information includes name, last name, address,phone, email, ID, and health insurance provider. Work information includes work hours and qualifications.
 
 Success Scenario (Main Flow):
-1. Manager authenticates and logs into system
+1. Manager authenticates and logs into system (This statement is excetly the same as Preconditions,which I think it should not be here.)
 2. Manager enters information of new trainer
 3. System records personal and work information entered
 4. System informs manager of succesful entry
+
+(Do we need Postconditions here?as our instrutor did in her lectures)
 
 Extensions:
 a. At any time, the process is cancelled by manager
@@ -19,7 +21,7 @@ a. At any time, the process is cancelled by manager
 b. At any time, system fails
   1. System displays error
   2. Manager restarts entering information
-c. Manager fails to authenticate
+(delete,since it is precondition)c. Manager fails to authenticate
   1. System imforms manager of lack of authentication
   2. System prompts manager to try again
 
@@ -38,7 +40,7 @@ Preconditions: Manager is logged into system and authenticated
 Postconditions: Information is succesfully stored in the system. Personal information includes name, last name, address, phone, email, ID, and health insurance provider. The membership of a customer is either active or inactive.
 
 Success Scenario (Main Flow):
-1. Manager authenticates and logs into system
+1. Manager authenticates and logs into system(same as the first case)
 2. Manager enters information of new customer
 3. System records personal and work information entered
 4. System informs manager of succesful entry
@@ -49,14 +51,14 @@ a. At any time, the process is cancelled by manager
 b. At any time, system fails
   1. System displays error
   2. Manager restarts entering information
-c. Manager fails to authenticate
+(delete)same as the first case)c. Manager fails to authenticate
   1. System imforms manager of lack of authentication
   2. System prompts manager to try again
 
 Cross References: See open issues on GSU-0001
 
 ID: GSU-0003
-Name: Inventory Equipment
+Name: Inventory Equipment(use verb?)
 Overview: All the equipment of the gym needs to be entered into the inventory
 Primary Actor: Manager
 Type: primary
@@ -64,7 +66,7 @@ Preconditions: Manager is logged into system and authenticated
 Postconditions: Information is succesfully stored in the system. For each machine, the system must register name, a picture, and quantity.
 
 Success Scenario (Main Flow):
-1. Manager authenticates and logs into system
+1. Manager authenticates and logs into system(~~)
 2. Manager enters information of machine
 3. System records personal and work information entered
 4. System informs manager of succesful entry
@@ -75,7 +77,7 @@ a. At any time, the process is cancelled by manager
 b. At any time, system fails
   1. System displays error
   2. Manager restarts entering information
-c. Manager fails to authenticate
+(~~)c. Manager fails to authenticate
   1. System imforms manager of lack of authentication
   2. System prompts manager to try again
 
@@ -83,16 +85,16 @@ c. Manager fails to authenticate
   - Should system correct any duplicate entries?
 
 ID: GSU-0004
-Name: Modification of trainers
+Name: Modification of trainers(use verb?)
 Overview: A manager can modify trainer information
 Primary Actor: Manager
 Secondary Actor: Trainer
 Type: primary
 Preconditions: Manager is logged into system and authenticated
-Postconditions: Information is succesfully stored in the system. Personal information includes name, last name, address, phone, email, ID, and health insurance provider. Work information includes work hours and qualifications.
+Postconditions: Information is (updated as needed and )succesfully stored in the system. Personal information includes name, last name, address, phone, email, ID, and health insurance provider. Work information includes work hours and qualifications.
 
 Success Scenario (Main Flow):
-1. Manager authenticates and logs into system
+1. Manager authenticates and logs into system(~~)
 2. Manager finds entry of Trainer
 3. Manager enters a modification state
 4. Manager updates record for trainer
@@ -105,7 +107,7 @@ a. At any time, the process is cancelled by manager
 b. At any time, system fails
   1. System displays error
   2. Manager restarts entering information
-c. Manager fails to authenticate
+(~~)c. Manager fails to authenticate
   1. System imforms manager of lack of authentication
   2. System prompts manager to try again
 
@@ -113,16 +115,16 @@ c. Manager fails to authenticate
   - Should system track revisions?
 
 ID: GSU-0005
-Name: Modification of customers
+Name: Modification of customers(use verb?)
 Overview: A manager can modify customer information
 Primary Actor: Manager
 Secondary Actor: Customer
 Type: primary
 Preconditions: Manager is logged into system and authenticated
-Postconditions: Information is succesfully stored in the system. Personal information includes name, last name, address, phone, email, ID, and health insurance provider. The membership of a customer is either active or inactive.
+Postconditions: Information is (updated as needed and )succesfully stored in the system. Personal information includes name, last name, address, phone, email, ID, and health insurance provider. The membership of a customer is either active or inactive.
 
 Success Scenario (Main Flow):
-1. Manager authenticates and logs into system
+1. Manager authenticates and logs into system(~~)
 2. Manager finds entry of Customer
 3. Manager enters a modification state
 4. Manager updates record for Customer
@@ -135,7 +137,7 @@ a. At any time, the process is cancelled by manager
 b. At any time, system fails
   1. System displays error
   2. Manager restarts entering information
-c. Manager fails to authenticate
+(~~)c. Manager fails to authenticate
   1. System imforms manager of lack of authentication
   2. System prompts manager to try again
 
@@ -143,7 +145,7 @@ c. Manager fails to authenticate
   - See GSU-0004 open issues
 
 ID: GSU-0006
-Name: Modification of equipment
+Name: Modification of equipment(use verb?)
 Overview: A manager can modify equipment information
 Primary Actor: Manager
 Type: primary
@@ -151,7 +153,7 @@ Preconditions: Manager is logged into system and authenticated
 Postconditions: Information is succesfully stored in the system. For each machine, the system must register name, a picture, and quantity.
 
 Success Scenario (Main Flow):
-1. Manager authenticates and logs into system
+1. Manager authenticates and logs into system(~~)
 2. Manager finds entry of an Equipment
 3. Manager enters a modification state
 4. Manager updates record for Equipment
@@ -164,7 +166,7 @@ a. At any time, the process is cancelled by manager
 b. At any time, system fails
   1. System displays error
   2. Manager restarts entering information
-c. Manager fails to authenticate
+(~~)c. Manager fails to authenticate
   1. System imforms manager of lack of authentication
   2. System prompts manager to try again
 
