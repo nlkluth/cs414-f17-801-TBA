@@ -58,7 +58,7 @@ b. At any time, system fails
 Cross References: See open issues on GSU-0001
 
 ID: GSU-0003
-Name: Inventory Equipment(use verb?)
+Name: Enter Equipment into Inventory
 Overview: All the equipment of the gym needs to be entered into the inventory
 Primary Actor: Manager
 Type: primary
@@ -85,7 +85,7 @@ b. At any time, system fails
   - Should system correct any duplicate entries?
 
 ID: GSU-0004
-Name: Modification of trainers(use verb?)
+Name: Modify trainers
 Overview: A manager can modify trainer information
 Primary Actor: Manager
 Secondary Actor: Trainer
@@ -115,7 +115,7 @@ b. At any time, system fails
   - Should system track revisions?
 
 ID: GSU-0005
-Name: Modification of customers(use verb?)
+Name: Modify customers
 Overview: A manager can modify customer information
 Primary Actor: Manager
 Secondary Actor: Customer
@@ -145,7 +145,7 @@ b. At any time, system fails
   - See GSU-0004 open issues
 
 ID: GSU-0006
-Name: Modification of equipment(use verb?)
+Name: Modify equipment
 Overview: A manager can modify equipment information
 Primary Actor: Manager
 Type: primary
