@@ -33,7 +33,7 @@ Name: Modification of workout routine(use verb?)
 Overview: A trainer can modify a workout routine
 Primary Actor: Trainer
 Type: primary
-Preconditions: Trainer is logged into system and authenticated. Equipment to be used is in the system. Record to by modified is in the system(??)
+Preconditions: Trainer is logged into system and authenticated. Equipment to be used is in the system. Workout routine is in the system.
 Postconditions: Information is succesfully stored in the system. Each routine consists of a name and series of exercises. An exercise has a unique name and might require the use of a machine in the equipment inventory. An exercise can have a duration (in time) or a number of sets and repetitions per set.
 
 Success Scenario (Main Flow):
