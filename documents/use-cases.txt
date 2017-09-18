@@ -138,7 +138,7 @@ Success Scenario (Main Flow):
 1. Manager finds entry of an Equipment
 2. Manager enters a modification state
 3. Manager updates record for Equipment
-4. System records personal and work information entered
+4. System records updated equipment information entered
 5. System informs manager of succesful update to entry
 
 Extensions:
@@ -162,7 +162,7 @@ Preconditions: Trainer is logged into system and authenticated. Equipment to be 
 
 Success Scenario (Main Flow):
 1. Trainer enters information of new workout
-2. System records personal and work information entered
+2. System records workout routine entered
 3. System informs trainer of succesful entry
 
 Extensions:
@@ -171,8 +171,6 @@ a. At any time, the process is cancelled by trainer
 b. At any time, system fails
   1. System displays error
   2. Trainer restarts entering information
-c. Equipment is not in the system
-  1. System rejects entry and shows error
 
 Postconditions: Information is succesfully stored in the system. Each routine consists of a name and series of exercises. An exercise has a unique name and might require the use of a machine in the equipment inventory. An exercise can have a duration (in time) or a number of sets and repetitions per set.
 
@@ -191,7 +189,7 @@ Success Scenario (Main Flow):
 2. Trainer finds entry of Workout Routine
 3. Trainer enters a modification state
 4. Trainer update information of existing workout
-5. System records personal and work information entered
+5. System records routine information entered
 6. System informs trainer of succesful entry
 
 Extensions:
@@ -200,8 +198,6 @@ a. At any time, the process is cancelled by trainer
 b. At any time, system fails
   1. System displays error
   2. Trainer restarts entering information
-c. Equipment is not in the system
-  1. System rejects entry and shows error
 
 Postconditions: Information is succesfully stored in the system. Each routine consists of a name and series of exercises. An exercise has a unique name and might require the use of a machine in the equipment inventory. An exercise can have a duration (in time) or a number of sets and repetitions per set.
 
@@ -223,7 +219,7 @@ Success Scenario (Main Flow):
 1. Trainer finds record of customer
 2. Trainer finds record of workout routine
 3. Trainer creates assignment between customer and workout routine
-4. System records personal and work information entered
+4. System records assignment entered
 5. System informs trainer of succesful entry
 
 Extensions:
@@ -232,8 +228,6 @@ a. At any time, the process is cancelled by trainer
 b. At any time, system fails
   1. System displays error
   2. Trainer restarts entering information
-c. Customer is not in the system
-  1. System rejects entry and shows error
 
 Postconditions: Information is succesfully stored in the system. Customer is now associated with the workouts.
 
