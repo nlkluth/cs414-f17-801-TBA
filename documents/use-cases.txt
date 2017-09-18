@@ -1,0 +1,267 @@
+ID: GSU-0001
+Name: Hire Trainer
+Overview: When a new trainer is hired, personal and work information is entered into the system
+Primary Actor: Manager
+Supporting Actors: Trainer
+Type: primary
+Preconditions: Manager is logged into system and authenticated
+
+Success Scenario (Main Flow):
+1. Manager enters information of new trainer
+2. System records personal and work information entered
+3. System informs manager of succesful entry
+
+Postconditions: Information is succesfully stored in the system. Personal information includes name, last name, address,phone, email, ID, and health insurance provider. Work information includes work hours and qualifications.
+
+Extensions:
+a. At any time, the process is cancelled by manager
+  1. System exits and discards changes
+b. At any time, system fails
+  1. System displays error
+  2. Manager restarts entering information
+
+Cross References:
+
+- Open Issues -
+  - For perseonal information, should system execute a logout after a certain period of inactivity?
+
+ID: GSU-0002
+Name: Register Customer
+Overview: When a new customer is registered, personal and work information is entered into the system
+Primary Actor: Manager
+Supporting Actors: Customer
+Type: primary
+Preconditions: Manager is logged into system and authenticated
+
+Success Scenario (Main Flow):
+1. Manager enters information of new customer
+2. System records personal and work information entered
+3. System informs manager of succesful entry
+
+Postconditions: Information is succesfully stored in the system. Personal information includes name, last name, address, phone, email, ID, and health insurance provider. The membership of a customer is either active or inactive.
+
+Extensions:
+a. At any time, the process is cancelled by manager
+  1. System exits and discards changes
+b. At any time, system fails
+  1. System displays error
+  2. Manager restarts entering information
+
+Cross References: See open issues on GSU-0001
+
+ID: GSU-0003
+Name: Enter Equipment into Inventory
+Overview: All the equipment of the gym needs to be entered into the inventory
+Primary Actor: Manager
+Type: primary
+Preconditions: Manager is logged into system and authenticated
+
+Success Scenario (Main Flow):
+1. Manager enters information of machine
+2. System records personal and work information entered
+3. System informs manager of succesful entry
+
+Extensions:
+a. At any time, the process is cancelled by manager
+  1. System exits and discards changes
+b. At any time, system fails
+  1. System displays error
+  2. Manager restarts entering information
+
+Postconditions: Information is succesfully stored in the system. For each machine, the system must register name, a picture, and quantity.
+
+- Open Issues -
+  - Should system correct any duplicate entries?
+
+ID: GSU-0004
+Name: Modify trainers
+Overview: A manager can modify trainer information
+Primary Actor: Manager
+Secondary Actor: Trainer
+Type: primary
+Preconditions: Manager is logged into system and authenticated
+
+Success Scenario (Main Flow):
+1. Manager finds entry of Trainer
+2. Manager enters a modification state
+3. Manager updates record for trainer
+4. System records personal and work information entered
+5. System informs manager of succesful update to entry
+
+Extensions:
+a. At any time, the process is cancelled by manager
+  1. System exits and discards changes
+b. At any time, system fails
+  1. System displays error
+  2. Manager restarts entering information
+
+Postconditions: Information is updated as needed and succesfully stored in the system. Personal information includes name, last name, address, phone, email, ID, and health insurance provider. Work information includes work hours and qualifications.
+
+- Open Issues -
+  - Should system track revisions?
+
+ID: GSU-0005
+Name: Modify customers
+Overview: A manager can modify customer information
+Primary Actor: Manager
+Secondary Actor: Customer
+Type: primary
+Preconditions: Manager is logged into system and authenticated
+
+Success Scenario (Main Flow):
+1. Manager finds entry of Customer
+2. Manager enters a modification state
+3. Manager updates record for Customer
+4. System records personal and work information entered
+5. System informs manager of succesful update to entry
+
+Extensions:
+a. At any time, the process is cancelled by manager
+  1. System exits and discards changes
+b. At any time, system fails
+  1. System displays error
+  2. Manager restarts entering information
+
+Postconditions: Information is updated as needed and succesfully stored in the system. Personal information includes name, last name, address, phone, email, ID, and health insurance provider. The membership of a customer is either active or inactive.
+
+- Open Issues -
+  - See GSU-0004 open issues
+
+ID: GSU-0006
+Name: Modify equipment
+Overview: A manager can modify equipment information
+Primary Actor: Manager
+Type: primary
+Preconditions: Manager is logged into system and authenticated
+
+Success Scenario (Main Flow):
+1. Manager finds entry of an Equipment
+2. Manager enters a modification state
+3. Manager updates record for Equipment
+4. System records personal and work information entered
+5. System informs manager of succesful update to entry
+
+Extensions:
+a. At any time, the process is cancelled by manager
+  1. System exits and discards changes
+b. At any time, system fails
+  1. System displays error
+  2. Manager restarts entering information
+
+Postconditions: Information is succesfully stored in the system. For each machine, the system must register name, a picture, and quantity.
+
+- Open Issues -
+  - See GSU-0004 open issues
+
+ID: GSU-0007
+Name: Create workout routine
+Overview: A trainer can create a workout routine (set of exercises)
+Primary Actor: Trainer
+Type: primary
+Preconditions: Trainer is logged into system and authenticated. Equipment to be used is in the system
+
+Success Scenario (Main Flow):
+1. Trainer enters information of new workout
+2. System records personal and work information entered
+3. System informs trainer of succesful entry
+
+Extensions:
+a. At any time, the process is cancelled by trainer
+  1. System exits and discards changes
+b. At any time, system fails
+  1. System displays error
+  2. Trainer restarts entering information
+c. Equipment is not in the system
+  1. System rejects entry and shows error
+
+Postconditions: Information is succesfully stored in the system. Each routine consists of a name and series of exercises. An exercise has a unique name and might require the use of a machine in the equipment inventory. An exercise can have a duration (in time) or a number of sets and repetitions per set.
+
+Cross References: GSU-003
+
+- Nonfunctional Requirements -
+
+ID: GSU-0008
+Name: Modify workout routine
+Overview: A trainer can modify a workout routine
+Primary Actor: Trainer
+Type: primary
+Preconditions: Trainer is logged into system and authenticated. Equipment to be used is in the system. Workout routine is in the system.
+
+Success Scenario (Main Flow):
+2. Trainer finds entry of Workout Routine
+3. Trainer enters a modification state
+4. Trainer update information of existing workout
+5. System records personal and work information entered
+6. System informs trainer of succesful entry
+
+Extensions:
+a. At any time, the process is cancelled by trainer
+  1. System exits and discards changes
+b. At any time, system fails
+  1. System displays error
+  2. Trainer restarts entering information
+c. Equipment is not in the system
+  1. System rejects entry and shows error
+
+Postconditions: Information is succesfully stored in the system. Each routine consists of a name and series of exercises. An exercise has a unique name and might require the use of a machine in the equipment inventory. An exercise can have a duration (in time) or a number of sets and repetitions per set.
+
+Cross References: GSU-003
+
+- Open Issues -
+  - Should system keep log of modifications?
+  - How should a failed equipment lookup be handled?
+
+ID: GSU-0009
+Name: Assign workout routine
+Overview: A trainer can assign one or more routines to a customer
+Primary Actor: Trainer
+Secondary Actor: Customer
+Type: primary
+Preconditions: Trainer is logged into system and authenticated. Workout is in the system. Customer is in the system.
+
+Success Scenario (Main Flow):
+1. Trainer finds record of customer
+2. Trainer finds record of workout routine
+3. Trainer creates assignment between customer and workout routine
+4. System records personal and work information entered
+5. System informs trainer of succesful entry
+
+Extensions:
+a. At any time, the process is cancelled by trainer
+  1. System exits and discards changes
+b. At any time, system fails
+  1. System displays error
+  2. Trainer restarts entering information
+c. Customer is not in the system
+  1. System rejects entry and shows error
+
+Postconditions: Information is succesfully stored in the system. Customer is now associated with the workouts.
+
+- Open Issues -
+  - How should a failed equipment lookup be handled?
+
+ID: GSU-0010
+Name: Search Customer and search Routine
+Overview: A trainer can search for customers to see assigned workouts and search for workouts to check what customers can be assigned to it.
+Primary Actor: Trainer
+Type: primary
+Preconditions: Trainer is logged into system and authenticated. Workout is in the system. Customer is in the system.
+
+Success Scenario (Main Flow):
+1. Trainer searches for record of workout Routine
+2. Trainer finds workout Routine and checks for list of assigned Customers
+3. Information is displayed to the trainer
+
+Extensions:
+a. At any time, the process is cancelled by trainer
+  1. System exits and discards changes
+b. At any time, system fails
+  1. System displays error
+  2. Trainer restarts entering information
+c. Trainer searches for record of Customer
+  1. Trainer finds customer and checks assigned workout routines
+
+Postconditions: Information is succesfully retreived and presented to trainer.
+
+- Open Issues -
+  - "No results" scenario?
