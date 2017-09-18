@@ -1,5 +1,5 @@
 ID: GSU-0007
-Name: Create routine
+Name: Create workout routine
 Overview: A trainer can create a workout routine (set of exercises)
 Primary Actor: Trainer
 Type: primary
@@ -57,7 +57,7 @@ Cross References: GSU-003
   - How should a failed equipment lookup be handled?
 
 ID: GSU-0009
-Name: Assign routine
+Name: Assign workout routine
 Overview: A trainer can assign one or more routines to a customer
 Primary Actor: Trainer
 Secondary Actor: Customer
@@ -86,7 +86,7 @@ Postconditions: Information is succesfully stored in the system. Customer is now
   - How should a failed equipment lookup be handled?
 
 ID: GSU-0010
-Name: Search Customer and Routine search
+Name: Search Customer and search Routine
 Overview: A trainer can search for customers to see assigned workouts and search for workouts to check what customers can be assigned to it.
 Primary Actor: Trainer
 Type: primary
