@@ -1,8 +1,8 @@
 <project name="GymManagement" basedir="." default="test">
-  <property name="main.build.dir" value="build/main" />  
+  <property name="main.build.dir" value="build/main" />
   <property name="main.src.dir" value="src" />
   <property name="test.build.dir" value="build/test" />
-  <property name="test.src.dir" value="src/test" />
+  <property name="test.src.dir" value="src/edu/colostate/cs/cs144/tba/gymmanagement" />
 
   <path id="classpath.base" />
 
@@ -29,7 +29,7 @@
     </javac>
     <echo message="Build done" />
   </target>
-   
+
   <!-- Test and build all files  -->
   <!-- To run this: use "ant" (default) or "ant run" -->
   <target name="run" depends="build">
@@ -44,7 +44,7 @@
         </batchtest>
     </junit>
   </target>
-   
+
   <!-- delete all class files -->
   <!-- To run this: use "ant clean" -->
   <target name="clean">
