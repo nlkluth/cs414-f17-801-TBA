@@ -3,6 +3,7 @@
   <property name="main.src.dir" value="src" />
   <property name="test.build.dir" value="build/test" />
   <property name="test.src.dir" value="src/edu/colostate/cs/cs144/tba/gymmanagement" />
+  <property name="project.lib" location="${basedir}/lib" />
 
   <path id="classpath.base" />
 
