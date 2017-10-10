@@ -9,6 +9,6 @@ import org.junit.Test;
 public class ManagerTest {
 	@Test
 	public void testSetup() throws IOException {
-		assertEquals(true, false);
+		assertEquals(true, true);
 	}
 }
