@@ -5,8 +5,8 @@
 ### Run test
 ##### with ant
 - `$ ant` runs all steps:
--- `$ ant compile` compiles to build directory
--- `$ ant test` runs tests
+  - `$ ant compile` compiles to build directory
+  - `$ ant test` runs tests
 
 ##### with make
 - `$ make test`
