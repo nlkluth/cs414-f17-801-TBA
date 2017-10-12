@@ -1,5 +1,5 @@
-<diagram program="umletino" version="14.2"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>47</x><y>99</y><w>250</w><h>200</h></coordinates><panel_attributes>*Trainer*
-
+<diagram program="umletino" version="14.2"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>0</x><y>50</y><w>520</w><h>280</h></coordinates><panel_attributes>*Trainer*
+(from edu.colostate.cs.cs414.tba.gymmanagement)
 --
 -id : int
 -name : String
@@ -8,17 +8,22 @@
 -phoneNumer : String
 -email : String
 -healthInsuranceProvider : String
--availability : String
+-availability : Availability
 --
-update(...)
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>367</x><y>99</y><w>250</w><h>100</h></coordinates><panel_attributes>*Manager*
-
++update(name, lastName, address, phoneNumber, email, healthInsuranceProvider, id, availability)
++getName() : String
++getAddress() : String
++getPhoneNumber() : String
++getEmail() : String
++getHealthInsuranceProvider() : String
++getAvailability() : Availability</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>530</x><y>70</y><w>280</w><h>100</h></coordinates><panel_attributes>*Manager*
+(from edu.colostate.cs.cs414.tba.gymmanagement)
 --
 -id : int
 -name : String
 --
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>47</x><y>359</y><w>250</w><h>200</h></coordinates><panel_attributes>*Customer*
-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>350</y><w>450</w><h>250</h></coordinates><panel_attributes>*Customer*
+(from edu.colostate.cs.cs414.tba.gymmanagement)
 --
 -id : int
 -name : String
@@ -27,18 +32,24 @@ update(...)
 -phoneNumer : String
 -email : String
 -healthInsuranceProvider : String
+-Membership: Membership
 --
-update()
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>367</x><y>269</y><w>250</w><h>100</h></coordinates><panel_attributes>*Equipment*
-
++update(name, lastName, address, phoneNumber, email, healthInsuranceProvider)
++getName() : String
++getAddress() : String
++getPhoneNumber() : String
++getEmail() : String
++getHealthInsuranceProvider() : String
++getMembership() : Membership</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>530</x><y>240</y><w>280</w><h>100</h></coordinates><panel_attributes>*Equipment*
+(from edu.colostate.cs.cs414.tba.gymmanagement)
 --
 -id : int
 -name : String
 -picture : File(PNG)
 -quality : int
 --
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>367</x><y>429</y><w>250</w><h>170</h></coordinates><panel_attributes>*Gym*
-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>520</x><y>400</y><w>280</w><h>170</h></coordinates><panel_attributes>*Gym*
+(from edu.colostate.cs.cs414.tba.gymmanagement)
 --
 -id : int
 -name : String
@@ -48,16 +59,38 @@ getTrainer(trainerID)
 getRoutine(routineID)
 getCustomers()
 getTrainers()
-getRoutines()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>667</x><y>179</y><w>250</w><h>100</h></coordinates><panel_attributes>*WorkoutRoutine*
-
+getRoutines()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>830</x><y>170</y><w>280</w><h>100</h></coordinates><panel_attributes>*WorkoutRoutine*
+(from edu.colostate.cs.cs414.tba.gymmanagement)
 --
 -id : int
 -name : String
 --
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>667</x><y>329</y><w>250</w><h>100</h></coordinates><panel_attributes>*Qualification*
-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>850</x><y>300</y><w>280</w><h>100</h></coordinates><panel_attributes>*Qualification*
+(from edu.colostate.cs.cs414.tba.gymmanagement)
 --
 -id : int
 -name : String
 --
-</panel_attributes><additional_attributes></additional_attributes></element></diagram>
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>830</x><y>450</y><w>280</w><h>130</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+*Availability*
+(from edu.colostate.cs.cs414.tba.gymmanagement)
+--
+FULLTIME
+PARTTIME
+SEASONAL_FULLTIME
+SEASONAL_PARTTIME
+UNAVAILABLE
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>830</x><y>0</y><w>280</w><h>140</h></coordinates><panel_attributes>*Exercise*
+(from edu.colostate.cs.cs414.tba.gymmanagement)
+--
+-id : int
+-name : String
+-duration : Time
+-numberOfSet : int
+-numberOfRep : int
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>510</x><y>600</y><w>280</w><h>90</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+*Membership*
+(from edu.colostate.cs.cs414.tba.gymmanagement)
+--
+ACTIVE
+INACTIVE</panel_attributes><additional_attributes></additional_attributes></element></diagram>
