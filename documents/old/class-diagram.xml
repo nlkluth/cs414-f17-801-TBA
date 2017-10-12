@@ -1,0 +1,63 @@
+<diagram program="umletino" version="14.2"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>47</x><y>99</y><w>250</w><h>200</h></coordinates><panel_attributes>*Trainer*
+
+--
+-id : int
+-name : String
+-lastName : String
+-address : String
+-phoneNumer : String
+-email : String
+-healthInsuranceProvider : String
+-availability : String
+--
+update(...)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>367</x><y>99</y><w>250</w><h>100</h></coordinates><panel_attributes>*Manager*
+
+--
+-id : int
+-name : String
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>47</x><y>359</y><w>250</w><h>200</h></coordinates><panel_attributes>*Customer*
+
+--
+-id : int
+-name : String
+-lastName : String
+-address : String
+-phoneNumer : String
+-email : String
+-healthInsuranceProvider : String
+--
+update()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>367</x><y>269</y><w>250</w><h>100</h></coordinates><panel_attributes>*Equipment*
+
+--
+-id : int
+-name : String
+-picture : File(PNG)
+-quality : int
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>367</x><y>429</y><w>250</w><h>170</h></coordinates><panel_attributes>*Gym*
+
+--
+-id : int
+-name : String
+--
+getCustomer(customerID)
+getTrainer(trainerID)
+getRoutine(routineID)
+getCustomers()
+getTrainers()
+getRoutines()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>667</x><y>179</y><w>250</w><h>100</h></coordinates><panel_attributes>*WorkoutRoutine*
+
+--
+-id : int
+-name : String
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>667</x><y>329</y><w>250</w><h>100</h></coordinates><panel_attributes>*Qualification*
+
+--
+-id : int
+-name : String
+--
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>
