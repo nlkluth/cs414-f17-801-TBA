@@ -7,7 +7,17 @@ import junit.framework.JUnit4TestAdapter;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({ 
-	ManagerTest.class
+	AddressTest.class,
+	CustomerTest.class,
+	EquipmentTest.class,
+	ExerciseTest.class,
+	GymSystemTest.class,
+	InsuranceTest.class,
+	ManagerTest.class,
+	PersonalInformationTest.class,
+	QualificationTest.class,
+	TrainerTest.class,
+	WorkoutRoutineTest.class
 })
 
 public class TestAll {
