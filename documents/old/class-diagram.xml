@@ -1,4 +1,4 @@
-<diagram program="umletino" version="14.2"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>570</x><y>760</y><w>530</w><h>160</h></coordinates><panel_attributes>*Trainer*
+<diagram program="umletino" version="14.2"><zoom_level>10</zoom_level><help_text>Space for d&lt; iagr notes</help_text><element><id>UMLClass</id><coordinates><x>1270</x><y>580</y><w>530</w><h>160</h></coordinates><panel_attributes>*Trainer*
 (from edu.colostate.cs.cs414.tba.gymmanagement)
 --
 -id : int
@@ -7,7 +7,7 @@
 +update(name, lastName, address, phoneNumber, email, healthInsuranceProvider, id, availability)
 +addQualification(Qualification)
 +getAvailability() : Availability
-+getQualifications() : Qualification[*]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>620</x><y>390</y><w>510</w><h>170</h></coordinates><panel_attributes>*Manager*
++getQualifications() : Qualification[*]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>50</x><y>590</y><w>510</w><h>160</h></coordinates><panel_attributes>*Manager*
 (from edu.colostate.cs.cs414.tba.gymmanagement)
 --
 -id : int
@@ -17,7 +17,7 @@
 +modifyCustomer(name, lastName, address, phoneNumber, email, healthInsuranceProvider)
 +hireTrainer(name, lastName, address, phoneNumber, email, healthInsuranceProvider)
 +modifyTrainer(name, lastName, address, phoneNumber, email, healthInsuranceProvider)
-+addEquipment(name, picture, quantity)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>560</x><y>60</y><w>450</w><h>160</h></coordinates><panel_attributes>*Customer*
++addEquipment(name, picture, quantity)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>680</x><y>600</y><w>450</w><h>160</h></coordinates><panel_attributes>*Customer*
 (from edu.colostate.cs.cs414.tba.gymmanagement)
 --
 -id : int
@@ -25,7 +25,7 @@
 --
 +update(name, lastName, address, phoneNumber, email, healthInsuranceProvider)
 +getMembership() : Membership
-+getRoutines() : WorkoutRoutine[*]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1220</x><y>610</y><w>280</w><h>130</h></coordinates><panel_attributes>*Equipment*
++getRoutines() : WorkoutRoutine[*]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>890</x><y>1060</y><w>280</w><h>130</h></coordinates><panel_attributes>*Equipment*
 (from edu.colostate.cs.cs414.tba.gymmanagement)
 --
 -id : int
@@ -33,28 +33,28 @@
 -picture : File(PNG)
 -quality : int
 --
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1270</x><y>400</y><w>510</w><h>140</h></coordinates><panel_attributes>*Gym*
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>50</x><y>320</y><w>510</w><h>140</h></coordinates><panel_attributes>*Gym*
 (from edu.colostate.cs.cs414.tba.gymmanagement)
 --
 -id : int
 -name : String
 --
 +handleInput()
-+handlelogin()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>690</x><y>1010</y><w>280</w><h>120</h></coordinates><panel_attributes>*WorkoutRoutine*
++handlelogin()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1390</x><y>820</y><w>280</w><h>120</h></coordinates><panel_attributes>*WorkoutRoutine*
 (from edu.colostate.cs.cs414.tba.gymmanagement)
 --
 -id : int
 -name : String
 --
 +getExercises() : Exercise[*]
-+getAssignedCustomers() : Customer[*]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>1000</y><w>280</w><h>120</h></coordinates><panel_attributes>*Qualification*
++getAssignedCustomers() : Customer[*]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1890</x><y>580</y><w>280</w><h>120</h></coordinates><panel_attributes>*Qualification*
 (from edu.colostate.cs.cs414.tba.gymmanagement)
 --
 -id : int
 -description : String
 --
 +addTrainer()
-+toString() : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>840</y><w>280</w><h>130</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
++toString() : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1780</x><y>390</y><w>280</w><h>130</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
 *Availability*
 (from edu.colostate.cs.cs414.tba.gymmanagement)
 --
@@ -63,7 +63,7 @@ PARTTIME
 SEASONAL_FULLTIME
 SEASONAL_PARTTIME
 UNAVAILABLE
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1120</x><y>970</y><w>300</w><h>220</h></coordinates><panel_attributes>*Exercise*
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1310</x><y>1050</y><w>300</w><h>220</h></coordinates><panel_attributes>*Exercise*
 (from edu.colostate.cs.cs414.tba.gymmanagement)
 --
 -id : int
@@ -77,21 +77,18 @@ UNAVAILABLE
 +getDuration() : Time
 +getNumberOfSets() : int
 +getNumberOfReps() : int
-+toString() : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>130</x><y>0</y><w>280</w><h>90</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
++toString() : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1200</x><y>350</y><w>280</w><h>90</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
 *Membership*
 (from edu.colostate.cs.cs414.tba.gymmanagement)
 --
 ACTIVE
-INACTIVE</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>147</y><w>110</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
+INACTIVE</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1600</x><y>450</y><w>200</w><h>150</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
-&lt; -has
-m2=1..*</panel_attributes><additional_attributes>10;20;90;20</additional_attributes></element><element><id>Relation</id><coordinates><x>300</x><y>830</y><w>290</w><h>90</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
-&lt; -has</panel_attributes><additional_attributes>10;70;270;10</additional_attributes></element><element><id>Relation</id><coordinates><x>300</x><y>860</y><w>290</w><h>230</h></coordinates><panel_attributes>lt=&lt;-
-&lt; -has
+-has &gt;</panel_attributes><additional_attributes>180;10;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>1790</x><y>640</y><w>120</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
+-has &gt;
 m1=*
 m2=1..*
-</panel_attributes><additional_attributes>10;210;270;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>40</x><y>590</y><w>480</w><h>180</h></coordinates><panel_attributes>PersonalInformation
+</panel_attributes><additional_attributes>100;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>600</x><y>310</y><w>480</w><h>180</h></coordinates><panel_attributes>PersonalInformation
 (from edu.colostate.cs.cs414.tba.gymmanagement)
 --
 -id : int
@@ -103,22 +100,19 @@ m2=1..*
 +getName() : String
 +getPhoneNumber() : String
 +getEmail() : String
-+toString() : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1020</x><y>550</y><w>370</w><h>90</h></coordinates><panel_attributes>lt=&lt;-
++toString() : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>0</x><y>660</y><w>910</w><h>450</h></coordinates><panel_attributes>lt=&lt;-
 m1=0..n
--creates &gt;
+-creates v
 m1=*
-m2=1</panel_attributes><additional_attributes>350;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>800</x><y>910</y><w>90</w><h>120</h></coordinates><panel_attributes>lt=&lt;-
+m2=1</panel_attributes><additional_attributes>890;420;10;420;10;10;50;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1500</x><y>730</y><w>90</w><h>110</h></coordinates><panel_attributes>lt=&lt;-
 m1=*
 m2=1
--creates v</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>960</x><y>1060</y><w>180</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
+-creates v</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1500</x><y>930</y><w>70</w><h>140</h></coordinates><panel_attributes>lt=&lt;-
 m1=*
 m2=1..*
--has v</panel_attributes><additional_attributes>160;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1120</x><y>430</y><w>170</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
+-has v</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>450</y><w>90</w><h>160</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
-&lt; -creates</panel_attributes><additional_attributes>10;20;150;20</additional_attributes></element><element><id>Relation</id><coordinates><x>810</x><y>210</y><w>90</w><h>200</h></coordinates><panel_attributes>lt=&lt;-
-m1=*
-m2=1..*
--creates ^</panel_attributes><additional_attributes>10;10;10;180</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1270</x><y>80</y><w>510</w><h>200</h></coordinates><panel_attributes>*DatabaseController*
+-creates v</panel_attributes><additional_attributes>10;140;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>50</x><y>0</y><w>510</w><h>200</h></coordinates><panel_attributes>*DatabaseController*
 (from edu.colostate.cs.cs414.tba.gymmanagement)
 --
 
@@ -131,22 +125,22 @@ m2=1..*
 +getWorkoutRoutine(routineId) : WorkoutRoutine
 +getExercises() : Exercise[*]
 +getExercise(exerciseId) : Exercise
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1510</x><y>270</y><w>90</w><h>150</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>190</y><w>90</w><h>150</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
--creates ^</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>810</x><y>550</y><w>90</w><h>230</h></coordinates><panel_attributes>lt=&lt;-
+-creates ^</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>430</x><y>510</y><w>1080</w><h>100</h></coordinates><panel_attributes>lt=&lt;-
 m1=*
 m2=1..*
--creates v</panel_attributes><additional_attributes>10;210;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1350</x><y>730</y><w>70</w><h>260</h></coordinates><panel_attributes>lt=&lt;-
--uses ^
+-creates &gt;</panel_attributes><additional_attributes>1060;70;1060;20;10;20;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>1160</x><y>1140</y><w>170</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
+&lt; -uses
 m1=*
-m2=*</panel_attributes><additional_attributes>10;10;10;240</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>120</y><w>480</w><h>120</h></coordinates><panel_attributes>Insurance
+m2=*</panel_attributes><additional_attributes>10;20;150;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>710</x><y>890</y><w>480</w><h>120</h></coordinates><panel_attributes>Insurance
 (from edu.colostate.cs.cs414.tba.gymmanagement)
 --
 -id : int
 -name : String
 --
 +getName() : String
-+getAddress() : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>310</y><w>480</w><h>210</h></coordinates><panel_attributes>Address
++getAddress() : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>120</x><y>830</y><w>480</w><h>210</h></coordinates><panel_attributes>Address
 (from edu.colostate.cs.cs414.tba.gymmanagement)
 --
 -street : String
@@ -159,30 +153,30 @@ m2=*</panel_attributes><additional_attributes>10;10;10;240</additional_attribute
 +getCity() : String
 +getState() : String
 +getZip() : String
-+toString() : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>47</y><w>180</w><h>100</h></coordinates><panel_attributes>lt=&lt;-
++toString() : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>870</x><y>427</y><w>480</w><h>190</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
-&lt; -has</panel_attributes><additional_attributes>10;10;160;80</additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>207</y><w>150</w><h>160</h></coordinates><panel_attributes>lt=&lt;-
+-has ^</panel_attributes><additional_attributes>460;10;10;170</additional_attributes></element><element><id>Relation</id><coordinates><x>550</x><y>670</y><w>150</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
+m1=*
+m2=1..*
+-creates &gt;</panel_attributes><additional_attributes>130;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>310</x><y>737</y><w>70</w><h>120</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
-&lt; -has
-m2=1..*</panel_attributes><additional_attributes>10;140;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>460</x><y>207</y><w>210</w><h>410</h></coordinates><panel_attributes>lt=&lt;-
+-has v
+</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>460</x><y>737</y><w>430</w><h>170</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
-&lt; -has
-m2=1..*</panel_attributes><additional_attributes>10;390;180;10</additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>197</y><w>180</w><h>230</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
-&lt; -has
-m2=1..*</panel_attributes><additional_attributes>10;10;150;210</additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>407</y><w>170</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
-&lt; -has
-m2=1..*</panel_attributes><additional_attributes>10;20;150;30</additional_attributes></element><element><id>Relation</id><coordinates><x>510</x><y>487</y><w>140</w><h>150</h></coordinates><panel_attributes>lt=&lt;-
+-has &gt;
+</panel_attributes><additional_attributes>410;150;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>937</y><w>140</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 &lt; -has
-m2=1..*</panel_attributes><additional_attributes>10;130;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>227</y><w>220</w><h>550</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>10;20;120;20</additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>747</y><w>320</w><h>160</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 &lt; -has
-m2=1..*</panel_attributes><additional_attributes>10;10;190;530</additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>437</y><w>220</w><h>340</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>10;140;300;10</additional_attributes></element><element><id>Relation</id><coordinates><x>950</x><y>747</y><w>70</w><h>160</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
-&lt; -has
-m2=1..*</panel_attributes><additional_attributes>10;10;190;320</additional_attributes></element><element><id>Relation</id><coordinates><x>510</x><y>677</y><w>170</w><h>100</h></coordinates><panel_attributes>lt=&lt;-
+-has v
+</panel_attributes><additional_attributes>10;140;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>677</y><w>700</w><h>390</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
-&lt; -has
-m2=1..*</panel_attributes><additional_attributes>10;10;150;80</additional_attributes></element></diagram>
+-has v
+</panel_attributes><additional_attributes>10;360;630;360;630;10;680;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1100</x><y>617</y><w>190</w><h>290</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+-has v
+</panel_attributes><additional_attributes>10;270;10;210;70;210;70;10;170;10</additional_attributes></element></diagram>
