@@ -20,4 +20,24 @@ public class AddressTest {
 		// Get full address
 		assertEquals("1234 S Spruce St. Unit 22, Denver CO, 80231", address.toString());
 	}
+	
+	@Test
+	public void testGetStreet() throws IOException {
+		assertEquals("1234 S Spruce St. Unit 22", address.getStreet());
+	}
+	
+	@Test
+	public void testGetCity() throws IOException {
+		assertEquals("Denver", address.getCity());
+	}
+	
+	@Test
+	public void testGetState() throws IOException {
+		assertEquals("CO", address.getState());
+	}
+	
+	@Test
+	public void testGetZip() throws IOException {
+		assertEquals("80231", address.getZip());
+	}
 }

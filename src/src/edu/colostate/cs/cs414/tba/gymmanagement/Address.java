@@ -21,4 +21,20 @@ public class Address {
 				", " + this.city + " " + this.state + ", "
 				+ this.zip;
 	}
+
+	public String getStreet() {
+		return this.street + " " + this.street2;
+	}
+	
+	public String getCity() {
+		return this.city;
+	}
+	
+	public String getState() {
+		return this.state;
+	}
+	
+	public String getZip() {
+		return this.zip;
+	}
 }
