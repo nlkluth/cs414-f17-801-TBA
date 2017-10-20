@@ -12,7 +12,7 @@ public class AddressTest {
 	
 	@Before public void setUp() {
 		// create new instance of address of tests
-		address = new Address();
+		address = new Address("1234 S Spruce St.", "Unit 22", "Denver", "CO", "80231");
 	}
 	
 	@Test

@@ -1,5 +1,14 @@
 package edu.colostate.cs.cs414.tba.gymmanagement;
 
-public class WorkoutRoutineTest {
+import static org.junit.Assert.assertEquals;
 
+import java.io.IOException;
+
+import org.junit.Test;
+
+public class WorkoutRoutineTest {
+	@Test
+	public void testSetup() throws IOException {
+		assertEquals(true, true);
+	}
 }
