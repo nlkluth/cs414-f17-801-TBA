@@ -23,6 +23,10 @@ public class Equipment {
 	public void addExercise(Exercise exercise) {
 		this.exercises.add(exercise);
 	}
+	
+	public String getName() {
+		return this.name;
+	}
 
 	public Set<Exercise> getExercises() { 
 		return this.exercises;
@@ -31,5 +35,10 @@ public class Equipment {
 	@Override
 	public String toString() {
 		return this.name + " : " + this.quality;
+	}
+	
+	@Override
+	public boolean equals(Object other) {
+		return ((Equipment) other).getName() == this.name;
 	}
 }

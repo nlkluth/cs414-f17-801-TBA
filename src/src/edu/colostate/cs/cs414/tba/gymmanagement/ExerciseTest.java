@@ -2,6 +2,7 @@ package edu.colostate.cs.cs414.tba.gymmanagement;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.File;
 import java.io.IOException;
 
 import org.junit.Before;
@@ -67,5 +68,12 @@ public class ExerciseTest {
 	public void testSetReps() throws IOException {
 		exercise.setReps(1);
 		assertEquals(1, exercise.getReps());
+	}
+	
+	@Test
+	public void testAddEquipment() throws IOException {
+		Equipment equipment = new Equipment("Barbell", new File("./barbell.png"), "Low");
+		exercise.setEquipment(equipment);
+		assertEquals(true, equipment.equals(exercise.getEquipment()));
 	}
 }
