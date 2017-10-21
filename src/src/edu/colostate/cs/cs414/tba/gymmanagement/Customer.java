@@ -8,15 +8,25 @@ public class Customer {
 	private Address address;
 	private Insurance insurance;
 	private Set<WorkoutRoutine> workouts = new HashSet<WorkoutRoutine>();
+	private Membership membership;
 	
 	public Customer(PersonalInformation personalInformation, Address address, Insurance insurance) {
 		this.personalInformation = personalInformation;
 		this.address = address;
 		this.insurance = insurance;
+		this.membership = Membership.ACTIVE;
 	}
 	
 	public PersonalInformation getPersonalInformation() {
 		return this.personalInformation;
+	}
+	
+	public void setActive(Membership membership) {
+		this.membership = membership;
+	}
+	
+	public Membership getMembership() {
+		return this.membership;
 	}
 	
 	@Override

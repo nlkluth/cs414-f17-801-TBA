@@ -62,4 +62,15 @@ public class CustomerTest {
 		customer.addWorkoutRoutine(workout);
 		assertEquals(true, workouts.equals(customer.getWorkoutRoutines()));
 	}
+	
+	@Test
+	public void testGetMembership() {
+		assertEquals(Membership.ACTIVE, customer.getMembership());
+	}
+	
+	@Test
+	public void testSetMembership() {
+		customer.setActive(Membership.INACTIVE);
+		assertEquals(Membership.INACTIVE, customer.getMembership());
+	}
 }
