@@ -22,6 +22,6 @@ public class DatabaseController {
 	private Manager manager;
 	
 	public DatabaseController() {
-		manager = new Manager("admin", "admin");
+//		manager = new Manager("admin", "admin");
 	}
 }
