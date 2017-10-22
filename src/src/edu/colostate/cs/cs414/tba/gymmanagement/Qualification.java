@@ -19,7 +19,7 @@ public class Qualification {
 		return this.trainers;
 	}
 	
-	// @Override
+	@Override
 	public String toString() {
 		return this.name;
 	}

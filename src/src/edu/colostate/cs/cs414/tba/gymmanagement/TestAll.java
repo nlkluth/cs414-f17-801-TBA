@@ -8,9 +8,9 @@ import junit.framework.JUnit4TestAdapter;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({ 
+	EquipmentTest.class,
 	AddressTest.class,
 	CustomerTest.class,
-	EquipmentTest.class,
 	ExerciseTest.class,
 	GymSystemTest.class,
 	InsuranceTest.class,

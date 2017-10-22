@@ -10,24 +10,27 @@ import org.junit.Test;
 
 public class EquipmentTest {
 	private Equipment equipment;
+	private Exercise exercise;
 	private File img;
 	
 	@Before public void setUp() {
 		img = new File("test.png");
 		equipment = new Equipment("Bench Press", img, "Excellent");
-		equipment.addExercise(new Exercise("Warmup", "3 minutes", 4, 10));
+		exercise = new Exercise("Warmup", "3 minutes", 4, 10);
+		equipment.addExercise(exercise);
 	}
 	
 	@Test
 	public void testAddExercise() throws IOException {
-		equipment.addExercise(new Exercise("HIIT", "2 minutes", 4, 15));
+		Exercise newExercise = new Exercise("HIIT", "2 minutes", 4, 15);
+		equipment.addExercise(newExercise);
 		assertEquals(2, equipment.getExercises().size());
-		assertEquals("HIIT : 2 minutes : 15 reps : 4 sets", equipment.getExercises().toArray()[1].toString());
+		assertEquals(true, equipment.getExercises().contains(newExercise));
 	}
 	
 	@Test
 	public void testGetExercise() throws IOException {
-		assertEquals("Warmup : 3 minutes : 10 reps : 4 sets", equipment.getExercises().toArray()[0].toString());
+		assertEquals(true, equipment.getExercises().contains(exercise));
 	}
 	
 	@Test
