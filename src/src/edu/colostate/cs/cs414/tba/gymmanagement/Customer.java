@@ -31,7 +31,7 @@ public class Customer {
 	
 	@Override
 	public boolean equals(Object other) {
-		return this.personalInformation.getName() == ((Customer) other).getPersonalInformation().getName(); 
+		return this.personalInformation.getName().equals(((Customer) other).getPersonalInformation().getName()); 
 	}
 
 	public Set<WorkoutRoutine> getWorkoutRoutines() {

@@ -39,6 +39,6 @@ public class Equipment {
 	
 	@Override
 	public boolean equals(Object other) {
-		return ((Equipment) other).getName() == this.name;
+		return ((Equipment) other).getName().equals(this.name);
 	}
 }

@@ -15,7 +15,7 @@ public class Trainer {
 	
 	@Override
 	public boolean equals(Object other) {
-		return this.personalInformation.getName() == ((Trainer) other).getPersonalInformation().getName();
+		return this.personalInformation.getName().equals(((Trainer) other).getPersonalInformation().getName());
 	}
 	
 	public PersonalInformation getPersonalInformation() {

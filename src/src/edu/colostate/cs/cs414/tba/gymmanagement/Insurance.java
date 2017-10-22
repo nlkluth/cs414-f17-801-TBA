@@ -18,7 +18,6 @@ public class Insurance {
 	}
 	
 	@Override
-	// two workers are equal iff their names match
 	public boolean equals(Object insurance) {
 		return ((Insurance) insurance).getName().equals(name);
 	}
