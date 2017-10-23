@@ -127,18 +127,93 @@ public class CLIController {
 		}
 	}
 
-	private void modifyEquipment() {
+	private void modifyEquipment() throws IOException {
 		if (!this.manager.equals(this.user)) {
 			System.out.println("Not Authorized");
 			return;
 		}
+		
+		System.out.println("Enter name of equipment");
+		String name = reader.readLine();
+		
+		for (Equipment equipment : gymSystem.getEquipment()) {
+			if (equipment.equals(name)) {
+				System.out.println("\nEnter name of equipment");
+				String newName = reader.readLine();
+				System.out.println("Enter file path for image");
+				String file = reader.readLine();
+				System.out.println("Enter quality rating");
+				String quality = reader.readLine();
+				
+				equipment.update(newName, new File(file), quality);				
+				System.out.println("\n ***Equipment updated in system*** \n");
+			}
+		}
+		
+		System.out.println("Error: no equipment found with that name");
 	}
 
-	private void modifyTrainer() {
+	private void modifyTrainer() throws IOException {
 		if (!this.manager.equals(this.user)) {
 			System.out.println("Not Authorized");
 			return;
 		}
+		
+		System.out.println("Enter trainer first name");
+		String name = reader.readLine();
+		System.out.println("Enter trainer last name");
+		String lastName = reader.readLine();
+		
+		for (Trainer trainer : gymSystem.getTrainers()) {
+			if (trainer.getPersonalInformation().getName().equals(name + " " + lastName)) {
+				System.out.println("Trainer found");
+				System.out.println("\nEnter Personal Information");
+				System.out.println("Name:");
+				String newName = reader.readLine();
+				System.out.println("Last Name:");
+				String newLast = reader.readLine();
+				System.out.println("Phone:");
+				String phone = reader.readLine();
+				System.out.println("email:");
+				String email = reader.readLine();
+				PersonalInformation personalInformation = new PersonalInformation(newName, newLast, phone, email);
+				
+				System.out.println("\nEnter Address information");
+				System.out.println("Street");
+				String street = reader.readLine();
+				System.out.println("Street 2");
+				String street2 = reader.readLine();
+				System.out.println("City");
+				String city = reader.readLine();
+				System.out.println("State");
+				String state = reader.readLine();
+				System.out.println("Zip");
+				String zip = reader.readLine();
+				Address address = new Address(street, street2, city, state, zip);
+				
+				System.out.println("\nEnter insurance information");
+				System.out.println("Insurance name");
+				String insuranceName = reader.readLine();
+				System.out.println("Insurance street");
+				String insuranceStreet = reader.readLine();
+				System.out.println("Insurance street 2");
+				String insuranceStreet2 = reader.readLine();
+				System.out.println("Insurance city");
+				String insuranceCity = reader.readLine();
+				System.out.println("Insurance state");
+				String insuranceState = reader.readLine();
+				System.out.println("Insurance zip");
+				String insuranceZip = reader.readLine();
+				Address insuranceAddress = new Address(insuranceStreet, insuranceStreet2, insuranceCity, insuranceState, insuranceZip);
+				Insurance insurance = new Insurance(insuranceName, insuranceAddress);
+				
+				trainer.update(personalInformation, address, insurance);
+				System.out.println("\n *** Trainer updated in the system *** \n");
+				return;
+			}
+		}
+		
+		System.out.println("Error: no trainer found with that name");
 	}
 
 	private void assignRoutine() {
@@ -176,12 +251,67 @@ public class CLIController {
 		}
 	}
 
-	private void modifyCustomer() {
+	private void modifyCustomer() throws IOException {
 		if (!this.manager.equals(this.user)) {
 			System.out.println("Not Authorized");
 			return;
 		}
 		
+		System.out.println("Enter customer first name");
+		String name = reader.readLine();
+		System.out.println("Enter customer last name");
+		String lastName = reader.readLine();
+		
+		for (Customer customer : gymSystem.getCustomers()) {
+			if (customer.getPersonalInformation().getName().equals(name + " " + lastName)) {
+				System.out.println("Customer found");
+				System.out.println("\nEnter Personal Information");
+				System.out.println("Name:");
+				String newName = reader.readLine();
+				System.out.println("Last Name:");
+				String newLast = reader.readLine();
+				System.out.println("Phone:");
+				String phone = reader.readLine();
+				System.out.println("email:");
+				String email = reader.readLine();
+				PersonalInformation personalInformation = new PersonalInformation(newName, newLast, phone, email);
+				
+				System.out.println("\nEnter Address information");
+				System.out.println("Street");
+				String street = reader.readLine();
+				System.out.println("Street 2");
+				String street2 = reader.readLine();
+				System.out.println("City");
+				String city = reader.readLine();
+				System.out.println("State");
+				String state = reader.readLine();
+				System.out.println("Zip");
+				String zip = reader.readLine();
+				Address address = new Address(street, street2, city, state, zip);
+				
+				System.out.println("\nEnter insurance information");
+				System.out.println("Insurance name");
+				String insuranceName = reader.readLine();
+				System.out.println("Insurance street");
+				String insuranceStreet = reader.readLine();
+				System.out.println("Insurance street 2");
+				String insuranceStreet2 = reader.readLine();
+				System.out.println("Insurance city");
+				String insuranceCity = reader.readLine();
+				System.out.println("Insurance state");
+				String insuranceState = reader.readLine();
+				System.out.println("Insurance zip");
+				String insuranceZip = reader.readLine();
+				Address insuranceAddress = new Address(insuranceStreet, insuranceStreet2, insuranceCity, insuranceState, insuranceZip);
+				Insurance insurance = new Insurance(insuranceName, insuranceAddress);
+				
+				customer.update(personalInformation, address, insurance);
+				System.out.println("\n *** Customer updated in the system *** \n");
+				return;
+			}
+		}
+		
+		System.out.println("Error: no customer found with that name");
 	}
 
 	private void addEquipment() throws IOException {

@@ -41,4 +41,10 @@ public class Equipment {
 	public boolean equals(Object other) {
 		return ((Equipment) other).getName().equals(this.name);
 	}
+
+	public void update(String name, File file, String quality) {
+		this.name = name;
+		this.img = file;
+		this.quality = quality;
+	}
 }
