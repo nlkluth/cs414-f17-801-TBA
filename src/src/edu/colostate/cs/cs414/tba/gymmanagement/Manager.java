@@ -51,4 +51,12 @@ public class Manager {
 	public void addEquipment(Equipment equipment) {
 		gymSystem.addEquipment(equipment);
 	}
+
+	public String getUsername() {
+		return this.username;
+	}
+	
+	public String getPassword() {
+		return this.password;
+	}
 }

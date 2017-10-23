@@ -11,7 +11,7 @@ public class TrainerTest {
 	private Trainer trainer;
 	
 	@Before public void setUp() {
-		trainer = new Trainer(
+		trainer = new Trainer("user", "password",
 				new PersonalInformation("Nathan", "Kluth", "555-555-5555", "test@example.com"),
 				new Address("2345", "4", "Denver", "CO", "80231"),
 				new Insurance("Blue Cross", new Address("234", "4", "Denver", "CO", "80231"))
@@ -29,6 +29,16 @@ public class TrainerTest {
 		assertEquals("User: Test User\nphone: 444-444-4444\nemail: Test@example.com", trainer.getPersonalInformation().toString());
 		assertEquals("2424 4, Denver CO, 80122", trainer.getAddress().toString());
 		assertEquals("eawf aewf:\n234 4, Denver CO, 80231", trainer.getInsurance().toString());
+	}
+	
+	@Test
+	public void testGetUsername() {
+		assertEquals("user", trainer.getUsername());
+	}
+	
+	@Test
+	public void testGetPassword() {
+		assertEquals("password", trainer.getPassword());
 	}
 	
 	@Test

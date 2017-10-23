@@ -68,7 +68,7 @@ public class ManagerTest {
 	
 	@Test
 	public void testHireTrainer() {
-		Trainer trainer = new Trainer(
+		Trainer trainer = new Trainer("user", "Password",
 				new PersonalInformation("Nathan", "Kluth", "444-444-4444", "test@example.com"),
 				new Address("123", "4", "Denver", "CO", "80231"),
 				new Insurance("Blue Cross", new Address("123", "4", "Denver", "CO", "80231"))
