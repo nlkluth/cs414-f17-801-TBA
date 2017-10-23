@@ -1,11 +1,14 @@
 package edu.colostate.cs.cs414.tba.services;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 import edu.colostate.cs.cs414.tba.application.GymSystem;
 import edu.colostate.cs.cs414.tba.gymmanagement.Address;
+import edu.colostate.cs.cs414.tba.gymmanagement.Customer;
+import edu.colostate.cs.cs414.tba.gymmanagement.Equipment;
 import edu.colostate.cs.cs414.tba.gymmanagement.Insurance;
 import edu.colostate.cs.cs414.tba.gymmanagement.Manager;
 import edu.colostate.cs.cs414.tba.gymmanagement.PersonalInformation;
@@ -95,13 +98,13 @@ public class CLIController {
 				this.addEquipment();
 				break;
 			case "modifytrainer":
-				this.hireTrainer();
+				this.modifyTrainer();
 				break;
 			case "modifycustomer":
 				this.modifyCustomer();
 				break;
 			case "modifyequipment":
-				this.addEquipment();
+				this.modifyEquipment();
 				break;
 			case "createworkout":
 				this.createWorkout();
@@ -124,44 +127,130 @@ public class CLIController {
 		}
 	}
 
+	private void modifyEquipment() {
+		if (!this.manager.equals(this.user)) {
+			System.out.println("Not Authorized");
+			return;
+		}
+	}
+
+	private void modifyTrainer() {
+		if (!this.manager.equals(this.user)) {
+			System.out.println("Not Authorized");
+			return;
+		}
+	}
+
 	private void assignRoutine() {
-		// TODO Auto-generated method stub
-		
+		if (this.manager.equals(this.user)) {
+			System.out.println("Not Authorized");
+			return;
+		}
 	}
 
 	private void searchCustomers() {
-		// TODO Auto-generated method stub
-		
+		if (this.manager.equals(this.user)) {
+			System.out.println("Not Authorized");
+			return;
+		}
 	}
 
 	private void modifyRoutine() {
-		// TODO Auto-generated method stub
-		
+		if (this.manager.equals(this.user)) {
+			System.out.println("Not Authorized");
+			return;
+		}
 	}
 
 	private void searchRoutines() {
-		// TODO Auto-generated method stub
-		
+		if (this.manager.equals(this.user)) {
+			System.out.println("Not Authorized");
+			return;
+		}
 	}
 
 	private void createWorkout() {
-		// TODO Auto-generated method stub
-		
+		if (this.manager.equals(this.user)) {
+			System.out.println("Not Authorized");
+			return;
+		}
 	}
 
 	private void modifyCustomer() {
-		// TODO Auto-generated method stub
+		if (!this.manager.equals(this.user)) {
+			System.out.println("Not Authorized");
+			return;
+		}
 		
 	}
 
-	private void addEquipment() {
-		// TODO Auto-generated method stub
+	private void addEquipment() throws IOException {
+		if (!this.manager.equals(this.user)) {
+			System.out.println("Not Authorized");
+			return;
+		}
 		
+		System.out.println("\nEnter name of equipment");
+		String name = reader.readLine();
+		System.out.println("Enter file path for image");
+		String file = reader.readLine();
+		System.out.println("Enter quality rating");
+		String quality = reader.readLine();
+		
+		Equipment equipment = new Equipment(name, new File(file), quality);
+		manager.addEquipment(equipment);
+		System.out.println("\n ***Equipment added to system*** \n");
 	}
 
-	private void registerCustomer() {
-		// TODO Auto-generated method stub
+	private void registerCustomer() throws IOException {
+		if (!this.manager.equals(this.user)) {
+			System.out.println("Not Authorized");
+			return;
+		}
 		
+		System.out.println("\nEnter Personal Information");
+		System.out.println("Name:");
+		String name = reader.readLine();
+		System.out.println("Last Name:");
+		String lastName = reader.readLine();
+		System.out.println("Phone:");
+		String phone = reader.readLine();
+		System.out.println("email:");
+		String email = reader.readLine();
+		PersonalInformation personalInformation = new PersonalInformation(name, lastName, phone, email);
+		
+		System.out.println("\nEnter Address information");
+		System.out.println("Street");
+		String street = reader.readLine();
+		System.out.println("Street 2");
+		String street2 = reader.readLine();
+		System.out.println("City");
+		String city = reader.readLine();
+		System.out.println("State");
+		String state = reader.readLine();
+		System.out.println("Zip");
+		String zip = reader.readLine();
+		Address address = new Address(street, street2, city, state, zip);
+		
+		System.out.println("\nEnter insurance information");
+		System.out.println("Insurance name");
+		String insuranceName = reader.readLine();
+		System.out.println("Insurance street");
+		String insuranceStreet = reader.readLine();
+		System.out.println("Insurance street 2");
+		String insuranceStreet2 = reader.readLine();
+		System.out.println("Insurance city");
+		String insuranceCity = reader.readLine();
+		System.out.println("Insurance state");
+		String insuranceState = reader.readLine();
+		System.out.println("Insurance zip");
+		String insuranceZip = reader.readLine();
+		Address insuranceAddress = new Address(insuranceStreet, insuranceStreet2, insuranceCity, insuranceState, insuranceZip);
+		Insurance insurance = new Insurance(insuranceName, insuranceAddress);
+		
+		Customer customer = new Customer(personalInformation, address, insurance);
+		manager.registerCustomer(customer);
+		System.out.println("\n ***Customer added to system*** \n");
 	}
 
 	private void hireTrainer() throws IOException {
