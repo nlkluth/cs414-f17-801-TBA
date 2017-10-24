@@ -14,3 +14,10 @@
 ##### without make
 - `$ cd build`
 - `$ java -cp ../lib/junit-4.12.jar:../lib/hamcrest-core-1.3.jar:. org.junit.runner.JUnitCore edu.colostate.cs.cs414.tba.gymmanagement.TestAll`
+
+### Run program
+##### with make
+- `$make run`
+
+##### without make
+- `$ cd build && java -cp . edu.colostate.cs.cs414.tba.application.GymSystem`
