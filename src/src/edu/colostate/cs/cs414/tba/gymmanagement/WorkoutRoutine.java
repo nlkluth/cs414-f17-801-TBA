@@ -31,4 +31,9 @@ public class WorkoutRoutine {
 	public void addExercise(Exercise exercise) {
 		this.exercises.add(exercise);
 	}
+
+	public void resetExercises() {
+		// Used to update the routine by re-entering exercises to list
+		this.exercises = new HashSet<Exercise>();
+	}
 }

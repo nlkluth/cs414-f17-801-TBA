@@ -9,10 +9,12 @@ import edu.colostate.cs.cs414.tba.application.GymSystem;
 import edu.colostate.cs.cs414.tba.gymmanagement.Address;
 import edu.colostate.cs.cs414.tba.gymmanagement.Customer;
 import edu.colostate.cs.cs414.tba.gymmanagement.Equipment;
+import edu.colostate.cs.cs414.tba.gymmanagement.Exercise;
 import edu.colostate.cs.cs414.tba.gymmanagement.Insurance;
 import edu.colostate.cs.cs414.tba.gymmanagement.Manager;
 import edu.colostate.cs.cs414.tba.gymmanagement.PersonalInformation;
 import edu.colostate.cs.cs414.tba.gymmanagement.Trainer;
+import edu.colostate.cs.cs414.tba.gymmanagement.WorkoutRoutine;
 
 /**
  * Simple Command line interface
@@ -216,11 +218,49 @@ public class CLIController {
 		System.out.println("Error: no trainer found with that name");
 	}
 
-	private void assignRoutine() {
+	private void assignRoutine() throws IOException {
 		if (this.manager.equals(this.user)) {
 			System.out.println("Not Authorized");
 			return;
 		}
+		
+		Customer customer = null;
+		WorkoutRoutine workout = null;
+		
+		while (user == null) {
+			System.out.println("What is the customer firstName?");
+			String name = reader.readLine();
+			System.out.println("What is the customer lastName?");
+			String lastName = reader.readLine();
+			
+			for (Customer foundCustomer : gymSystem.getCustomers()) {
+				if (foundCustomer.getPersonalInformation().getName().toLowerCase().equals(name + " " + lastName)) {
+					customer = foundCustomer;
+					break;
+				}
+			}
+			
+			System.out.println("User not found");
+		}
+		
+		while (workout == null) {
+			System.out.println("What workout would you like to assign?");
+			String workoutName = reader.readLine();
+			
+			for (WorkoutRoutine foundWorkout : gymSystem.getWorkoutRoutines()) {
+				if (foundWorkout.getName().toString().equals(workoutName)) {
+					workout = foundWorkout;
+					break;
+				}
+			}
+			
+			System.out.println("WorkoutRoutine not found");
+		}
+		
+		workout.assignCustomer(customer);
+		customer.addWorkoutRoutine(workout);
+		
+		System.out.println("\n *** Assigned customer to workout routine *** \n");
 	}
 
 	private void searchCustomers() {
@@ -228,12 +268,94 @@ public class CLIController {
 			System.out.println("Not Authorized");
 			return;
 		}
+		
+		System.out.println("Customers:\n");
+		for (Customer customer : gymSystem.getCustomers()) {
+			System.out.println(customer.toString() + "\n");
+		}
 	}
 
-	private void modifyRoutine() {
+	private void modifyRoutine() throws IOException {
 		if (this.manager.equals(this.user)) {
 			System.out.println("Not Authorized");
 			return;
+		}
+		
+		System.out.println("Enter name of routine: ");
+		String name = reader.readLine();
+		
+		for (WorkoutRoutine workoutRoutine : gymSystem.getWorkoutRoutines()) {
+			if (workoutRoutine.getName().equals(name)) {
+				System.out.println("Are there changes to exercises? (y/n)");
+				String response = reader.readLine();
+				
+				if (response.toLowerCase().equals("n")) {
+					System.out.println("Nothing to change");
+					return;
+				}
+				
+				workoutRoutine.resetExercises(); // reset exercises
+				
+				boolean addingExercises = true;
+				while (addingExercises) {					
+					System.out.println("Enter exercise name: ");
+					String exerciseName = reader.readLine();
+					System.out.println("Enter duration of workout: ");
+					String duration = reader.readLine();
+					System.out.println("Enter a number of sets:");
+					int sets = 0;
+					int reps = 0;
+					
+					try {
+						String setsString = reader.readLine();
+						sets = Integer.parseInt(setsString);
+					} catch (Error e) {
+						System.out.println("sets must be a number");
+					}
+					
+					try {
+						System.out.println("Enter a number of reps");
+						String repsString = reader.readLine();
+						reps = Integer.parseInt(repsString);
+					} catch (Error e) {
+						System.out.println("reps must be a number");
+					}
+					
+					Exercise exercise = new Exercise(exerciseName, duration, sets, reps);
+					workoutRoutine.addExercise(exercise);
+					
+					System.out.println("Does this exercise need equipment? (y/n)");
+					String needEquipment = reader.readLine();
+					
+					while (needEquipment.toLowerCase().equals("y")) {
+						Equipment found = null;
+						System.out.println("Which equipment does it need?");
+						String equipmentName = reader.readLine();				
+						
+						for (Equipment equipment : gymSystem.getEquipment()) {
+							if (equipmentName.toLowerCase().equals(equipment.getName().toLowerCase())) {
+								found = equipment;
+							}
+						}
+							
+						if (found == null) {
+							System.out.println("Did not find equipment");
+						} else {
+							exercise.setEquipment(found);
+							needEquipment = "n";
+						}
+					}
+					
+					System.out.println("Are there more exercises? (y/n)");
+					String choice = reader.readLine();
+					
+					if (choice.toLowerCase().equals("n")) {
+						addingExercises = false;				
+					}
+				}
+				
+				System.out.print("\n ***Workout routine updated in system*** \n");
+			}
 		}
 	}
 
@@ -242,13 +364,85 @@ public class CLIController {
 			System.out.println("Not Authorized");
 			return;
 		}
+		
+		System.out.println("Workout Routines:\n");
+		for (WorkoutRoutine workoutRoutine : gymSystem.getWorkoutRoutines()) {
+			System.out.println(workoutRoutine.toString() + "\n");
+		}
 	}
 
-	private void createWorkout() {
+	private void createWorkout() throws IOException {
 		if (this.manager.equals(this.user)) {
 			System.out.println("Not Authorized");
 			return;
 		}
+		
+		System.out.println("Enter name of workout:");
+		String name = reader.readLine();
+		
+		WorkoutRoutine workoutRoutine = new WorkoutRoutine(name);
+		
+		boolean addingExercises = true;
+		while (addingExercises) {
+			
+			System.out.println("Enter exercise name: ");
+			String exerciseName = reader.readLine();
+			System.out.println("Enter duration of workout: ");
+			String duration = reader.readLine();
+			System.out.println("Enter a number of sets:");
+			int sets = 0;
+			int reps = 0;
+			
+			try {
+				String setsString = reader.readLine();
+				sets = Integer.parseInt(setsString);
+			} catch (Error e) {
+				System.out.println("sets must be a number");
+			}
+			
+			try {
+				System.out.println("Enter a number of reps");
+				String repsString = reader.readLine();
+				reps = Integer.parseInt(repsString);
+			} catch (Error e) {
+				System.out.println("reps must be a number");
+			}
+			
+			Exercise exercise = new Exercise(exerciseName, duration, sets, reps);
+			workoutRoutine.addExercise(exercise);
+			
+			System.out.println("Does this exercise need equipment? (y/n)");
+			String needEquipment = reader.readLine();
+			
+			while (needEquipment.toLowerCase().equals("y")) {
+				Equipment found = null;
+				System.out.println("Which equipment does it need?");
+				String equipmentName = reader.readLine();				
+				
+				for (Equipment equipment : gymSystem.getEquipment()) {
+					if (equipmentName.toLowerCase().equals(equipment.getName().toLowerCase())) {
+						found = equipment;
+					}
+				}
+					
+				if (found == null) {
+					System.out.println("Did not find equipment");
+				} else {
+					exercise.setEquipment(found);
+					needEquipment = "n";
+				}
+			}
+			
+			System.out.println("Are there more exercises? (y/n)");
+			String choice = reader.readLine();
+			
+			if (choice.toLowerCase().equals("n")) {
+				addingExercises = false;				
+			}
+		}
+		
+		gymSystem.addWorkoutRoutine(workoutRoutine);
+		System.out.print("\n ***Workout routine added to system*** \n");
 	}
 
 	private void modifyCustomer() throws IOException {

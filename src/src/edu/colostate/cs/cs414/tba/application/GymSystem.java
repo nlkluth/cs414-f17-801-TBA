@@ -8,12 +8,14 @@ import edu.colostate.cs.cs414.tba.gymmanagement.Customer;
 import edu.colostate.cs.cs414.tba.gymmanagement.Equipment;
 import edu.colostate.cs.cs414.tba.gymmanagement.Manager;
 import edu.colostate.cs.cs414.tba.gymmanagement.Trainer;
+import edu.colostate.cs.cs414.tba.gymmanagement.WorkoutRoutine;
 import edu.colostate.cs.cs414.tba.services.CLIController;
 
 public class GymSystem {
 	private Set<Trainer> trainers = new HashSet<Trainer>();
 	private Set<Customer> customers = new HashSet<Customer>();
 	private Set<Equipment> equipment = new HashSet<Equipment>();
+	private Set<WorkoutRoutine> workoutRoutines = new HashSet<WorkoutRoutine>();
 	
 	public static void main(String args[]) throws IOException {
 		GymSystem gymSystem = new GymSystem();
@@ -43,5 +45,13 @@ public class GymSystem {
 	
 	public Set<Equipment> getEquipment() {
 		return this.equipment;
+	}
+	
+	public void addWorkoutRoutine(WorkoutRoutine workoutRoutine) {
+		this.workoutRoutines.add(workoutRoutine);
+	}
+	
+	public Set<WorkoutRoutine> getWorkoutRoutines() {
+		return this.workoutRoutines;
 	}
 }
