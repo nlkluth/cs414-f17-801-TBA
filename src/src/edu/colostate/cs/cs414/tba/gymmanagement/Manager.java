@@ -2,6 +2,13 @@ package edu.colostate.cs.cs414.tba.gymmanagement;
 
 import edu.colostate.cs.cs414.tba.application.GymSystem;
 
+/**
+ * Administrator of the system. Created on system initialization
+ * @param {username} username for manager
+ * @param {password} password for logging in manager
+ * @param {gymSystem} a reference to the gym system to delegate storage
+ *
+ */
 public class Manager {
 	private String username;
 	private String password;

@@ -1,5 +1,15 @@
 package edu.colostate.cs.cs414.tba.gymmanagement;
 
+/**
+ * Created by manager, can manage customers
+ * Can assign a customer to a routine and create workouts
+ * @param {username} username for trainer
+ * @param {password} password for logging in
+ * @param {PersonalInformation} trainer's personal info
+ * @param {Address} Trainer's address
+ * @param {Insurance} Trainer's insurance
+ *
+ */
 public class Trainer {
 	private PersonalInformation personalInformation;
 	private Address address;
@@ -31,6 +41,7 @@ public class Trainer {
 		return this.personalInformation.getName().hashCode();
 	}
 	
+	// A trainer has availability, defaults to FULLTIME
 	public void setAvailability(Availability availability) {
 		this.availability = availability;
 	}

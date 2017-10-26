@@ -11,6 +11,12 @@ import edu.colostate.cs.cs414.tba.gymmanagement.Trainer;
 import edu.colostate.cs.cs414.tba.gymmanagement.WorkoutRoutine;
 import edu.colostate.cs.cs414.tba.services.CLIController;
 
+/**
+ * GymSystem represents the overall system
+ * it also acts as a in-memory database for this
+ * small demo project
+ *
+ */
 public class GymSystem {
 	private Set<Trainer> trainers = new HashSet<Trainer>();
 	private Set<Customer> customers = new HashSet<Customer>();

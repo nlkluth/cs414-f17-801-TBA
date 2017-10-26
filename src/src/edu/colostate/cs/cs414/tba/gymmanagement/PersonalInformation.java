@@ -1,5 +1,12 @@
 package edu.colostate.cs.cs414.tba.gymmanagement;
 
+/**
+ * Stores common personal information for users of the system and customers
+ * @param {name} the name of this person
+ * @param {lastName} lastName of person
+ * @param {phone} phone number for person
+ * @param {email} email for person
+ */
 public class PersonalInformation {
 	private String name;
 	private String lastName;

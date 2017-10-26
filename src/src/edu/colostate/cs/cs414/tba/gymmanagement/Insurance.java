@@ -1,5 +1,10 @@
 package edu.colostate.cs.cs414.tba.gymmanagement;
 
+/**
+ * All members staff or customers have health insurance providers
+ * @param {name} the name of the provider
+ * @param {Address} the location of the provider
+ */
 public class Insurance {
 	private String name;
 	private Address address;

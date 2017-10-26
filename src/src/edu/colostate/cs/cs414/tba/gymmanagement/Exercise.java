@@ -1,5 +1,14 @@
 package edu.colostate.cs.cs414.tba.gymmanagement;
 
+/**
+ * Created by trainers and added to work out routines
+ * may or may not use equipment from the inventory
+ * @param {name} name of exercise
+ * @param {duration} duration of exercise
+ * @param {sets} number of sets to complete
+ * @param {reps} number of reps in each set
+ *
+ */
 public class Exercise {
 	private String name;
 	private String duration;
@@ -28,6 +37,7 @@ public class Exercise {
 		this.reps = reps;
 	}
 	
+	// May or may not use a piece of equipment
 	public void setEquipment(Equipment equipment) {
 		equipment.addExercise(this);
 		this.equipment = equipment;

@@ -21,6 +21,11 @@ import junit.framework.JUnit4TestAdapter;
 	WorkoutRoutineTest.class
 })
 
+/**
+ * Run this file in eclipse or directly in command line
+ * to run all tests
+ *
+ */
 public class TestAll {
 	public static void main (String[] args) {
 		junit.textui.TestRunner.run(suite());

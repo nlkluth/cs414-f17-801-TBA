@@ -4,6 +4,13 @@ import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Equipment class represents any item in the gym's inventory
+ * @param {name} the name of the equipment
+ * @param {img} the picture of the equipment
+ * @param {quality} a quality rating 
+ *
+ */
 public class Equipment {
 	private String name;
 	private File img;
@@ -20,6 +27,7 @@ public class Equipment {
 		return this.img;
 	}
 	
+	// equipment may be used by an exercise
 	public void addExercise(Exercise exercise) {
 		this.exercises.add(exercise);
 	}

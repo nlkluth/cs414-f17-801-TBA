@@ -1,5 +1,10 @@
 package edu.colostate.cs.cs414.tba.gymmanagement;
 
+/**
+ * Address is a class used to store 
+ * street, street2, city, state, and zip
+ *
+ */
 public class Address {
 	private String street;
 	private String street2;

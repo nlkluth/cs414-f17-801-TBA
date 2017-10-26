@@ -3,6 +3,13 @@ package edu.colostate.cs.cs414.tba.gymmanagement;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Customers are created by managers and managed by trainers
+ * @param {PersonalInformation} the customers PI
+ * @param {Address} address information
+ * @param {Insurance} info on the customer's health insuracne
+ *
+ */
 public class Customer {
 	private PersonalInformation personalInformation;
 	private Address address;
@@ -21,6 +28,7 @@ public class Customer {
 		return this.personalInformation;
 	}
 	
+	// membership status changed, defaults to active
 	public void setActive(Membership membership) {
 		this.membership = membership;
 	}
@@ -38,6 +46,7 @@ public class Customer {
 		return this.workouts;
 	}
 
+	// customers may be assigned by trainers to workout routines
 	public void addWorkoutRoutine(WorkoutRoutine workout) {
 		this.workouts.add(workout);
 	}
