@@ -10,7 +10,7 @@ package edu.colostate.cs.cs414.tba.gymmanagement;
  * @param {Insurance} Trainer's insurance
  *
  */
-public class Trainer {
+public class Trainer implements User {
 	private PersonalInformation personalInformation;
 	private Address address;
 	private Insurance insurance;

@@ -10,7 +10,7 @@ import java.util.Set;
  * @param {Insurance} info on the customer's health insuracne
  *
  */
-public class Customer {
+public class Customer implements User {
 	private PersonalInformation personalInformation;
 	private Address address;
 	private Insurance insurance;
@@ -51,7 +51,7 @@ public class Customer {
 		this.workouts.add(workout);
 	}
 
-	public Object getInsurance() {
+	public Insurance getInsurance() {
 		return this.insurance;
 	}
 
