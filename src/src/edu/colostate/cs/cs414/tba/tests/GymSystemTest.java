@@ -1,4 +1,4 @@
-package edu.colostate.cs.cs414.tba.application;
+package edu.colostate.cs.cs414.tba.tests;
 
 import static org.junit.Assert.assertEquals;
 
@@ -8,6 +8,7 @@ import java.io.IOException;
 import org.junit.Before;
 import org.junit.Test;
 
+import edu.colostate.cs.cs414.tba.application.GymSystem;
 import edu.colostate.cs.cs414.tba.gymmanagement.Address;
 import edu.colostate.cs.cs414.tba.gymmanagement.Customer;
 import edu.colostate.cs.cs414.tba.gymmanagement.Equipment;

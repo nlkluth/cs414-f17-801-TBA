@@ -1,4 +1,4 @@
-package edu.colostate.cs.cs414.tba.gymmanagement;
+package edu.colostate.cs.cs414.tba.tests;
 
 import static org.junit.Assert.assertEquals;
 
@@ -8,6 +8,13 @@ import java.util.Set;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import edu.colostate.cs.cs414.tba.gymmanagement.Address;
+import edu.colostate.cs.cs414.tba.gymmanagement.Customer;
+import edu.colostate.cs.cs414.tba.gymmanagement.Exercise;
+import edu.colostate.cs.cs414.tba.gymmanagement.Insurance;
+import edu.colostate.cs.cs414.tba.gymmanagement.PersonalInformation;
+import edu.colostate.cs.cs414.tba.gymmanagement.WorkoutRoutine;
 
 public class WorkoutRoutineTest {
 	private WorkoutRoutine workoutRoutine;

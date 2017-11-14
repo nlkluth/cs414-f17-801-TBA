@@ -1,4 +1,4 @@
-package edu.colostate.cs.cs414.tba.gymmanagement;
+package edu.colostate.cs.cs414.tba.tests;
 
 import static org.junit.Assert.assertEquals;
 
@@ -6,6 +6,12 @@ import java.io.IOException;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import edu.colostate.cs.cs414.tba.gymmanagement.Address;
+import edu.colostate.cs.cs414.tba.gymmanagement.Availability;
+import edu.colostate.cs.cs414.tba.gymmanagement.Insurance;
+import edu.colostate.cs.cs414.tba.gymmanagement.PersonalInformation;
+import edu.colostate.cs.cs414.tba.gymmanagement.Trainer;
 
 public class TrainerTest {
 	private Trainer trainer;

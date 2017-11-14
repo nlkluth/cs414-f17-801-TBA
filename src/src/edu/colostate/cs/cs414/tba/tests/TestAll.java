@@ -1,9 +1,8 @@
-package edu.colostate.cs.cs414.tba.gymmanagement;
+package edu.colostate.cs.cs414.tba.tests;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
-import edu.colostate.cs.cs414.tba.application.GymSystemTest;
 import junit.framework.JUnit4TestAdapter;
 
 @RunWith(Suite.class)
