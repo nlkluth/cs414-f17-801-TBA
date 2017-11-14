@@ -23,18 +23,18 @@ public class QualificationTest {
 	}
 	
 	@Test
-	public void testToString() {
+	public void testToString() throws IOException {
 		assertEquals("Leadership", qualification.toString());
 	}
 	
 	@Test 
-	public void testGetTrainer() {
+	public void testGetTrainer() throws IOException {
 		Set<Trainer> emptySet = new HashSet<Trainer>();
 		assertEquals(true, emptySet.equals(qualification.getTrainers()));
 	}
 	
 	@Test
-	public void testAddTrainer() {
+	public void testAddTrainer() throws IOException {
 		Trainer trainer = new Trainer("user", "Password",
 			new PersonalInformation("Test", "User", "555-555-5555", "test@example.com"),
 			new Address("123", "4", "Denver", "CO", "80231"),

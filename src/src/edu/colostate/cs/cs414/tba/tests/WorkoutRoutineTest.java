@@ -29,13 +29,13 @@ public class WorkoutRoutineTest {
 	}
 	
 	@Test
-	public void testGetAssignedCustomers() {
+	public void testGetAssignedCustomers() throws IOException {
 		Set<Customer> emptyCustomers = new HashSet<Customer>();
 		assertEquals(true, emptyCustomers.equals(workoutRoutine.getAssignedCustomers()));
 	}
 	
 	@Test
-	public void testAssignCustomer() {
+	public void testAssignCustomer() throws IOException {
 		Set<Customer> customersTest = new HashSet<Customer>();
 		Customer customer = new Customer(
 				new PersonalInformation("Nathan", "Kluth", "555-555-5555", "test@example.com"),
@@ -48,13 +48,13 @@ public class WorkoutRoutineTest {
 	}
 	
 	@Test
-	public void testGetExercises() {
+	public void testGetExercises() throws IOException {
 		Set<Exercise> emptyExercises = new HashSet<Exercise>();
 		assertEquals(true, emptyExercises.equals(workoutRoutine.getExercises()));
 	}
 	
 	@Test
-	public void testSetExercises() {
+	public void testSetExercises() throws IOException {
 		Set<Exercise> newExercises = new HashSet<Exercise>();
 		Exercise exercise = new Exercise("Bench", "1 min", 4, 10);
 		newExercises.add(exercise);

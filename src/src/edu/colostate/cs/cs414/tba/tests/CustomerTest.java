@@ -28,12 +28,12 @@ public class CustomerTest {
 	}
 	
 	@Test
-	public void testGetPersonalInformation() {
+	public void testGetPersonalInformation() throws IOException {
 		assertEquals("User: Nathan Kluth\nphone: 555-555-5555\nemail: test@example.com", customer.getPersonalInformation().toString());
 	}
 	
 	@Test
-	public void testUpdate() {
+	public void testUpdate() throws IOException {
 		customer.update(
 				new PersonalInformation("Test", "User", "444-444-4444", "test@example.com"),
 				new Address("234", "4", "Denver", "CO", "80222"),
@@ -46,23 +46,23 @@ public class CustomerTest {
 	}
 	
 	@Test
-	public void testGetAddress() {
+	public void testGetAddress() throws IOException {
 		assertEquals("1234 4, Denver CO, 80231", customer.getAddress().toString());
 	}
 	
 	@Test
-	public void testGetInsurance() {
+	public void testGetInsurance() throws IOException {
 		assertEquals("Blue Cross:\n1234 4, Denver CO, 80231", customer.getInsurance().toString());
 	}
 	
 	@Test
-	public void testGetWorkoutRoutines() {
+	public void testGetWorkoutRoutines() throws IOException {
 		Set<WorkoutRoutine> emptyWorkouts = new HashSet<WorkoutRoutine>();
 		assertEquals(true, emptyWorkouts.equals(customer.getWorkoutRoutines()));
 	}
 	
 	@Test
-	public void testAssignToWorkoutRoutine() {
+	public void testAssignToWorkoutRoutine() throws IOException {
 		Set<WorkoutRoutine> workouts = new HashSet<WorkoutRoutine>();
 		WorkoutRoutine workout = new WorkoutRoutine("Workout2");
 		workouts.add(workout);
@@ -71,12 +71,12 @@ public class CustomerTest {
 	}
 	
 	@Test
-	public void testGetMembership() {
+	public void testGetMembership() throws IOException {
 		assertEquals(Membership.ACTIVE, customer.getMembership());
 	}
 	
 	@Test
-	public void testSetMembership() {
+	public void testSetMembership() throws IOException {
 		customer.setActive(Membership.INACTIVE);
 		assertEquals(Membership.INACTIVE, customer.getMembership());
 	}

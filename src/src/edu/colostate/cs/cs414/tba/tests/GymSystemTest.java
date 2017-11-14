@@ -24,12 +24,12 @@ public class GymSystemTest {
 	}
 	
 	@Test
-	public void testGetCustomers() {
+	public void testGetCustomers() throws IOException {
 		assertEquals(0, gymSystem.getCustomers().size());
 	}
 	
 	@Test
-	public void testAddCustomer() {
+	public void testAddCustomer() throws IOException {
 		Customer customer = new Customer(
 				new PersonalInformation("Nathan", "Kluth", "444-444-4444", "test@example.com"),
 				new Address("123", "4", "Denver", "CO", "80231"),
@@ -41,12 +41,12 @@ public class GymSystemTest {
 	}
 	
 	@Test
-	public void testGetTrainers() {
+	public void testGetTrainers() throws IOException {
 		assertEquals(0, gymSystem.getTrainers().size());
 	}
 	
 	@Test
-	public void testAddTrainer() {
+	public void testAddTrainer() throws IOException {
 		Trainer trainer = new Trainer("username", "Password",
 				new PersonalInformation("Nathan", "Kluth", "444-444-4444", "test@example.com"),
 				new Address("123", "4", "Denver", "CO", "80231"),
@@ -58,12 +58,12 @@ public class GymSystemTest {
 	}
 	
 	@Test
-	public void testGetEquipment() {
+	public void testGetEquipment() throws IOException {
 		assertEquals(0, gymSystem.getEquipment().size());
 	}
 	
 	@Test
-	public void testAddEquipment() {
+	public void testAddEquipment() throws IOException {
 		Equipment equipment = new Equipment("Free weights", new File("./weights.png"), "Excellent");
 		
 		gymSystem.addEquipment(equipment);

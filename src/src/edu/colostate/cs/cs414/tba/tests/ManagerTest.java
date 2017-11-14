@@ -26,29 +26,29 @@ public class ManagerTest {
 	}
 	
 	@Test
-	public void testGetPersonalInformation() {
+	public void testGetPersonalInformation() throws IOException {
 		assertEquals(null, manager.getPersonalInformation());
 	}
 	
 	@Test
-	public void testGetInsurance() {
+	public void testGetInsurance() throws IOException {
 		assertEquals(null, manager.getInsurance());
 	}
 	
 	@Test
-	public void testGetAddress() {
+	public void testGetAddress() throws IOException {
 		assertEquals(null, manager.getAddress());
 	}
 	
 	@Test
-	public void setPersonalInformation() {
+	public void setPersonalInformation() throws IOException {
 		manager.setPersonalInformation(new PersonalInformation("Nathan",
 				"Kluth", "444-444-4444", "test@example.com"));
 		assertEquals("User: Nathan Kluth\nphone: 444-444-4444\nemail: test@example.com", manager.getPersonalInformation().toString());
 	}
 	
 	@Test
-	public void testSetInsurance() {
+	public void testSetInsurance() throws IOException {
 		manager.setInsurance(new Insurance("Blue Cross", new Address("123",
 				"4", "Denver", "CO", "80231")));
 		
@@ -56,13 +56,13 @@ public class ManagerTest {
 	}
 	
 	@Test
-	public void testSetAddress() {
+	public void testSetAddress() throws IOException {
 		manager.setAddress(new Address("123", "4", "Denver", "CO", "80231"));
 		assertEquals("123 4, Denver CO, 80231", manager.getAddress().toString());
 	}
 	
 	@Test
-	public void testRegisterCustomer() {
+	public void testRegisterCustomer() throws IOException {
 		Customer customer = new Customer(
 				new PersonalInformation("Nathan", "Kluth", "444-444-4444", "test@example.com"),
 				new Address("123", "4", "Denver", "CO", "80231"),
@@ -74,7 +74,7 @@ public class ManagerTest {
 	}
 	
 	@Test
-	public void testHireTrainer() {
+	public void testHireTrainer() throws IOException {
 		Trainer trainer = new Trainer("user", "Password",
 				new PersonalInformation("Nathan", "Kluth", "444-444-4444", "test@example.com"),
 				new Address("123", "4", "Denver", "CO", "80231"),
@@ -86,7 +86,7 @@ public class ManagerTest {
 	}
 	
 	@Test
-	public void testAddEquipment() {
+	public void testAddEquipment() throws IOException {
 		Equipment equipment = new Equipment("Free weights", new File("./weights.png"), "Excellent");
 		
 		manager.addEquipment(equipment);
