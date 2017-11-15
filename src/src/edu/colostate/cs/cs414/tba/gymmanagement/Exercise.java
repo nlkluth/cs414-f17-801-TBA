@@ -16,11 +16,12 @@ public class Exercise {
 	private int reps;
 	private Equipment equipment;
 	
-	public Exercise(String name, String duration, int sets, int reps) {
+	public Exercise(String name, String duration, int sets, int reps, Equipment equipment) {
 		this.name = name;
 		this.duration = duration;
 		this.sets = sets;
 		this.reps = reps;
+		this.equipment = equipment;
 	}
 
 	@Override
@@ -30,13 +31,15 @@ public class Exercise {
 				+ Integer.toString(this.sets) + " sets";
 	}
 	
-	public void update(String name, String duration, int sets, int reps) {
+	public void update(String name, String duration, int sets, int reps, Equipment equipment) {
 		this.name = name;
 		this.duration = duration;
 		this.sets = sets;
 		this.reps = reps;
+		this.equipment = equipment;
 	}
 	
+
 	// May or may not use a piece of equipment
 	public void setEquipment(Equipment equipment) {
 		equipment.addExercise(this);
