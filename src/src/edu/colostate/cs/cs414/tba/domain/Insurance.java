@@ -1,4 +1,4 @@
-package edu.colostate.cs.cs414.tba.gymmanagement;
+package edu.colostate.cs.cs414.tba.domain;
 
 /**
  * All members staff or customers have health insurance providers

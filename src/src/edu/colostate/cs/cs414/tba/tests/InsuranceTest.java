@@ -7,8 +7,8 @@ import java.io.IOException;
 import org.junit.Before;
 import org.junit.Test;
 
-import edu.colostate.cs.cs414.tba.gymmanagement.Address;
-import edu.colostate.cs.cs414.tba.gymmanagement.Insurance;
+import edu.colostate.cs.cs414.tba.domain.Address;
+import edu.colostate.cs.cs414.tba.domain.Insurance;
 
 public class InsuranceTest {
 	private Insurance insurance;

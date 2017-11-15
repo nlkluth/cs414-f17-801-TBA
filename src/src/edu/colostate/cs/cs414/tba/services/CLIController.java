@@ -6,17 +6,17 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import edu.colostate.cs.cs414.tba.application.GymSystem;
-import edu.colostate.cs.cs414.tba.gymmanagement.Address;
-import edu.colostate.cs.cs414.tba.gymmanagement.Customer;
-import edu.colostate.cs.cs414.tba.gymmanagement.Equipment;
-import edu.colostate.cs.cs414.tba.gymmanagement.Exercise;
+import edu.colostate.cs.cs414.tba.domain.Address;
+import edu.colostate.cs.cs414.tba.domain.Customer;
+import edu.colostate.cs.cs414.tba.domain.Equipment;
+import edu.colostate.cs.cs414.tba.domain.Exercise;
+import edu.colostate.cs.cs414.tba.domain.Insurance;
+import edu.colostate.cs.cs414.tba.domain.Manager;
+import edu.colostate.cs.cs414.tba.domain.PersonalInformation;
+import edu.colostate.cs.cs414.tba.domain.Trainer;
+import edu.colostate.cs.cs414.tba.domain.WorkoutRoutine;
 import edu.colostate.cs.cs414.tba.gymmanagement.ExerciseBuilder;
-import edu.colostate.cs.cs414.tba.gymmanagement.Insurance;
-import edu.colostate.cs.cs414.tba.gymmanagement.Manager;
-import edu.colostate.cs.cs414.tba.gymmanagement.PersonalInformation;
-import edu.colostate.cs.cs414.tba.gymmanagement.Trainer;
 import edu.colostate.cs.cs414.tba.gymmanagement.UserFactory;
-import edu.colostate.cs.cs414.tba.gymmanagement.WorkoutRoutine;
 
 /**
  * Simple Command line interface

@@ -8,8 +8,8 @@ import java.io.IOException;
 import org.junit.Before;
 import org.junit.Test;
 
-import edu.colostate.cs.cs414.tba.gymmanagement.Equipment;
-import edu.colostate.cs.cs414.tba.gymmanagement.Exercise;
+import edu.colostate.cs.cs414.tba.domain.Equipment;
+import edu.colostate.cs.cs414.tba.domain.Exercise;
 
 public class EquipmentTest {
 	private Equipment equipment;

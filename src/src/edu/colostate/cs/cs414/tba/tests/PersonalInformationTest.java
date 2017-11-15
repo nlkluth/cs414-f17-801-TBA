@@ -7,7 +7,7 @@ import java.io.IOException;
 import org.junit.Before;
 import org.junit.Test;
 
-import edu.colostate.cs.cs414.tba.gymmanagement.PersonalInformation;
+import edu.colostate.cs.cs414.tba.domain.PersonalInformation;
 
 public class PersonalInformationTest {
 	private PersonalInformation personalInformation;

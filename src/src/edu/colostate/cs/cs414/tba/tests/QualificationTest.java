@@ -9,11 +9,11 @@ import java.util.Set;
 import org.junit.Before;
 import org.junit.Test;
 
-import edu.colostate.cs.cs414.tba.gymmanagement.Address;
-import edu.colostate.cs.cs414.tba.gymmanagement.Insurance;
-import edu.colostate.cs.cs414.tba.gymmanagement.PersonalInformation;
-import edu.colostate.cs.cs414.tba.gymmanagement.Qualification;
-import edu.colostate.cs.cs414.tba.gymmanagement.Trainer;
+import edu.colostate.cs.cs414.tba.domain.Address;
+import edu.colostate.cs.cs414.tba.domain.Insurance;
+import edu.colostate.cs.cs414.tba.domain.PersonalInformation;
+import edu.colostate.cs.cs414.tba.domain.Qualification;
+import edu.colostate.cs.cs414.tba.domain.Trainer;
 
 public class QualificationTest {
 	private Qualification qualification;

@@ -1,5 +1,11 @@
 package edu.colostate.cs.cs414.tba.gymmanagement;
 
+import edu.colostate.cs.cs414.tba.domain.Address;
+import edu.colostate.cs.cs414.tba.domain.Customer;
+import edu.colostate.cs.cs414.tba.domain.Insurance;
+import edu.colostate.cs.cs414.tba.domain.PersonalInformation;
+import edu.colostate.cs.cs414.tba.domain.Trainer;
+
 /**
  * creates a User type
  * Manager | Trainer | Customer

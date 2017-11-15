@@ -1,4 +1,4 @@
-package edu.colostate.cs.cs414.tba.gymmanagement;
+package edu.colostate.cs.cs414.tba.domain;
 
 import java.util.HashSet;
 import java.util.Set;

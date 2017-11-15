@@ -1,4 +1,4 @@
-package edu.colostate.cs.cs414.tba.gymmanagement;
+package edu.colostate.cs.cs414.tba.domain;
 
 /**
  * Stores common personal information for users of the system and customers

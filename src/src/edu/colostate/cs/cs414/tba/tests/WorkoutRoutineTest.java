@@ -9,12 +9,12 @@ import java.util.Set;
 import org.junit.Before;
 import org.junit.Test;
 
-import edu.colostate.cs.cs414.tba.gymmanagement.Address;
-import edu.colostate.cs.cs414.tba.gymmanagement.Customer;
-import edu.colostate.cs.cs414.tba.gymmanagement.Exercise;
-import edu.colostate.cs.cs414.tba.gymmanagement.Insurance;
-import edu.colostate.cs.cs414.tba.gymmanagement.PersonalInformation;
-import edu.colostate.cs.cs414.tba.gymmanagement.WorkoutRoutine;
+import edu.colostate.cs.cs414.tba.domain.Address;
+import edu.colostate.cs.cs414.tba.domain.Customer;
+import edu.colostate.cs.cs414.tba.domain.Exercise;
+import edu.colostate.cs.cs414.tba.domain.Insurance;
+import edu.colostate.cs.cs414.tba.domain.PersonalInformation;
+import edu.colostate.cs.cs414.tba.domain.WorkoutRoutine;
 
 public class WorkoutRoutineTest {
 	private WorkoutRoutine workoutRoutine;

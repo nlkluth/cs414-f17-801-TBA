@@ -7,7 +7,7 @@ import java.io.IOException;
 import org.junit.Before;
 import org.junit.Test;
 
-import edu.colostate.cs.cs414.tba.gymmanagement.Address;
+import edu.colostate.cs.cs414.tba.domain.Address;
 
 public class AddressTest {
 	private Address address;

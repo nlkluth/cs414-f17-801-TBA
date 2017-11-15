@@ -4,11 +4,11 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-import edu.colostate.cs.cs414.tba.gymmanagement.Customer;
-import edu.colostate.cs.cs414.tba.gymmanagement.Equipment;
-import edu.colostate.cs.cs414.tba.gymmanagement.Manager;
-import edu.colostate.cs.cs414.tba.gymmanagement.Trainer;
-import edu.colostate.cs.cs414.tba.gymmanagement.WorkoutRoutine;
+import edu.colostate.cs.cs414.tba.domain.Customer;
+import edu.colostate.cs.cs414.tba.domain.Equipment;
+import edu.colostate.cs.cs414.tba.domain.Manager;
+import edu.colostate.cs.cs414.tba.domain.Trainer;
+import edu.colostate.cs.cs414.tba.domain.WorkoutRoutine;
 import edu.colostate.cs.cs414.tba.services.CLIController;
 
 /**

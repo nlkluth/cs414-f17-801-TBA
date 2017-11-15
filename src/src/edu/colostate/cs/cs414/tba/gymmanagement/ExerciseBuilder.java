@@ -1,5 +1,8 @@
 package edu.colostate.cs.cs414.tba.gymmanagement;
 
+import edu.colostate.cs.cs414.tba.domain.Equipment;
+import edu.colostate.cs.cs414.tba.domain.Exercise;
+
 /**
  * Builds an exercise
  */
