@@ -15,7 +15,7 @@ public class ExerciseTest {
 	private Exercise exercise;
 	
 	@Before public void setUp() {
-		exercise = new Exercise("Jumping jacks", "1 min", 3, 15);
+		exercise = new Exercise("Jumping jacks", "1 min", 3, 15, null);
 	}
 	
 	@Test
@@ -25,7 +25,7 @@ public class ExerciseTest {
 	
 	@Test
 	public void testUpdate() throws IOException {
-		exercise.update("Jumping Jacks", "2 min", 4, 20);
+		exercise.update("Jumping Jacks", "2 min", 4, 20, null);
 		assertEquals("Jumping Jacks : 2 min : 20 reps : 4 sets", exercise.toString());
 	}
 	

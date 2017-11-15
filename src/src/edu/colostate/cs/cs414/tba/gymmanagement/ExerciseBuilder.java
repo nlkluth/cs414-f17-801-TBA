@@ -11,6 +11,8 @@ public class ExerciseBuilder {
 	private int reps;
 	private Equipment equipment;
 	
+	public ExerciseBuilder() {}
+	
 	public Exercise createExercise() {
 		this.exercise = new Exercise(this.name, this.duration, this.sets, this.reps, this.equipment);
 		return this.exercise;

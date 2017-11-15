@@ -19,13 +19,13 @@ public class EquipmentTest {
 	@Before public void setUp() {
 		img = new File("test.png");
 		equipment = new Equipment("Bench Press", img, "Excellent");
-		exercise = new Exercise("Warmup", "3 minutes", 4, 10);
+		exercise = new Exercise("Warmup", "3 minutes", 4, 10, null);
 		equipment.addExercise(exercise);
 	}
 	
 	@Test
 	public void testAddExercise() throws IOException {
-		Exercise newExercise = new Exercise("HIIT", "2 minutes", 4, 15);
+		Exercise newExercise = new Exercise("HIIT", "2 minutes", 4, 15, null);
 		equipment.addExercise(newExercise);
 		assertEquals(2, equipment.getExercises().size());
 		assertEquals(true, equipment.getExercises().contains(newExercise));

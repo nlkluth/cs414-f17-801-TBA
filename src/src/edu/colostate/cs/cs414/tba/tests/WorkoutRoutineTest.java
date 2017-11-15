@@ -56,7 +56,7 @@ public class WorkoutRoutineTest {
 	@Test
 	public void testSetExercises() throws IOException {
 		Set<Exercise> newExercises = new HashSet<Exercise>();
-		Exercise exercise = new Exercise("Bench", "1 min", 4, 10);
+		Exercise exercise = new Exercise("Bench", "1 min", 4, 10, null);
 		newExercises.add(exercise);
 		workoutRoutine.addExercise(exercise);
 		assertEquals(true, newExercises.equals(workoutRoutine.getExercises()));

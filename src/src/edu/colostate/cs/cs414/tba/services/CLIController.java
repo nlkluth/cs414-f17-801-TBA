@@ -10,6 +10,7 @@ import edu.colostate.cs.cs414.tba.gymmanagement.Address;
 import edu.colostate.cs.cs414.tba.gymmanagement.Customer;
 import edu.colostate.cs.cs414.tba.gymmanagement.Equipment;
 import edu.colostate.cs.cs414.tba.gymmanagement.Exercise;
+import edu.colostate.cs.cs414.tba.gymmanagement.ExerciseBuilder;
 import edu.colostate.cs.cs414.tba.gymmanagement.Insurance;
 import edu.colostate.cs.cs414.tba.gymmanagement.Manager;
 import edu.colostate.cs.cs414.tba.gymmanagement.PersonalInformation;
@@ -26,6 +27,7 @@ public class CLIController {
 	private GymSystem gymSystem;
 	private Object user;
 	private UserFactory userFactory = new UserFactory();
+	private ExerciseBuilder exerciseBuilder;
 	
 	public CLIController(Manager manager, GymSystem gymSystem) throws IOException {
 		this.manager = manager;
@@ -297,7 +299,8 @@ public class CLIController {
 				}
 				
 				workoutRoutine.resetExercises(); // reset exercises
-				
+			
+				exerciseBuilder = new ExerciseBuilder();
 				boolean addingExercises = true;
 				while (addingExercises) {					
 					System.out.println("Enter exercise name: ");
@@ -305,12 +308,11 @@ public class CLIController {
 					System.out.println("Enter duration of workout: ");
 					String duration = reader.readLine();
 					System.out.println("Enter a number of sets:");
-					int sets = 0;
-					int reps = 0;
 					
 					try {
 						String setsString = reader.readLine();
-						sets = Integer.parseInt(setsString);
+						int sets = Integer.parseInt(setsString);
+						exerciseBuilder.setSets(sets);
 					} catch (Error e) {
 						System.out.println("sets must be a number");
 					}
@@ -318,13 +320,11 @@ public class CLIController {
 					try {
 						System.out.println("Enter a number of reps");
 						String repsString = reader.readLine();
-						reps = Integer.parseInt(repsString);
+						int reps = Integer.parseInt(repsString);
+						exerciseBuilder.setReps(reps);
 					} catch (Error e) {
 						System.out.println("reps must be a number");
 					}
-					
-					Exercise exercise = new Exercise(exerciseName, duration, sets, reps);
-					workoutRoutine.addExercise(exercise);
 					
 					System.out.println("Does this exercise need equipment? (y/n)");
 					String needEquipment = reader.readLine();
@@ -343,7 +343,7 @@ public class CLIController {
 						if (found == null) {
 							System.out.println("Did not find equipment");
 						} else {
-							exercise.setEquipment(found);
+							exerciseBuilder.addEquipment(found);
 							needEquipment = "n";
 						}
 					}
@@ -356,6 +356,8 @@ public class CLIController {
 					}
 				}
 				
+				Exercise exercise = exerciseBuilder.createExercise();
+				workoutRoutine.addExercise(exercise);
 				System.out.print("\n ***Workout routine updated in system*** \n");
 			}
 		}
@@ -383,21 +385,22 @@ public class CLIController {
 		String name = reader.readLine();
 		
 		WorkoutRoutine workoutRoutine = new WorkoutRoutine(name);
+		exerciseBuilder = new ExerciseBuilder();
 		
 		boolean addingExercises = true;
 		while (addingExercises) {
-			
 			System.out.println("Enter exercise name: ");
 			String exerciseName = reader.readLine();
+			exerciseBuilder.setName(exerciseName);
 			System.out.println("Enter duration of workout: ");
 			String duration = reader.readLine();
+			exerciseBuilder.setDuration(duration);
 			System.out.println("Enter a number of sets:");
-			int sets = 0;
-			int reps = 0;
 			
 			try {
 				String setsString = reader.readLine();
-				sets = Integer.parseInt(setsString);
+				int sets = Integer.parseInt(setsString);
+				exerciseBuilder.setSets(sets);
 			} catch (Error e) {
 				System.out.println("sets must be a number");
 			}
@@ -405,13 +408,11 @@ public class CLIController {
 			try {
 				System.out.println("Enter a number of reps");
 				String repsString = reader.readLine();
-				reps = Integer.parseInt(repsString);
+				int reps = Integer.parseInt(repsString);
+				exerciseBuilder.setReps(reps);
 			} catch (Error e) {
 				System.out.println("reps must be a number");
-			}
-			
-			Exercise exercise = new Exercise(exerciseName, duration, sets, reps);
-			workoutRoutine.addExercise(exercise);
+			}			
 			
 			System.out.println("Does this exercise need equipment? (y/n)");
 			String needEquipment = reader.readLine();
@@ -430,7 +431,7 @@ public class CLIController {
 				if (found == null) {
 					System.out.println("Did not find equipment");
 				} else {
-					exercise.setEquipment(found);
+					exerciseBuilder.addEquipment(found);					
 					needEquipment = "n";
 				}
 			}
@@ -443,6 +444,8 @@ public class CLIController {
 			}
 		}
 		
+		Exercise exercise = exerciseBuilder.createExercise();
+		workoutRoutine.addExercise(exercise);
 		gymSystem.addWorkoutRoutine(workoutRoutine);
 		System.out.print("\n ***Workout routine added to system*** \n");
 	}
