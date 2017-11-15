@@ -10,6 +10,7 @@ import edu.colostate.cs.cs414.tba.domain.Manager;
 import edu.colostate.cs.cs414.tba.domain.Trainer;
 import edu.colostate.cs.cs414.tba.domain.WorkoutRoutine;
 import edu.colostate.cs.cs414.tba.services.CLIController;
+import edu.colostate.cs.cs414.tba.services.CLIControllerFacade;
 
 /**
  * GymSystem represents the overall system
@@ -22,15 +23,13 @@ public class GymSystem {
 	private Set<Customer> customers = new HashSet<Customer>();
 	private Set<Equipment> equipment = new HashSet<Equipment>();
 	private Set<WorkoutRoutine> workoutRoutines = new HashSet<WorkoutRoutine>();	
-	private static CLIController cliController = CLIController.getInstance();
+	private static CLIControllerFacade cliController = new CLIControllerFacade();
 	
 	public static void main(String args[]) throws IOException {
 		GymSystem gymSystem = new GymSystem();
 		Manager manager = new Manager("admin", "admin", gymSystem);
 		
-		cliController.setManager(manager);
-		cliController.setGymSystem(gymSystem);
-		cliController.start();
+		cliController.start(manager, gymSystem);
 	}
 	
 	public void addCustomer(Customer customer) {
