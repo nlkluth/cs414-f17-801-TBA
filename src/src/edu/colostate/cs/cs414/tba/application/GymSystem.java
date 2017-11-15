@@ -22,11 +22,15 @@ public class GymSystem {
 	private Set<Customer> customers = new HashSet<Customer>();
 	private Set<Equipment> equipment = new HashSet<Equipment>();
 	private Set<WorkoutRoutine> workoutRoutines = new HashSet<WorkoutRoutine>();	
+	private static CLIController cliController = CLIController.getInstance();
 	
 	public static void main(String args[]) throws IOException {
 		GymSystem gymSystem = new GymSystem();
 		Manager manager = new Manager("admin", "admin", gymSystem);
-		new CLIController(manager, gymSystem);
+		
+		cliController.setManager(manager);
+		cliController.setGymSystem(gymSystem);
+		cliController.start();
 	}
 	
 	public void addCustomer(Customer customer) {
