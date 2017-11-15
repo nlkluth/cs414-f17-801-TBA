@@ -21,7 +21,7 @@ public class GymSystem {
 	private Set<Trainer> trainers = new HashSet<Trainer>();
 	private Set<Customer> customers = new HashSet<Customer>();
 	private Set<Equipment> equipment = new HashSet<Equipment>();
-	private Set<WorkoutRoutine> workoutRoutines = new HashSet<WorkoutRoutine>();
+	private Set<WorkoutRoutine> workoutRoutines = new HashSet<WorkoutRoutine>();	
 	
 	public static void main(String args[]) throws IOException {
 		GymSystem gymSystem = new GymSystem();

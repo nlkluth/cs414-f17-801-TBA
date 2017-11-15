@@ -14,6 +14,7 @@ import edu.colostate.cs.cs414.tba.gymmanagement.Insurance;
 import edu.colostate.cs.cs414.tba.gymmanagement.Manager;
 import edu.colostate.cs.cs414.tba.gymmanagement.PersonalInformation;
 import edu.colostate.cs.cs414.tba.gymmanagement.Trainer;
+import edu.colostate.cs.cs414.tba.gymmanagement.UserFactory;
 import edu.colostate.cs.cs414.tba.gymmanagement.WorkoutRoutine;
 
 /**
@@ -24,6 +25,7 @@ public class CLIController {
 	private Manager manager;
 	private GymSystem gymSystem;
 	private Object user;
+	private UserFactory userFactory = new UserFactory();
 	
 	public CLIController(Manager manager, GymSystem gymSystem) throws IOException {
 		this.manager = manager;
@@ -572,7 +574,7 @@ public class CLIController {
 		Address insuranceAddress = new Address(insuranceStreet, insuranceStreet2, insuranceCity, insuranceState, insuranceZip);
 		Insurance insurance = new Insurance(insuranceName, insuranceAddress);
 		
-		Customer customer = new Customer(personalInformation, address, insurance);
+		Customer customer = (Customer) userFactory.createUser("customer", null, null, personalInformation, address, insurance);
 		manager.registerCustomer(customer);
 		System.out.println("\n ***Customer added to system*** \n");
 	}
@@ -629,7 +631,7 @@ public class CLIController {
 		Address insuranceAddress = new Address(insuranceStreet, insuranceStreet2, insuranceCity, insuranceState, insuranceZip);
 		Insurance insurance = new Insurance(insuranceName, insuranceAddress);
 		
-		Trainer trainer = new Trainer(username, password, personalInformation, address, insurance);
+		Trainer trainer = (Trainer) userFactory.createUser("trainer", username, password, personalInformation, address, insurance);
 		manager.hireTrainer(trainer);
 		System.out.println("\n ***Trainer added to system*** \n");
 	}
