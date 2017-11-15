@@ -28,10 +28,27 @@ public class CLIController {
 	private Object user;
 	private UserFactory userFactory = new UserFactory();
 	private ExerciseBuilder exerciseBuilder;
+	private static CLIController uniqueInstance;
 	
-	public CLIController(Manager manager, GymSystem gymSystem) throws IOException {
+	private CLIController() {}
+	
+	public static CLIController getInstance() {
+		if (uniqueInstance == null) {
+			uniqueInstance = new CLIController();		
+		}
+		
+		return uniqueInstance;
+	}
+	
+	public void setManager(Manager manager) {
 		this.manager = manager;
+	}
+	
+	public void setGymSystem(GymSystem gymSystem) {
 		this.gymSystem = gymSystem;
+	}
+	
+	public void start() throws IOException {
 		System.out.println("Login as manager to start");
 		
 		String username = "";
