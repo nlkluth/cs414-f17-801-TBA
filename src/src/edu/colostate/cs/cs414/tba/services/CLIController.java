@@ -26,7 +26,7 @@ public class CLIController {
 	private Manager manager;
 	private GymSystem gymSystem;
 	private Object user;
-	private UserFactory userFactory = new UserFactory();
+	private CustomerCreator customerCreator;	
 	private ExerciseBuilder exerciseBuilder;
 	private static CLIController uniqueInstance;
 	private TrainerCreator trainerCreator;
@@ -501,49 +501,7 @@ public class CLIController {
 			return;
 		}
 		
-		System.out.println("\nEnter Personal Information");
-		System.out.println("Name:");
-		String name = reader.readLine();
-		System.out.println("Last Name:");
-		String lastName = reader.readLine();
-		System.out.println("Phone:");
-		String phone = reader.readLine();
-		System.out.println("email:");
-		String email = reader.readLine();
-		PersonalInformation personalInformation = new PersonalInformation(name, lastName, phone, email);
-		
-		System.out.println("\nEnter Address information");
-		System.out.println("Street");
-		String street = reader.readLine();
-		System.out.println("Street 2");
-		String street2 = reader.readLine();
-		System.out.println("City");
-		String city = reader.readLine();
-		System.out.println("State");
-		String state = reader.readLine();
-		System.out.println("Zip");
-		String zip = reader.readLine();
-		Address address = new Address(street, street2, city, state, zip);
-		
-		System.out.println("\nEnter insurance information");
-		System.out.println("Insurance name");
-		String insuranceName = reader.readLine();
-		System.out.println("Insurance street");
-		String insuranceStreet = reader.readLine();
-		System.out.println("Insurance street 2");
-		String insuranceStreet2 = reader.readLine();
-		System.out.println("Insurance city");
-		String insuranceCity = reader.readLine();
-		System.out.println("Insurance state");
-		String insuranceState = reader.readLine();
-		System.out.println("Insurance zip");
-		String insuranceZip = reader.readLine();
-		Address insuranceAddress = new Address(insuranceStreet, insuranceStreet2, insuranceCity, insuranceState, insuranceZip);
-		Insurance insurance = new Insurance(insuranceName, insuranceAddress);
-		
-		Customer customer = (Customer) userFactory.createUser("customer", null, null, personalInformation, address, insurance);
-		manager.registerCustomer(customer);
-		System.out.println("\n ***Customer added to system*** \n");
+		customerCreator.registerCustomer(this.manager);
 	}
 
 	private void hireTrainer() throws IOException {
