@@ -126,4 +126,83 @@ public class WorkoutCreator {
 		System.out.println("\n *** Assigned customer to workout routine *** \n");
 	}
 
+	public void modifyRoutine(Trainer user, GymSystem gymSystem) throws IOException {
+		System.out.println("Enter name of routine: ");
+		String name = reader.readLine();
+		
+		for (WorkoutRoutine workoutRoutine : gymSystem.getWorkoutRoutines()) {
+			if (workoutRoutine.getName().equals(name)) {
+				System.out.println("Are there changes to exercises? (y/n)");
+				String response = reader.readLine();
+				
+				if (response.toLowerCase().equals("n")) {
+					System.out.println("Nothing to change");
+					return;
+				}
+				
+				workoutRoutine.resetExercises(); // reset exercises
+			
+				exerciseBuilder = new ExerciseBuilder();
+				boolean addingExercises = true;
+				while (addingExercises) {					
+					System.out.println("Enter exercise name: ");
+					String exerciseName = reader.readLine();					
+					System.out.println("Enter duration of workout: ");
+					String duration = reader.readLine();
+					System.out.println("Enter a number of sets:");
+					
+					try {
+						String setsString = reader.readLine();
+						int sets = Integer.parseInt(setsString);
+						exerciseBuilder.setSets(sets);
+					} catch (Error e) {
+						System.out.println("sets must be a number");
+					}
+					
+					try {
+						System.out.println("Enter a number of reps");
+						String repsString = reader.readLine();
+						int reps = Integer.parseInt(repsString);
+						exerciseBuilder.setReps(reps);
+					} catch (Error e) {
+						System.out.println("reps must be a number");
+					}
+					
+					System.out.println("Does this exercise need equipment? (y/n)");
+					String needEquipment = reader.readLine();
+					
+					while (needEquipment.toLowerCase().equals("y")) {
+						Equipment found = null;
+						System.out.println("Which equipment does it need?");
+						String equipmentName = reader.readLine();				
+						
+						for (Equipment equipment : gymSystem.getEquipment()) {
+							if (equipmentName.toLowerCase().equals(equipment.getName().toLowerCase())) {
+								found = equipment;
+							}
+						}
+							
+						if (found == null) {
+							System.out.println("Did not find equipment");
+						} else {
+							exerciseBuilder.addEquipment(found);
+							needEquipment = "n";
+						}
+					}
+					
+					System.out.println("Are there more exercises? (y/n)");
+					String choice = reader.readLine();
+					
+					if (choice.toLowerCase().equals("n")) {
+						addingExercises = false;				
+					}
+				}
+				
+				Exercise exercise = exerciseBuilder.createExercise();
+				workoutRoutine.addExercise(exercise);
+				System.out.print("\n ***Workout routine updated in system*** \n");
+			}
+		}
+	}
+
 }
