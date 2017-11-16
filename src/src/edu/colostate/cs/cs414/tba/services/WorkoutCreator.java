@@ -146,9 +146,11 @@ public class WorkoutCreator {
 				boolean addingExercises = true;
 				while (addingExercises) {					
 					System.out.println("Enter exercise name: ");
-					String exerciseName = reader.readLine();					
+					String exerciseName = reader.readLine();
+					exerciseBuilder.setName(exerciseName);
 					System.out.println("Enter duration of workout: ");
 					String duration = reader.readLine();
+					exerciseBuilder.setDuration(duration);
 					System.out.println("Enter a number of sets:");
 					
 					try {
