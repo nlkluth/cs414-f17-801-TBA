@@ -24,6 +24,10 @@ public class Insurance {
 	
 	@Override
 	public boolean equals(Object insurance) {
+		if ((insurance == null) || (this == null)) {
+	        return false;
+	    }
+		
 		return ((Insurance) insurance).getName().equals(name);
 	}
 	

@@ -40,8 +40,19 @@ public class Customer implements User {
 		return this.membership;
 	}
 	
+	
+	@Override
+	// used for equality checks
+	public int hashCode() {
+		return this.personalInformation.getName().hashCode();
+	}
+	
 	@Override
 	public boolean equals(Object other) {
+		if ((other == null) || (this == null)) {
+	        return false;
+	    }
+		
 		return this.personalInformation.getName().equals(((Customer) other).getPersonalInformation().getName()); 
 	}
 

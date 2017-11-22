@@ -46,7 +46,17 @@ public class Equipment {
 	}
 	
 	@Override
+	// used for equality checks
+	public int hashCode() {
+		return this.name.hashCode();
+	}
+	
+	@Override
 	public boolean equals(Object other) {
+		if ((other == null) || (this == null)) {
+	        return false;
+	    }
+		
 		return ((Equipment) other).getName().equals(this.name);
 	}
 

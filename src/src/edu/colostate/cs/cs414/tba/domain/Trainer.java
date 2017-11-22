@@ -32,6 +32,10 @@ public class Trainer implements User {
 	
 	@Override
 	public boolean equals(Object other) {
+		if ((other == null) || (this == null)) {
+	        return false;
+	    }
+		
 		return this.personalInformation.getName().equals(((Trainer) other).getPersonalInformation().getName());
 	}
 	
