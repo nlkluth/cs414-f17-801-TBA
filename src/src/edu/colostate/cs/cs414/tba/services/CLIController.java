@@ -21,11 +21,10 @@ public class CLIController {
 	private Manager manager;
 	private GymSystem gymSystem;
 	private Object user;
-	private CustomerCreator customerCreator;	
-	private ExerciseBuilder exerciseBuilder;
+	private CustomerCreator customerCreator = new CustomerCreator();	
 	private static CLIController uniqueInstance;
-	private TrainerCreator trainerCreator;
-	private WorkoutCreator workoutCreator;
+	private TrainerCreator trainerCreator = new TrainerCreator();
+	private WorkoutCreator workoutCreator = new WorkoutCreator();
 	
 	private CLIController() {}
 	
