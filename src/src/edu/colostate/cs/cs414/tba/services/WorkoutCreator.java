@@ -27,9 +27,17 @@ public class WorkoutCreator {
 		while (addingExercises) {
 			System.out.println("Enter exercise name: ");
 			String exerciseName = reader.readLine();
+			if (exerciseName == null) {
+				exerciseName = "";
+			}
+			
 			exerciseBuilder.setName(exerciseName);
 			System.out.println("Enter duration of workout: ");
 			String duration = reader.readLine();
+			if (duration == null) {
+				duration = "";
+			}
+			
 			exerciseBuilder.setDuration(duration);
 			System.out.println("Enter a number of sets:");
 			
@@ -52,11 +60,17 @@ public class WorkoutCreator {
 			
 			System.out.println("Does this exercise need equipment? (y/n)");
 			String needEquipment = reader.readLine();
+			if (needEquipment == null) {
+				needEquipment = "";
+			}
 			
 			while (needEquipment.toLowerCase().equals("y")) {
 				Equipment found = null;
 				System.out.println("Which equipment does it need?");
-				String equipmentName = reader.readLine();				
+				String equipmentName = reader.readLine();	
+				if (equipmentName == null) {
+					equipmentName = "";
+				}
 				
 				for (Equipment equipment : gymSystem.getEquipment()) {
 					if (equipmentName.toLowerCase().equals(equipment.getName().toLowerCase())) {
@@ -74,6 +88,9 @@ public class WorkoutCreator {
 			
 			System.out.println("Are there more exercises? (y/n)");
 			String choice = reader.readLine();
+			if (choice == null) {
+				choice = "n";
+			}
 			
 			if (choice.toLowerCase().equals("n")) {
 				addingExercises = false;				
@@ -129,11 +146,17 @@ public class WorkoutCreator {
 	public void modifyRoutine(Trainer user, GymSystem gymSystem) throws IOException {
 		System.out.println("Enter name of routine: ");
 		String name = reader.readLine();
+		if (name == null) {
+			name = "";
+		}
 		
 		for (WorkoutRoutine workoutRoutine : gymSystem.getWorkoutRoutines()) {
 			if (workoutRoutine.getName().equals(name)) {
 				System.out.println("Are there changes to exercises? (y/n)");
 				String response = reader.readLine();
+				if (response == null) {
+					response = "";
+				}
 				
 				if (response.toLowerCase().equals("n")) {
 					System.out.println("Nothing to change");
@@ -147,9 +170,15 @@ public class WorkoutCreator {
 				while (addingExercises) {					
 					System.out.println("Enter exercise name: ");
 					String exerciseName = reader.readLine();
+					if (exerciseName == null) {
+						exerciseName = "";
+					}
 					exerciseBuilder.setName(exerciseName);
 					System.out.println("Enter duration of workout: ");
 					String duration = reader.readLine();
+					if (duration == null) {
+						duration = "";
+					}
 					exerciseBuilder.setDuration(duration);
 					System.out.println("Enter a number of sets:");
 					
@@ -172,11 +201,17 @@ public class WorkoutCreator {
 					
 					System.out.println("Does this exercise need equipment? (y/n)");
 					String needEquipment = reader.readLine();
+					if (needEquipment == null) {
+						needEquipment = "";
+					}
 					
 					while (needEquipment.toLowerCase().equals("y")) {
 						Equipment found = null;
 						System.out.println("Which equipment does it need?");
-						String equipmentName = reader.readLine();				
+						String equipmentName = reader.readLine();
+						if (equipmentName == null) {
+							equipmentName = "";
+						}
 						
 						for (Equipment equipment : gymSystem.getEquipment()) {
 							if (equipmentName.toLowerCase().equals(equipment.getName().toLowerCase())) {
@@ -194,6 +229,9 @@ public class WorkoutCreator {
 					
 					System.out.println("Are there more exercises? (y/n)");
 					String choice = reader.readLine();
+					if (choice == null) {
+						choice = "n";
+					}
 					
 					if (choice.toLowerCase().equals("n")) {
 						addingExercises = false;				

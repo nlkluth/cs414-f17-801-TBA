@@ -157,13 +157,24 @@ public class CLIController {
 		String name = reader.readLine();
 		
 		for (Equipment equipment : gymSystem.getEquipment()) {
-			if (equipment.equals(name)) {
+			if (equipment.getName().equals(name)) {
 				System.out.println("\nEnter name of equipment");
 				String newName = reader.readLine();
+				if (newName == null) {
+					newName = "";
+				}
+				
 				System.out.println("Enter file path for image");
 				String file = reader.readLine();
+				if (file == null) {
+					file = "";
+				}
+				
 				System.out.println("Enter quality rating");
 				String quality = reader.readLine();
+				if (quality== null) {
+					quality = "";
+				}
 				
 				equipment.update(newName, new File(file), quality);				
 				System.out.println("\n ***Equipment updated in system*** \n");
@@ -250,10 +261,21 @@ public class CLIController {
 		
 		System.out.println("\nEnter name of equipment");
 		String name = reader.readLine();
+		if (name == null) {
+			name = "";
+		}
+		
 		System.out.println("Enter file path for image");
 		String file = reader.readLine();
+		if (file == null) {
+			file = "";
+		}
+		
 		System.out.println("Enter quality rating");
 		String quality = reader.readLine();
+		if (quality == null) {
+			quality = "";
+		}
 		
 		Equipment equipment = new Equipment(name, new File(file), quality);
 		manager.addEquipment(equipment);
