@@ -20,11 +20,10 @@ public class CLIController {
 	private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 	private Manager manager;
 	private GymSystem gymSystem;
-	private Object user;
-	private CustomerCreator customerCreator = new CustomerCreator();	
-	private static CLIController uniqueInstance;
-	private TrainerCreator trainerCreator = new TrainerCreator();
-	private WorkoutCreator workoutCreator = new WorkoutCreator();
+	private Object user;		
+	private static CLIController uniqueInstance;	
+	private CLIManagerController cliManagerController;
+	private CLITrainerController cliTrainerController;
 	
 	private CLIController() {}
 	
@@ -46,6 +45,8 @@ public class CLIController {
 	
 	public void start() throws IOException {
 		System.out.println("Login as manager to start");
+		cliManagerController = new CLIManagerController(this.manager, this.user, this.gymSystem);
+		cliTrainerController = new CLITrainerController(this.manager, this.user, this.gymSystem);
 		
 		String username = "";
 		String password = "";
@@ -107,196 +108,11 @@ public class CLIController {
 			case "logout":
 				this.promptForLogin();
 				break;
-			case "hiretrainer":
-				this.hireTrainer();
-				break;
-			case "registercustomer":
-				this.registerCustomer();
-				break;
-			case "addequipment":
-				this.addEquipment();
-				break;
-			case "modifytrainer":
-				this.modifyTrainer();
-				break;
-			case "modifycustomer":
-				this.modifyCustomer();
-				break;
-			case "modifyequipment":
-				this.modifyEquipment();
-				break;
-			case "createworkout":
-				this.createWorkout();
-				break;
-			case "searchroutines":
-				this.searchRoutines();
-				break;
-			case "modifyroutine":
-				this.modifyRoutine();
-				break;
-			case "searchcustomers":
-				this.searchCustomers();
-				break;
-			case "assignroutine":
-				this.assignRoutine();
-				break;
 			default:
-				System.out.println("Unrecognized command. Type 'help' for help");
+				this.cliManagerController.input(input);
+				this.cliTrainerController.input(input);
 			}
 		}
-	}
-
-	private void modifyEquipment() throws IOException {
-		if (!this.manager.equals(this.user)) {
-			System.out.println("Not Authorized");
-			return;
-		}
-		
-		System.out.println("Enter name of equipment");
-		String name = reader.readLine();
-		
-		for (Equipment equipment : gymSystem.getEquipment()) {
-			if (equipment.getName().equals(name)) {
-				System.out.println("\nEnter name of equipment");
-				String newName = reader.readLine();
-				if (newName == null) {
-					newName = "";
-				}
-				
-				System.out.println("Enter file path for image");
-				String file = reader.readLine();
-				if (file == null) {
-					file = "";
-				}
-				
-				System.out.println("Enter quality rating");
-				String quality = reader.readLine();
-				if (quality== null) {
-					quality = "";
-				}
-				
-				equipment.update(newName, new File(file), quality);				
-				System.out.println("\n ***Equipment updated in system*** \n");
-			}
-		}
-		
-		System.out.println("Error: no equipment found with that name");
-	}
-
-	private void modifyTrainer() throws IOException {
-		if (!this.manager.equals(this.user)) {
-			System.out.println("Not Authorized");
-			return;
-		}
-		
-		trainerCreator.modifyTrainer(this.manager, this.gymSystem);
-	}
-
-	private void assignRoutine() throws IOException {
-		if (this.manager.equals(this.user)) {
-			System.out.println("Not Authorized");
-			return;
-		}
-		
-		workoutCreator.assignWorkout((Trainer) this.user, this.gymSystem);
-	}
-
-	private void searchCustomers() {
-		if (this.manager.equals(this.user)) {
-			System.out.println("Not Authorized");
-			return;
-		}
-		
-		System.out.println("Customers:\n");
-		for (Customer customer : gymSystem.getCustomers()) {
-			System.out.println(customer.toString() + "\n");
-		}
-	}
-
-	private void modifyRoutine() throws IOException {
-		if (this.manager.equals(this.user)) {
-			System.out.println("Not Authorized");
-			return;
-		}
-		
-		workoutCreator.modifyRoutine((Trainer) this.user, this.gymSystem);
-	}
-
-	private void searchRoutines() {
-		if (this.manager.equals(this.user)) {
-			System.out.println("Not Authorized");
-			return;
-		}
-		
-		System.out.println("Workout Routines:\n");
-		for (WorkoutRoutine workoutRoutine : gymSystem.getWorkoutRoutines()) {
-			System.out.println(workoutRoutine.toString() + "\n");
-		}
-	}
-
-	private void createWorkout() throws IOException {
-		if (this.manager.equals(this.user)) {
-			System.out.println("Not Authorized");
-			return;
-		}
-		
-		workoutCreator.createWorkout((Trainer) this.user, this.gymSystem);
-	}
-
-	private void modifyCustomer() throws IOException {
-		if (!this.manager.equals(this.user)) {
-			System.out.println("Not Authorized");
-			return;
-		}
-		
-		customerCreator.modifyCustomer(this.manager, this.gymSystem);
-	}
-
-	private void addEquipment() throws IOException {
-		if (!this.manager.equals(this.user)) {
-			System.out.println("Not Authorized");
-			return;
-		}
-		
-		System.out.println("\nEnter name of equipment");
-		String name = reader.readLine();
-		if (name == null) {
-			name = "";
-		}
-		
-		System.out.println("Enter file path for image");
-		String file = reader.readLine();
-		if (file == null) {
-			file = "";
-		}
-		
-		System.out.println("Enter quality rating");
-		String quality = reader.readLine();
-		if (quality == null) {
-			quality = "";
-		}
-		
-		Equipment equipment = new Equipment(name, new File(file), quality);
-		manager.addEquipment(equipment);
-		System.out.println("\n ***Equipment added to system*** \n");
-	}
-
-	private void registerCustomer() throws IOException {
-		if (!this.manager.equals(this.user)) {
-			System.out.println("Not Authorized");
-			return;
-		}
-		
-		customerCreator.registerCustomer(this.manager);
-	}
-
-	private void hireTrainer() throws IOException {
-		if (!this.manager.equals(this.user)) {
-			System.out.println("Not Authorized");
-			return;
-		}
-		
-		trainerCreator.createTrainer(this.manager);
 	}
 
 	public void printHelp() {
