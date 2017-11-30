@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import edu.colostate.cs.cs414.tba.application.ExerciseBuilder;
 import edu.colostate.cs.cs414.tba.domain.Customer;
 import edu.colostate.cs.cs414.tba.domain.Equipment;
 import edu.colostate.cs.cs414.tba.domain.Manager;
