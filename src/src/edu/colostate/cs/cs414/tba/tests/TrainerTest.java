@@ -7,11 +7,11 @@ import java.io.IOException;
 import org.junit.Before;
 import org.junit.Test;
 
+import edu.colostate.cs.cs414.tba.application.Availability;
 import edu.colostate.cs.cs414.tba.domain.Address;
 import edu.colostate.cs.cs414.tba.domain.Insurance;
 import edu.colostate.cs.cs414.tba.domain.PersonalInformation;
 import edu.colostate.cs.cs414.tba.domain.Trainer;
-import edu.colostate.cs.cs414.tba.gymmanagement.Availability;
 
 public class TrainerTest {
 	private Trainer trainer;

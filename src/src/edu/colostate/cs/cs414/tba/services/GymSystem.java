@@ -1,16 +1,15 @@
-package edu.colostate.cs.cs414.tba.application;
+package edu.colostate.cs.cs414.tba.services;
 
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
+import edu.colostate.cs.cs414.tba.application.CLIControllerFacade;
 import edu.colostate.cs.cs414.tba.domain.Customer;
 import edu.colostate.cs.cs414.tba.domain.Equipment;
 import edu.colostate.cs.cs414.tba.domain.Manager;
 import edu.colostate.cs.cs414.tba.domain.Trainer;
 import edu.colostate.cs.cs414.tba.domain.WorkoutRoutine;
-import edu.colostate.cs.cs414.tba.services.CLIController;
-import edu.colostate.cs.cs414.tba.services.CLIControllerFacade;
 
 /**
  * GymSystem represents the overall system

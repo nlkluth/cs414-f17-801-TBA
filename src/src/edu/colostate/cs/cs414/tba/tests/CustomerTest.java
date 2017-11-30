@@ -9,12 +9,12 @@ import java.util.Set;
 import org.junit.Before;
 import org.junit.Test;
 
+import edu.colostate.cs.cs414.tba.application.Membership;
 import edu.colostate.cs.cs414.tba.domain.Address;
 import edu.colostate.cs.cs414.tba.domain.Customer;
 import edu.colostate.cs.cs414.tba.domain.Insurance;
 import edu.colostate.cs.cs414.tba.domain.PersonalInformation;
 import edu.colostate.cs.cs414.tba.domain.WorkoutRoutine;
-import edu.colostate.cs.cs414.tba.gymmanagement.Membership;
 
 public class CustomerTest {
 	private Customer customer;

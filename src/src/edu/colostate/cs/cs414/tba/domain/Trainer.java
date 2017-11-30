@@ -1,7 +1,7 @@
 package edu.colostate.cs.cs414.tba.domain;
 
-import edu.colostate.cs.cs414.tba.gymmanagement.Availability;
-import edu.colostate.cs.cs414.tba.gymmanagement.User;
+import edu.colostate.cs.cs414.tba.application.Availability;
+import edu.colostate.cs.cs414.tba.application.User;
 
 /**
  * Created by manager, can manage customers

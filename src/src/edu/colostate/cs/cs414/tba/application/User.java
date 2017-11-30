@@ -1,4 +1,4 @@
-package edu.colostate.cs.cs414.tba.gymmanagement;
+package edu.colostate.cs.cs414.tba.application;
 
 import edu.colostate.cs.cs414.tba.domain.Address;
 import edu.colostate.cs.cs414.tba.domain.Insurance;

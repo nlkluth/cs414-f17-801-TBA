@@ -3,8 +3,8 @@ package edu.colostate.cs.cs414.tba.domain;
 import java.util.HashSet;
 import java.util.Set;
 
-import edu.colostate.cs.cs414.tba.gymmanagement.Membership;
-import edu.colostate.cs.cs414.tba.gymmanagement.User;
+import edu.colostate.cs.cs414.tba.application.Membership;
+import edu.colostate.cs.cs414.tba.application.User;
 
 /**
  * Customers are created by managers and managed by trainers

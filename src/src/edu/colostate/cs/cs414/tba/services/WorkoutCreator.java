@@ -4,13 +4,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import edu.colostate.cs.cs414.tba.application.GymSystem;
+import edu.colostate.cs.cs414.tba.application.ExerciseBuilder;
 import edu.colostate.cs.cs414.tba.domain.Customer;
 import edu.colostate.cs.cs414.tba.domain.Equipment;
 import edu.colostate.cs.cs414.tba.domain.Exercise;
 import edu.colostate.cs.cs414.tba.domain.Trainer;
 import edu.colostate.cs.cs414.tba.domain.WorkoutRoutine;
-import edu.colostate.cs.cs414.tba.gymmanagement.ExerciseBuilder;
 
 public class WorkoutCreator {
 	private ExerciseBuilder exerciseBuilder;
