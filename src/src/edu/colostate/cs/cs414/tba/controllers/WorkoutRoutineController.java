@@ -2,31 +2,31 @@ package edu.colostate.cs.cs414.tba.controllers;
 
 import java.util.Set;
 
-import edu.colostate.cs.cs414.tba.domain.Trainer;
+import edu.colostate.cs.cs414.tba.domain.WorkoutRoutine;
 
-public class TrainerController implements Controller<Trainer> {
-	public Trainer create() {
+public class WorkoutRoutineController implements Controller<WorkoutRoutine> {
+	public WorkoutRoutine create() {
 		return null;
 	}
 	
-	public Trainer update() {
+	public WorkoutRoutine update() {
 		return null;
 	}
-
+	
 	@Override
-	public Set<Trainer> getAll() {
+	public Set<WorkoutRoutine> getAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Trainer get(int id) {
+	public WorkoutRoutine get(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Trainer get(Trainer item) {
+	public WorkoutRoutine get(WorkoutRoutine item) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -38,7 +38,7 @@ public class TrainerController implements Controller<Trainer> {
 	}
 
 	@Override
-	public void delete(Trainer item) {
+	public void delete(WorkoutRoutine item) {
 		// TODO Auto-generated method stub
 		
 	}
