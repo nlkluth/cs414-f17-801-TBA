@@ -17,6 +17,11 @@ import junit.framework.JUnit4TestAdapter;
 	PersonalInformationTest.class,
 	QualificationTest.class,
 	TrainerTest.class,
+	ExerciseModelTest.class,
+	EquipmentModelTest.class,
+	CustomerModelTest.class,
+	TrainerModelTest.class,
+	WorkoutRoutineModelTest.class,
 	WorkoutRoutineTest.class
 })
 

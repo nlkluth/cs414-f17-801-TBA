@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-import edu.colostate.cs.cs414.tba.application.CLIControllerFacade;
+import edu.colostate.cs.cs414.tba.application.CLIFacade;
 import edu.colostate.cs.cs414.tba.domain.Customer;
 import edu.colostate.cs.cs414.tba.domain.Equipment;
 import edu.colostate.cs.cs414.tba.domain.Manager;
@@ -22,7 +22,7 @@ public class GymSystem {
 	private Set<Customer> customers = new HashSet<Customer>();
 	private Set<Equipment> equipment = new HashSet<Equipment>();
 	private Set<WorkoutRoutine> workoutRoutines = new HashSet<WorkoutRoutine>();	
-	private static CLIControllerFacade cliController = new CLIControllerFacade();
+	private static CLIFacade cliController = new CLIFacade();
 	
 	public static void main(String args[]) throws IOException {
 		GymSystem gymSystem = new GymSystem();

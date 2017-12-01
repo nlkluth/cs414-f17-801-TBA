@@ -10,7 +10,7 @@ import edu.colostate.cs.cs414.tba.ui.CLI;
  * handles setting up CLI for running the app
  * Call start() to go through motions of starting app
  */
-public class CLIControllerFacade {
+public class CLIFacade {
 	private CLI cliController = CLI.getInstance();
 
 	public void start(Manager manager, GymSystem gymSystem) throws IOException {
