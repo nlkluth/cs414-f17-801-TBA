@@ -1,5 +1,6 @@
 package edu.colostate.cs.cs414.tba.domain;
 
+import java.rmi.server.UID;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,9 +13,11 @@ public class WorkoutRoutine {
 	private String name;
 	private Set<Customer> customers = new HashSet<Customer>();
 	private Set<Exercise> exercises = new HashSet<Exercise>();
+	private UID id;
 	
 	public WorkoutRoutine(String name) {
 		this.name = name;
+		this.id = new UID();
 	}
 
 	public Object getName() {
@@ -42,5 +45,9 @@ public class WorkoutRoutine {
 	public void resetExercises() {
 		// Used to update the routine by re-entering exercises to list
 		this.exercises = new HashSet<Exercise>();
+	}
+
+	public UID getId() {
+		return id;
 	}
 }

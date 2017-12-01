@@ -1,5 +1,7 @@
 package edu.colostate.cs.cs414.tba.domain;
 
+import java.rmi.server.UID;
+
 /**
  * Created by trainers and added to work out routines
  * may or may not use equipment from the inventory
@@ -15,6 +17,7 @@ public class Exercise {
 	private int sets;
 	private int reps;
 	private Equipment equipment;
+	private UID id;
 	
 	public Exercise(String name, String duration, int sets, int reps, Equipment equipment) {
 		this.name = name;
@@ -22,6 +25,7 @@ public class Exercise {
 		this.sets = sets;
 		this.reps = reps;
 		this.equipment = equipment;
+		this.id = new UID();
 	}
 
 	@Override
@@ -36,9 +40,22 @@ public class Exercise {
 		this.duration = duration;
 		this.sets = sets;
 		this.reps = reps;
-		this.equipment = equipment;
+		this.equipment = equipment;		
 	}
 	
+	@Override
+	public boolean equals(Object other) {
+		if ((other == null) || (this == null)) {
+	        return false;
+	    }
+		
+		return this.name.equals(((Exercise) other).getName());
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.getName().hashCode();
+	}
 
 	// May or may not use a piece of equipment
 	public void setEquipment(Equipment equipment) {
@@ -80,5 +97,9 @@ public class Exercise {
 	
 	public int getReps() {
 		return this.reps;
+	}
+
+	public UID getId() {
+		return this.id;
 	}
 }

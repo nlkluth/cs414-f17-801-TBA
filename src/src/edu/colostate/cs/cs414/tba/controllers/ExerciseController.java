@@ -1,46 +1,49 @@
 package edu.colostate.cs.cs414.tba.controllers;
 
+import java.rmi.server.UID;
 import java.util.Set;
 
+import edu.colostate.cs.cs414.tba.domain.Equipment;
 import edu.colostate.cs.cs414.tba.domain.Exercise;
+import edu.colostate.cs.cs414.tba.models.ExerciseModel;
 
 public class ExerciseController implements Controller<Exercise> {
-	public Exercise create() {
-		return null;
+	private ExerciseModel model;
+	
+	public ExerciseController() {
+		model = ExerciseModel.getInstance();
 	}
 	
-	public Exercise update() {
-		return null;
+	public Exercise create(String name, String duration, int sets, int reps, Equipment equipment) {
+		Exercise exercise = new Exercise(name, duration, sets, reps, equipment);
+		model.add(exercise);
+		return exercise;
 	}
 		
 	@Override
 	public Set<Exercise> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return model.get();
 	}
 
 	@Override
-	public Exercise get(int id) {
-		// TODO Auto-generated method stub
+	public Exercise get(UID id) {
+		for (Exercise exercise : model.get()) {
+			if (exercise.getId() == id) {
+				return exercise;
+			}
+		}
+		
 		return null;
 	}
 
 	@Override
 	public Exercise get(Exercise item) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void delete(int id) {
-		// TODO Auto-generated method stub
-		
+		return model.getIndividual(item);
 	}
 
 	@Override
 	public void delete(Exercise item) {
-		// TODO Auto-generated method stub
-		
+		model.remove(item);
 	}
 
 }

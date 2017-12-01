@@ -1,46 +1,49 @@
 package edu.colostate.cs.cs414.tba.controllers;
 
+import java.rmi.server.UID;
 import java.util.Set;
 
 import edu.colostate.cs.cs414.tba.domain.WorkoutRoutine;
+import edu.colostate.cs.cs414.tba.models.WorkoutRoutineModel;
 
 public class WorkoutRoutineController implements Controller<WorkoutRoutine> {
-	public WorkoutRoutine create() {
-		return null;
+	private WorkoutRoutineModel model;
+	
+	public WorkoutRoutineController() {
+		model = WorkoutRoutineModel.getInstance();
 	}
 	
-	public WorkoutRoutine update() {
-		return null;
+	public WorkoutRoutine create(String name) {
+		WorkoutRoutine workout = new WorkoutRoutine(name);
+		model.add(workout);
+		return workout;
 	}
 	
 	@Override
 	public Set<WorkoutRoutine> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return model.get();
 	}
 
 	@Override
-	public WorkoutRoutine get(int id) {
-		// TODO Auto-generated method stub
+	public WorkoutRoutine get(UID uid) {
+		Set<WorkoutRoutine> workouts = model.get();
+		for (WorkoutRoutine workout : workouts) {
+			if (workout.getId() == uid) {
+				return workout;
+			}
+		}
+		
 		return null;
 	}
 
 	@Override
 	public WorkoutRoutine get(WorkoutRoutine item) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void delete(int id) {
-		// TODO Auto-generated method stub
-		
+		return model.getIndividual(item);
 	}
 
 	@Override
 	public void delete(WorkoutRoutine item) {
-		// TODO Auto-generated method stub
-		
+		model.remove(item);
 	}
 
 }

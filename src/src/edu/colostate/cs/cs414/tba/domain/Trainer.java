@@ -1,5 +1,7 @@
 package edu.colostate.cs.cs414.tba.domain;
 
+import java.rmi.server.UID;
+
 import edu.colostate.cs.cs414.tba.application.Availability;
 import edu.colostate.cs.cs414.tba.application.User;
 
@@ -20,6 +22,7 @@ public class Trainer implements User {
 	private Availability availability;
 	private String username;
 	private String password;
+	private UID id;
 	
 	public Trainer(String username, String password, PersonalInformation personalInformation, Address address, Insurance insurance) {
 		this.personalInformation = personalInformation;
@@ -27,6 +30,7 @@ public class Trainer implements User {
 		this.insurance = insurance;
 		this.username = username;
 		this.password = password;
+		this.id = new UID();
 		availability = Availability.FULLTIME;
 	}
 	
@@ -79,5 +83,9 @@ public class Trainer implements User {
 	
 	public String getPassword() {
 		return this.password;
+	}
+
+	public UID getId() {
+		return this.id;
 	}
 }
