@@ -1,5 +1,6 @@
 package edu.colostate.cs.cs414.tba.domain;
 
+import java.rmi.server.UID;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -19,12 +20,14 @@ public class Customer implements User {
 	private Insurance insurance;
 	private Set<WorkoutRoutine> workouts = new HashSet<WorkoutRoutine>();
 	private Membership membership;
+	private UID id;
 	
 	public Customer(PersonalInformation personalInformation, Address address, Insurance insurance) {
 		this.personalInformation = personalInformation;
 		this.address = address;
 		this.insurance = insurance;
 		this.membership = Membership.ACTIVE;
+		this.id = new UID();
 	}
 	
 	public PersonalInformation getPersonalInformation() {
@@ -78,5 +81,9 @@ public class Customer implements User {
 		this.personalInformation = personalInformation;
 		this.address = address;
 		this.insurance = insurance;
+	}
+
+	public UID getId() {
+		return this.id;
 	}
 }

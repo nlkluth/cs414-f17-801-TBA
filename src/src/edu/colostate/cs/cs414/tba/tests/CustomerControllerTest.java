@@ -12,6 +12,7 @@ import org.junit.Test;
 import edu.colostate.cs.cs414.tba.controllers.CustomerController;
 import edu.colostate.cs.cs414.tba.domain.Customer;
 import edu.colostate.cs.cs414.tba.domain.Exercise;
+import edu.colostate.cs.cs414.tba.domain.PersonalInformation;
 
 public class CustomerControllerTest {
 	private CustomerController controller;
@@ -33,27 +34,55 @@ public class CustomerControllerTest {
 	
 	@Test
 	public void testCreate() throws IOException {
-		controller.create();
+		controller.create(
+				new PersonalInformation("Test", "User", null, null),
+				null,
+				null				
+		);
 		assertEquals(1, controller.getAll().size());
 	}
 	
 	@Test
 	public void testGetById() throws IOException {
-		
+		Customer customer = controller.create(
+				new PersonalInformation("Test", "User", null, null),
+				null,
+				null				
+		);
+		Customer found = controller.get(customer.getId());
+		assertEquals(true, found.equals(customer));
 	}
 	
 	@Test
 	public void testGetByObject() throws IOException {
-		
+		Customer customer = controller.create(
+				new PersonalInformation("Test", "User", null, null),
+				null,
+				null
+		);
+		Customer found = controller.get(customer);
+		assertEquals(true, found.equals(customer));
 	}
 	
 	@Test
 	public void testGetAll() throws IOException {
-		
+		controller.create(
+				new PersonalInformation("Test", "User", null, null),
+				null,
+				null
+		);
+		assertEquals(1, controller.getAll().size());
 	}
 	
 	@Test
 	public void testDeleteBObject() throws IOException {
-		
+		Customer customer = controller.create(
+				new PersonalInformation("Test", "User", null, null),
+				null,
+				null				
+		);
+		controller.delete(customer);
+		Customer found = controller.get(customer);
+		assertEquals(null, found);
 	}
 }
