@@ -18,6 +18,9 @@ public class TrainerModelTest {
 	
 	@Before public void setUp() {
 		trainerModel = TrainerModel.getInstance();
+		for (Trainer trainer : trainerModel.get()) {
+			trainerModel.remove(trainer);
+		}
 	}
 	
 	@Test
@@ -30,21 +33,21 @@ public class TrainerModelTest {
 	@Test
 	public void testGetItemEmpty() throws IOException {
 		// returns null if item isn't found
-		Trainer trainer = new Trainer("Other", null, new PersonalInformation("Testing", "User", null, null), null, null);
+		Trainer trainer = new Trainer("username", "pass");
 		Trainer found = trainerModel.getIndividual(trainer);
 		assertEquals(null, found);
 	}
   
 	@Test
 	public void testAddItem() throws IOException {
-		Trainer trainer = new Trainer(null, null, new PersonalInformation("Test", "User", null, null), null, null);
+		Trainer trainer = new Trainer("username", "pass");
 		trainerModel.add(trainer);
 		assertEquals(1, trainerModel.get().size());
 	}
   
 	@Test
 	public void testGetItem() throws IOException {
-		Trainer trainer = new Trainer(null, null, new PersonalInformation("Test", "User", null, null), null, null);
+		Trainer trainer = new Trainer("username", "pass");
 		trainerModel.add(trainer);
 		Trainer found = trainerModel.getIndividual(trainer);
 		assertEquals(true, found.equals(trainer));
@@ -52,10 +55,10 @@ public class TrainerModelTest {
   
 	@Test
 	public void testGetNotEmpty() throws IOException {
-		Trainer trainer = new Trainer(null, null, new PersonalInformation("Test", "User", null, null), null, null);
+		Trainer trainer = new Trainer("username", "pass");
 		trainerModel.add(trainer);
 		
-		Trainer trainer2 = new Trainer("Testing", null, new PersonalInformation("Test2", "User2", null, null), null, null);
+		Trainer trainer2 = new Trainer("username2", "pass");
 		trainerModel.add(trainer2);
 		
 		assertEquals(2, trainerModel.get().size());
@@ -63,13 +66,13 @@ public class TrainerModelTest {
   
 	@Test
 	public void testRemove() throws IOException {
-		Trainer trainer = new Trainer(null, null, new PersonalInformation("Test", "User", null, null), null, null);
+		Trainer trainer = new Trainer("username", "pass");
 		trainerModel.add(trainer);
 		
-		Trainer trainer2 = new Trainer("Testing", null, new PersonalInformation("Test2", "User2", null, null), null, null);
+		Trainer trainer2 = new Trainer("username2", "pass");
 		trainerModel.add(trainer2);
 		
-		Trainer trainer3 = new Trainer("Testing3", null, new PersonalInformation("Test3", "User3", null, null), null, null);
+		Trainer trainer3 = new Trainer("username3", "pass");
 		trainerModel.add(trainer3);
 		
 		trainerModel.remove(trainer2);

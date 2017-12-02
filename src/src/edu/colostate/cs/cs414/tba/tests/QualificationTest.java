@@ -35,11 +35,7 @@ public class QualificationTest {
 	
 	@Test
 	public void testAddTrainer() throws IOException {
-		Trainer trainer = new Trainer("user", "Password",
-			new PersonalInformation("Test", "User", "555-555-5555", "test@example.com"),
-			new Address("123", "4", "Denver", "CO", "80231"),
-			new Insurance("Blue Cross", new Address("123", "4", "Denver", "CO", "80211"))
-		);
+		Trainer trainer = new Trainer("username", "pass");
 		Set<Trainer> testSet = new HashSet<Trainer>();
 		testSet.add(trainer);
 		qualification.addTrainer(trainer);

@@ -38,11 +38,7 @@ public class WorkoutRoutineTest {
 	@Test
 	public void testAssignCustomer() throws IOException {
 		Set<Customer> customersTest = new HashSet<Customer>();
-		Customer customer = new Customer(
-				new PersonalInformation("Nathan", "Kluth", "555-555-5555", "test@example.com"),
-				new Address("213", "4", "Denver", "CO", "80231"),
-				new Insurance("Test", new Address("1223", "42", "Denver", "CO", "80231"))
-				);
+		Customer customer = new Customer("username", "pass");
 		customersTest.add(customer);
 		workoutRoutine.assignCustomer(customer);
 		assertEquals(true, customersTest.equals(workoutRoutine.getAssignedCustomers()));

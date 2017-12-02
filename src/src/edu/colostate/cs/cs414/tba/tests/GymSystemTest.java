@@ -30,11 +30,7 @@ public class GymSystemTest {
 	
 	@Test
 	public void testAddCustomer() throws IOException {
-		Customer customer = new Customer(
-				new PersonalInformation("Nathan", "Kluth", "444-444-4444", "test@example.com"),
-				new Address("123", "4", "Denver", "CO", "80231"),
-				new Insurance("Blue Cross", new Address("123", "4", "Denver", "CO", "80231"))
-				);
+		Customer customer = new Customer("username", "pass");
 		
 		gymSystem.addCustomer(customer);
 		assertEquals(true, customer.equals((Customer) gymSystem.getCustomers().toArray()[0]));
@@ -47,12 +43,7 @@ public class GymSystemTest {
 	
 	@Test
 	public void testAddTrainer() throws IOException {
-		Trainer trainer = new Trainer("username", "Password",
-				new PersonalInformation("Nathan", "Kluth", "444-444-4444", "test@example.com"),
-				new Address("123", "4", "Denver", "CO", "80231"),
-				new Insurance("Blue Cross", new Address("123", "4", "Denver", "CO", "80231"))
-				);
-		
+		Trainer trainer = new Trainer("username", "Password");
 		gymSystem.addTrainer(trainer);
 		assertEquals(true, trainer.equals(gymSystem.getTrainers().toArray()[0]));
 	}

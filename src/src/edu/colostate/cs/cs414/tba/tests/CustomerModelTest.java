@@ -18,6 +18,10 @@ public class CustomerModelTest {
 	
 	@Before public void setUp() {
 		customerModel = CustomerModel.getInstance();
+		// clear out model
+		for (Customer customer : customerModel.get()) {
+			customerModel.remove(customer);
+		}
 	}
 	  
 	@Test
@@ -30,20 +34,20 @@ public class CustomerModelTest {
 	@Test
 	public void testGetItemEmpty() throws IOException {
 		// returns a null if item isn't found
-		Customer customer = new Customer(new PersonalInformation("Testing", "User", null, null), null, null);
+		Customer customer = new Customer("username", "pass");
 		assertEquals(null, customerModel.getIndividual(customer));
 	}
 
 	@Test
 	public void testAddItem() throws IOException {
-		Customer customer = new Customer(new PersonalInformation("Test", "User", null, null), null, null);
+		Customer customer = new Customer("username", "pass");
 		customerModel.add(customer);
 		assertEquals(1, customerModel.get().size());
 	}
 
 	@Test
 	public void testGetItem() throws IOException {
-		Customer customer = new Customer(new PersonalInformation("Test", "User", null, null), null, null);;
+		Customer customer = new Customer("username", "pass");
 		customerModel.add(customer);
 		Customer found = customerModel.getIndividual(customer);
 		assertEquals(true, found.equals(customer));
@@ -51,10 +55,10 @@ public class CustomerModelTest {
 
 	@Test
 	public void testGetNotEmpty() throws IOException {
-		Customer customer = new Customer(new PersonalInformation("Test", "User", null, null), null, null);
+		Customer customer = new Customer("username", "pass");
 		customerModel.add(customer);
 		
-		Customer customer2 = new Customer(new PersonalInformation("Test2", "User2", null, null), null, null);
+		Customer customer2 = new Customer("username2", "pass");
 		customerModel.add(customer2);
 		
 		assertEquals(2, customerModel.get().size());		
@@ -62,13 +66,13 @@ public class CustomerModelTest {
 
 	@Test
 	public void testRemove() throws IOException {
-		Customer customer = new Customer(new PersonalInformation("Test", "User", null, null), null, null);
+		Customer customer = new Customer("username", "pass");
 		customerModel.add(customer);
 		
-		Customer customer2 = new Customer(new PersonalInformation("Test2", "User2", null, null), null, null);
+		Customer customer2 = new Customer("username2", "pass");
 		customerModel.add(customer2);
 		
-		Customer customer3 = new Customer(new PersonalInformation("Tes3t", "Use3r", null, null), null, null);
+		Customer customer3 = new Customer("username3", "pass");
 		customerModel.add(customer3);
 		
 		customerModel.remove(customer2);
