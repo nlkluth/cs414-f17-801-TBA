@@ -1,6 +1,7 @@
 package edu.colostate.cs.cs414.tba.domain;
 
 import java.io.File;
+import java.rmi.server.UID;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,11 +17,13 @@ public class Equipment {
 	private File img;
 	private String quality;
 	private Set<Exercise> exercises = new HashSet<Exercise>();
+	private UID id;
 
 	public Equipment(String name, File img, String quality) {
 		this.name = name;
 		this.img = img;
 		this.quality = quality;
+		this.id = new UID();
 	}
 	
 	public File getImage() {
@@ -64,5 +67,9 @@ public class Equipment {
 		this.name = name;
 		this.img = file;
 		this.quality = quality;
+	}
+
+	public UID getId() {
+		return this.id;
 	}
 }
