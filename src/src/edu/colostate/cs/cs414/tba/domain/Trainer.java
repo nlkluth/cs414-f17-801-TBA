@@ -1,5 +1,8 @@
 package edu.colostate.cs.cs414.tba.domain;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import edu.colostate.cs.cs414.tba.application.Availability;
 import edu.colostate.cs.cs414.tba.application.User;
 
@@ -10,6 +13,7 @@ import edu.colostate.cs.cs414.tba.application.User;
  */
 public class Trainer extends User {
 	private Availability availability;
+	private Set<Qualification> qualifications = new HashSet<Qualification>();
 	
 	public Trainer(String username, String password) {
 		super(username, password);	
@@ -23,5 +27,13 @@ public class Trainer extends User {
 	
 	public Availability getAvailability() {
 		return this.availability;
+	}
+	
+	public void addQualification(Qualification qualification) {
+		this.qualifications.add(qualification);
+	}
+	
+	public Set<Qualification> getQualifications() {
+		return this.qualifications;
 	}
 }

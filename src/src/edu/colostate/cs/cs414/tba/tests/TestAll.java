@@ -6,21 +6,29 @@ import org.junit.runners.Suite;
 import junit.framework.JUnit4TestAdapter;
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ 
-	EquipmentTest.class,
+@Suite.SuiteClasses({
 	AddressTest.class,
+	CustomerControllerTest.class,
+	CustomerModelTest.class,
 	CustomerTest.class,
+	EquipmentControllerTest.class,
+	EquipmentModelTest.class,
+	EquipmentTest.class,
+	ExerciseControllerTest.class,
+	ExerciseModelTest.class,
 	ExerciseTest.class,
 	GymSystemTest.class,
 	InsuranceTest.class,
+	ManagerControllerTest.class,
 	ManagerTest.class,
 	PersonalInformationTest.class,
 	QualificationTest.class,
-	TrainerTest.class,
-	ExerciseModelTest.class,
-	EquipmentModelTest.class,
-	CustomerModelTest.class,
+	QualificationControllerTest.class,
+	QualificationModelTest.class,
+	TrainerControllerTest.class,
 	TrainerModelTest.class,
+	TrainerTest.class,
+	WorkoutRoutineControllerTest.class,
 	WorkoutRoutineModelTest.class,
 	WorkoutRoutineTest.class
 })

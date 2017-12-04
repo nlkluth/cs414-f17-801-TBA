@@ -33,68 +33,32 @@ public class TrainerControllerTest {
 	
 	@Test
 	public void testGetById() throws IOException {
-		Trainer trainer = controller.create(
-				"Test",
-				"pass",
-				new PersonalInformation("Test", "user", null, null),
-				null,
-				null
-		);
+		Trainer trainer = controller.create("Test", "pass");
 		Trainer found = controller.get(trainer.getId());
 		assertEquals(true, found.equals(trainer));
 	}
 	
 	@Test
 	public void testGetByObject() throws IOException {
-		Trainer trainer = controller.create(
-				"Test",
-				"pass",
-				new PersonalInformation("Test", "user", null, null),
-				null,
-				null
-		);
+		Trainer trainer = controller.create("Test", "pass");
 		Trainer found = controller.get(trainer);
 		assertEquals(true, found.equals(trainer));
 	}
 	
 	@Test
 	public void testGetAll() throws IOException {
-		controller.create(
-				"Test",
-				"pass",
-				new PersonalInformation("Test", "user", null, null),
-				null,
-				null
-		);
+		controller.create("Test", "pass");
 		
-		controller.create(
-				"Test2",
-				"pass",
-				new PersonalInformation("Test2", "user2", null, null),
-				null,
-				null
-		);
+		controller.create("Test2", "pass2");
 		
 		assertEquals(2, controller.getAll().size());
 	}
 	
 	@Test
 	public void testDeleteByObject() throws IOException {
-		Trainer trainer = controller.create(
-				"Test",
-				"pass",
-				new PersonalInformation("Test", "user", null, null),
-				null,
-				null
-		);
+		Trainer trainer = controller.create("Test", "pass");
 		
-		controller.create(
-				"Test2",
-				"pass",
-				new PersonalInformation("Test2", "user2", null, null),
-				null,
-				null
-		);
+		controller.create("Test2", "pass2");
 		
 		controller.delete(trainer);
 		assertEquals(1, controller.getAll().size());

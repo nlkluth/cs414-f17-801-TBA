@@ -5,15 +5,24 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import edu.colostate.cs.cs414.tba.application.Availability;
+import edu.colostate.cs.cs414.tba.application.Membership;
+import edu.colostate.cs.cs414.tba.application.User;
+import edu.colostate.cs.cs414.tba.application.UserFactory;
 import edu.colostate.cs.cs414.tba.controllers.CustomerController;
 import edu.colostate.cs.cs414.tba.controllers.EquipmentController;
 import edu.colostate.cs.cs414.tba.controllers.ExerciseController;
 import edu.colostate.cs.cs414.tba.controllers.ManagerController;
+import edu.colostate.cs.cs414.tba.controllers.QualificationController;
 import edu.colostate.cs.cs414.tba.controllers.TrainerController;
 import edu.colostate.cs.cs414.tba.controllers.WorkoutRoutineController;
+import edu.colostate.cs.cs414.tba.domain.Address;
 import edu.colostate.cs.cs414.tba.domain.Customer;
 import edu.colostate.cs.cs414.tba.domain.Equipment;
+import edu.colostate.cs.cs414.tba.domain.Insurance;
 import edu.colostate.cs.cs414.tba.domain.Manager;
+import edu.colostate.cs.cs414.tba.domain.PersonalInformation;
+import edu.colostate.cs.cs414.tba.domain.Qualification;
 import edu.colostate.cs.cs414.tba.domain.Trainer;
 import edu.colostate.cs.cs414.tba.domain.WorkoutRoutine;
 import edu.colostate.cs.cs414.tba.services.GymSystem;
@@ -26,17 +35,15 @@ public class CLI {
 	private TrainerController trainerController;
 	private CustomerController customerController;
 	private EquipmentController equipmentController;
-	private ManagerController managerController;
-	private ExerciseController exerciseController;
 	private WorkoutRoutineController workoutRoutineController;
+	private QualificationController qualificationController;
+	private UserFactory userFactory;
 	private Manager manager;
 	private GymSystem gymSystem;
 	private Object user;		
 	private static CLI uniqueInstance;	
 	private WorkoutCreator workoutCreator = new WorkoutCreator();
-	private CustomerCreator customerCreator = new CustomerCreator();
-	private TrainerCreator trainerCreator = new TrainerCreator();
-	
+
 	private CLI() {}
 	
 	public static CLI getInstance() {
@@ -183,6 +190,129 @@ public class CLI {
 				+ commandsForUser);
 	}
 	
+	// 
+	// Helper methods for capturing input from user
+	//
+	private PersonalInformation capturePersonalInformation() throws IOException {
+		System.out.println("\nEnter Personal Information");
+		System.out.println("Name:");
+		String newName = reader.readLine();
+		System.out.println("Last Name:");
+		String newLast = reader.readLine();
+		System.out.println("Phone:");
+		String phone = reader.readLine();
+		System.out.println("email:");
+		String email = reader.readLine();
+		return new PersonalInformation(newName, newLast, phone, email);
+	}
+	
+	private Address captureAddress() throws IOException {
+		System.out.println("\nEnter Address information");
+		System.out.println("Street");
+		String street = reader.readLine();
+		System.out.println("Street 2");
+		String street2 = reader.readLine();
+		System.out.println("City");
+		String city = reader.readLine();
+		System.out.println("State");
+		String state = reader.readLine();
+		System.out.println("Zip");
+		String zip = reader.readLine();
+		return new Address(street, street2, city, state, zip);		
+	}
+	
+	public Insurance captureInsurance() throws IOException {
+		System.out.println("\nEnter insurance information");
+		System.out.println("Insurance name");
+		String insuranceName = reader.readLine();
+		System.out.println("Insurance street");
+		String insuranceStreet = reader.readLine();
+		System.out.println("Insurance street 2");
+		String insuranceStreet2 = reader.readLine();
+		System.out.println("Insurance city");
+		String insuranceCity = reader.readLine();
+		System.out.println("Insurance state");
+		String insuranceState = reader.readLine();
+		System.out.println("Insurance zip");
+		String insuranceZip = reader.readLine();
+		Address insuranceAddress = new Address(insuranceStreet, insuranceStreet2, insuranceCity, insuranceState, insuranceZip);
+		return new Insurance(insuranceName, insuranceAddress);
+	}
+	
+	/**
+	 * Creates a user via the UserFactory class, user is abstract class inherited by all user types in system
+	 * @param type - the type of user to create trainer | manager | customer
+	 * @return User, the user Created, cast to Type to use
+	 * @throws IOException
+	 */
+	private User captureUserInfo(String type) throws IOException {
+		System.out.println("\nEnter "+ type + " username");
+		String username = reader.readLine();
+		if (username == null) {
+			username = "";
+		}
+		
+		System.out.println("\nEnter " + type + " password");
+		String password = reader.readLine();
+		if (password == null) {
+			password = "";
+		}
+		
+		User user = userFactory.createUser("customer", username, password);
+		user.setPersonalInformation(this.capturePersonalInformation());
+		user.setAddress(this.captureAddress());
+		user.setInsurance(this.captureInsurance());
+		
+		return user;
+	}
+	
+	/**
+	 * Method for capturing information about trainer availability
+	 * @param trainer - the trainer to assign availability to
+	 * @throws IOException
+	 */
+	private void captureAvailability(Trainer trainer) throws IOException {
+		System.out.println("What is the availability for this trainer?");
+		System.out.println("(Full time, Part time, seasonal, seasonal part time, unavailable)");
+		switch (reader.readLine().toLowerCase()) {
+		case "full time":
+		case "fulltime":
+			trainer.setAvailability(Availability.FULLTIME);
+			break;
+		case "part time":
+		case "parttime":
+			trainer.setAvailability(Availability.PARTTIME);
+			break;
+		case "seasonal":
+			trainer.setAvailability(Availability.SEASONAL_FULLTIME);
+			break;
+		case "seasonal part time":
+		case "seasonal parttime":
+			trainer.setAvailability(Availability.SEASONAL_PARTTIME);
+		default:
+			trainer.setAvailability(Availability.UNAVAILABLE);
+		}
+	}
+	
+	/**
+	 * Method for capturing information about trainer qualifications
+	 * @param trianer - the trainer to assign qualifications to
+	 * @throws IOException
+	 */
+	private void captureQualifications(Trainer trainer) throws IOException {
+		System.out.println("What qualificaitons does this trainer have? (comma separated)");
+		String[] qualifications = reader.readLine().split(",");
+		for (String qualification : qualifications) {
+			Qualification q = qualificationController.create(qualification, trainer);
+			trainer.addQualification(q);
+			
+		}
+	}
+	
+	// 
+	// End Helper methods for capturing input from user
+	//
+	
 	private void createWorkout() throws IOException {
 		if (this.manager.equals(this.user)) {
 			System.out.println("Not Authorized");
@@ -199,7 +329,7 @@ public class CLI {
 			return;
 		}
 		
-		workoutCreator.assignWorkout((Trainer) this.user, this.gymSystem);
+		workoutCreator.assignWorkout((Trainer) this.user);
 	}
 
 	private void searchCustomers() {
@@ -241,7 +371,21 @@ public class CLI {
 			return;
 		}
 		
-		customerCreator.modifyCustomer(this.manager, this.gymSystem);
+		System.out.println("Enter customer first name");
+		String name = reader.readLine();
+		System.out.println("Enter customer last name");
+		String lastName = reader.readLine();
+		
+		for (Customer customer : customerController.getAll()) {
+            if (customer.getPersonalInformation().getName().equals(name + " " + lastName)) {
+            	customer.setPersonalInformation(this.capturePersonalInformation());
+            	customer.setAddress(this.captureAddress());
+            	customer.setInsurance(this.captureInsurance());
+            	return;
+            }
+		}
+		
+		System.out.println("Error: no customer found with that name");
 	}
 
 	private void addEquipment() throws IOException {
@@ -278,7 +422,16 @@ public class CLI {
 			return;
 		}
 		
-		customerCreator.registerCustomer(this.manager);
+		Customer customer = (Customer) this.captureUserInfo("customer");
+		System.out.println("Is customer active?");
+		String YN = reader.readLine();
+		if (YN == null) {
+			YN = "Y";
+		}
+		
+		if (YN.toUpperCase() == "N") {
+			customer.setActive(Membership.INACTIVE);
+		}
 	}
 
 	private void hireTrainer() throws IOException {
@@ -287,7 +440,8 @@ public class CLI {
 			return;
 		}
 		
-		trainerCreator.createTrainer(this.manager);
+		Trainer trainer = (Trainer) this.captureUserInfo("trainer");
+		this.captureAvailability(trainer);
 	}
 	
 	private void modifyTrainer() throws IOException {
@@ -296,7 +450,21 @@ public class CLI {
 			return;
 		}
 		
-		trainerCreator.modifyTrainer(this.manager, this.gymSystem);
+		System.out.println("Enter trainer first name");
+		String name = reader.readLine();
+		System.out.println("Enter trainer last name");
+		String lastName = reader.readLine();
+		
+		for (Trainer trainer : trainerController.getAll()) {
+            if (trainer.getPersonalInformation().getName().equals(name + " " + lastName)) {
+            	trainer.setPersonalInformation(this.capturePersonalInformation());
+            	trainer.setAddress(this.captureAddress());
+            	trainer.setInsurance(this.captureInsurance());
+            	return;
+            }
+		}
+		
+		System.out.println("Error: no trainer found with that name");
 	}
 
 	private void modifyEquipment() throws IOException {

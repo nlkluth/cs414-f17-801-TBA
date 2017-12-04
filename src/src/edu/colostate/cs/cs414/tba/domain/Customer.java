@@ -1,5 +1,8 @@
 package edu.colostate.cs.cs414.tba.domain;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import edu.colostate.cs.cs414.tba.application.Membership;
 import edu.colostate.cs.cs414.tba.application.User;
 
@@ -10,6 +13,7 @@ import edu.colostate.cs.cs414.tba.application.User;
  */
 public class Customer extends User {
 	private Membership membership;
+	private Set<WorkoutRoutine> workouts = new HashSet<WorkoutRoutine>();
 	
 	public Customer(String username, String password) {
 		super(username, password);
@@ -24,13 +28,13 @@ public class Customer extends User {
 	public Membership getMembership() {
 		return this.membership;
 	}
-//
-//	public Set<WorkoutRoutine> getWorkoutRoutines() {
-//		return this.workouts;
-//	}
-//
-//	// customers may be assigned by trainers to workout routines
-//	public void addWorkoutRoutine(WorkoutRoutine workout) {
-//		this.workouts.add(workout);
-//	}
+
+	public Set<WorkoutRoutine> getWorkoutRoutines() {
+		return this.workouts;
+	}
+
+	// customers may be assigned by trainers to workout routines
+	public void addWorkoutRoutine(WorkoutRoutine workout) {
+		this.workouts.add(workout);
+	}
 }

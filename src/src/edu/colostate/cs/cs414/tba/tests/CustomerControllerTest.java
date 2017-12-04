@@ -34,53 +34,33 @@ public class CustomerControllerTest {
 	
 	@Test
 	public void testCreate() throws IOException {
-		controller.create(
-				new PersonalInformation("Test", "User", null, null),
-				null,
-				null				
-		);
+		controller.create("username", "password");
 		assertEquals(1, controller.getAll().size());
 	}
 	
 	@Test
 	public void testGetById() throws IOException {
-		Customer customer = controller.create(
-				new PersonalInformation("Test", "User", null, null),
-				null,
-				null				
-		);
+		Customer customer = controller.create("username", "password");
 		Customer found = controller.get(customer.getId());
 		assertEquals(true, found.equals(customer));
 	}
 	
 	@Test
 	public void testGetByObject() throws IOException {
-		Customer customer = controller.create(
-				new PersonalInformation("Test", "User", null, null),
-				null,
-				null
-		);
+		Customer customer = controller.create("username", "password");
 		Customer found = controller.get(customer);
 		assertEquals(true, found.equals(customer));
 	}
 	
 	@Test
 	public void testGetAll() throws IOException {
-		controller.create(
-				new PersonalInformation("Test", "User", null, null),
-				null,
-				null
-		);
+		controller.create("username", "password");
 		assertEquals(1, controller.getAll().size());
 	}
 	
 	@Test
 	public void testDeleteBObject() throws IOException {
-		Customer customer = controller.create(
-				new PersonalInformation("Test", "User", null, null),
-				null,
-				null				
-		);
+		Customer customer = controller.create("username", "password");
 		controller.delete(customer);
 		Customer found = controller.get(customer);
 		assertEquals(null, found);
