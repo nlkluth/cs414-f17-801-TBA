@@ -25,12 +25,12 @@ public class TrainerTest {
 	
 	@Test
 	public void testGetUsername() throws IOException {
-		assertEquals("user", trainer.getUsername());
+		assertEquals("username", trainer.getUsername());
 	}
 	
 	@Test
 	public void testGetPassword() throws IOException {
-		assertEquals("password", trainer.getPassword());
+		assertEquals("pass", trainer.getPassword());
 	}
 	
 	@Test

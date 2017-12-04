@@ -30,12 +30,12 @@ import edu.colostate.cs.cs414.tba.services.GymSystem;
  */
 public class CLI {
 	private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-	private TrainerController trainerController;
-	private CustomerController customerController;
-	private EquipmentController equipmentController;
-	private WorkoutRoutineController workoutRoutineController;
-	private QualificationController qualificationController;
-	private UserFactory userFactory;
+	private TrainerController trainerController = new TrainerController();
+	private CustomerController customerController = new CustomerController();
+	private EquipmentController equipmentController = new EquipmentController();
+	private WorkoutRoutineController workoutRoutineController = new WorkoutRoutineController();
+	private QualificationController qualificationController = new QualificationController();
+	private UserFactory userFactory = new UserFactory();
 	private Manager manager;
 	private GymSystem gymSystem;
 	private Object user;		
@@ -256,7 +256,7 @@ public class CLI {
 			password = "";
 		}
 		
-		User user = userFactory.createUser("customer", username, password);
+		User user = userFactory.createUser(type, username, password);
 		user.setPersonalInformation(this.capturePersonalInformation());
 		user.setAddress(this.captureAddress());
 		user.setInsurance(this.captureInsurance());
@@ -327,7 +327,7 @@ public class CLI {
 			return;
 		}
 		
-		workoutCreator.assignWorkout((Trainer) this.user);
+		workoutCreator.assignWorkout();
 	}
 
 	private void searchCustomers() {
@@ -379,6 +379,7 @@ public class CLI {
             	customer.setPersonalInformation(this.capturePersonalInformation());
             	customer.setAddress(this.captureAddress());
             	customer.setInsurance(this.captureInsurance());
+            	System.out.println("\n *** Customer updated in system *** \n");
             	return;
             }
 		}
@@ -421,7 +422,7 @@ public class CLI {
 		}
 		
 		Customer customer = (Customer) this.captureUserInfo("customer");
-		System.out.println("Is customer active?");
+		System.out.println("Is customer active? (Y / N)");
 		String YN = reader.readLine();
 		if (YN == null) {
 			YN = "Y";
@@ -430,6 +431,9 @@ public class CLI {
 		if (YN.toUpperCase() == "N") {
 			customer.setActive(Membership.INACTIVE);
 		}
+		
+		customerController.create(customer);		
+		System.out.println("\n *** Customer added to system *** \n");
 	}
 
 	private void hireTrainer() throws IOException {
@@ -440,6 +444,10 @@ public class CLI {
 		
 		Trainer trainer = (Trainer) this.captureUserInfo("trainer");
 		this.captureAvailability(trainer);
+		this.captureQualifications(trainer);
+		
+		trainerController.create(trainer);
+		System.out.println("\n *** Trainer added to system *** \n");
 	}
 	
 	private void modifyTrainer() throws IOException {
@@ -458,6 +466,7 @@ public class CLI {
             	trainer.setPersonalInformation(this.capturePersonalInformation());
             	trainer.setAddress(this.captureAddress());
             	trainer.setInsurance(this.captureInsurance());
+            	System.out.println("\n *** Trainer modified in system *** \n");
             	return;
             }
 		}
@@ -474,9 +483,9 @@ public class CLI {
 		System.out.println("Enter name of equipment");
 		String name = reader.readLine();
 		
-		for (Equipment equipment : equipmentController.getAll()) {
+		for (Equipment equipment : equipmentController.getAll()) {		
 			if (equipment.getName().equals(name)) {
-				System.out.println("\nEnter name of equipment");
+				System.out.println("\nEnter new name of equipment");
 				String newName = reader.readLine();
 				if (newName == null) {
 					newName = "";
@@ -496,6 +505,7 @@ public class CLI {
 				
 				equipment.update(newName, new File(file), quality);				
 				System.out.println("\n ***Equipment updated in system*** \n");
+				return;
 			}
 		}
 		

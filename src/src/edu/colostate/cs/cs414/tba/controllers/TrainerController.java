@@ -20,7 +20,7 @@ public class TrainerController implements Controller<Trainer> {
 	}
 
 	@Override
-	public Set<Trainer> getAll() {
+	public Set<Trainer> getAll() {		
 		return model.get();
 	}
 
@@ -43,6 +43,13 @@ public class TrainerController implements Controller<Trainer> {
 	@Override
 	public void delete(Trainer item) {
 		model.remove(item);
+	}
+
+	/**
+	 * Used by factory to add customer after object was created
+	 */
+	public void create(Trainer trainer) {
+		model.add(trainer);
 	}
 
 }

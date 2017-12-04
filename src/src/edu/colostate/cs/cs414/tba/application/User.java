@@ -66,6 +66,11 @@ public abstract class User {
 	}
 	
 	@Override
+	public String toString() {
+		return this.username + " " + this.personalInformation.getName();
+	}
+	
+	@Override
 	public boolean equals(Object other) {
 		if ((other == null) || (this == null)) {
 	        return false;

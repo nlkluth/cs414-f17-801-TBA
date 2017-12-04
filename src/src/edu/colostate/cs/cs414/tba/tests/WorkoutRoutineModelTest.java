@@ -61,7 +61,7 @@ public class WorkoutRoutineModelTest {
 		WorkoutRoutine workout2 = new WorkoutRoutine("Test2");
 		workoutRoutineModel.add(workout2);
 		
-		assertEquals(3, workoutRoutineModel.get().size());
+		assertEquals(2, workoutRoutineModel.get().size());
 	}
 	
 	@Test

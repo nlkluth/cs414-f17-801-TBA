@@ -27,6 +27,11 @@ public class WorkoutRoutine {
 	public Object getAssignedCustomers() {
 		return this.customers;
 	}
+	
+	@Override
+	public String toString() {
+		return this.name;
+	}
 
 	// a list of exercises is assigned to a workout routine
 	public Object getExercises() {

@@ -44,6 +44,13 @@ public class CustomerController implements Controller<Customer> {
 	public void delete(Customer item) {
 		model.remove(item);
 	}
+
+	/**
+	 * Used by factory to add customer after object was created
+	 */
+	public void create(Customer customer) {
+		model.add(customer);
+	}
 	
 
 }

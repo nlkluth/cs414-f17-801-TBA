@@ -34,11 +34,11 @@ public class WorkoutCreator {
 		System.out.print("\n ***Workout routine added to system*** \n");
 	}
 
-	public void assignWorkout(Trainer user) throws IOException {
+	public void assignWorkout() throws IOException {
 		Customer customer = null;
 		WorkoutRoutine workout = null;
 		
-		while (user == null) {
+		while (customer == null) {
 			System.out.println("What is the customer firstName?");
 			String name = reader.readLine();
 			System.out.println("What is the customer lastName?");
@@ -49,6 +49,10 @@ public class WorkoutCreator {
 					customer = foundCustomer;
 					break;
 				}
+			}
+			
+			if (customer != null) {
+				break;
 			}
 			
 			System.out.println("User not found");
@@ -63,6 +67,10 @@ public class WorkoutCreator {
 					workout = foundWorkout;
 					break;
 				}
+			}
+			
+			if (workout != null) {
+				break;
 			}
 			
 			System.out.println("WorkoutRoutine not found");
