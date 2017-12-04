@@ -22,4 +22,7 @@ public class GymSystemTest {
 	@Before public void setUp() {
 		gymSystem = new GymSystem();
 	}
+	
+	// Tests for gym system setup and overall changes would go here
+	// currently in this light implementation there are none
 }

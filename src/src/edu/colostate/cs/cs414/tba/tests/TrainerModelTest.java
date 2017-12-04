@@ -18,7 +18,8 @@ public class TrainerModelTest {
 	
 	@Before public void setUp() {
 		trainerModel = TrainerModel.getInstance();
-		for (Trainer trainer : trainerModel.get()) {
+		while (trainerModel.get().size() != 0) {
+			Trainer trainer = trainerModel.get().iterator().next();
 			trainerModel.remove(trainer);
 		}
 	}

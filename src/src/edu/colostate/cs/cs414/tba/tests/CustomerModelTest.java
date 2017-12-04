@@ -19,7 +19,8 @@ public class CustomerModelTest {
 	@Before public void setUp() {
 		customerModel = CustomerModel.getInstance();
 		// clear out model
-		for (Customer customer : customerModel.get()) {
+		while(customerModel.get().size() != 0) {
+			Customer customer = customerModel.get().iterator().next();
 			customerModel.remove(customer);
 		}
 	}

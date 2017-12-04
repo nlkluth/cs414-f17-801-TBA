@@ -42,20 +42,20 @@ public class CustomerTest {
 		assertEquals("Blue Cross:\n1234 4, Denver CO, 80231", customer.getInsurance().toString());
 	}
 	
-//	@Test
-//	public void testGetWorkoutRoutines() throws IOException {
-//		Set<WorkoutRoutine> emptyWorkouts = new HashSet<WorkoutRoutine>();
-//		assertEquals(true, emptyWorkouts.equals(customer.getWorkoutRoutines()));
-//	}
-//	
-//	@Test
-//	public void testAssignToWorkoutRoutine() throws IOException {
-//		Set<WorkoutRoutine> workouts = new HashSet<WorkoutRoutine>();
-//		WorkoutRoutine workout = new WorkoutRoutine("Workout2");
-//		workouts.add(workout);
-//		customer.addWorkoutRoutine(workout);
-//		assertEquals(true, workouts.equals(customer.getWorkoutRoutines()));
-//	}
+	@Test
+	public void testGetWorkoutRoutines() throws IOException {
+		Set<WorkoutRoutine> emptyWorkouts = new HashSet<WorkoutRoutine>();
+		assertEquals(true, emptyWorkouts.equals(customer.getWorkoutRoutines()));
+	}
+	
+	@Test
+	public void testAssignToWorkoutRoutine() throws IOException {
+		Set<WorkoutRoutine> workouts = new HashSet<WorkoutRoutine>();
+		WorkoutRoutine workout = new WorkoutRoutine("Workout2");
+		workouts.add(workout);
+		customer.addWorkoutRoutine(workout);
+		assertEquals(true, workouts.equals(customer.getWorkoutRoutines()));
+	}
 	
 	@Test
 	public void testGetMembership() throws IOException {

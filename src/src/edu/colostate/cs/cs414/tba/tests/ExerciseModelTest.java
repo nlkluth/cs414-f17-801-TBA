@@ -17,6 +17,10 @@ public class ExerciseModelTest {
 	
 	@Before public void setUp() {
 		exerciseModel = ExerciseModel.getInstance();
+		while (exerciseModel.get().size() != 0) {
+			Exercise exercise = exerciseModel.get().iterator().next();
+			exerciseModel.remove(exercise);
+		}
 	}
 	
 	@Test
@@ -56,7 +60,7 @@ public class ExerciseModelTest {
 		Exercise exercise2 = new Exercise("Exercise2", null, 0, 0, null);
 		exerciseModel.add(exercise2);
 		
-		assertEquals(3, exerciseModel.get().size());
+		assertEquals(2, exerciseModel.get().size());
 	}
 
 	@Test

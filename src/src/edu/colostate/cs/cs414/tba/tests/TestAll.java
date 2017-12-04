@@ -19,7 +19,6 @@ import junit.framework.JUnit4TestAdapter;
 	ExerciseTest.class,
 	GymSystemTest.class,
 	InsuranceTest.class,
-	ManagerControllerTest.class,
 	ManagerTest.class,
 	PersonalInformationTest.class,
 	QualificationTest.class,

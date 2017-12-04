@@ -18,6 +18,10 @@ public class EquipmentModelTest {
 	
 	@Before public void setUp() {  
 		equipmentModel = EquipmentModel.getInstance();
+		while (equipmentModel.get().size() != 0) {
+			Equipment eq = equipmentModel.get().iterator().next();
+			equipmentModel.remove(eq);			
+		}
 	}
 	
 	@Test

@@ -18,6 +18,10 @@ public class WorkoutRoutineModelTest {
 	
 	@Before public void setUp() {
 		workoutRoutineModel = WorkoutRoutineModel.getInstance();
+		while (workoutRoutineModel.get().size() != 0) {
+			WorkoutRoutine workoutRoutine = workoutRoutineModel.get().iterator().next();
+			workoutRoutineModel.remove(workoutRoutine);
+		}
 	}
 	
 	@Test

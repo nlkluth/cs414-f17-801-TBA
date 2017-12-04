@@ -11,8 +11,6 @@ import edu.colostate.cs.cs414.tba.application.User;
 import edu.colostate.cs.cs414.tba.application.UserFactory;
 import edu.colostate.cs.cs414.tba.controllers.CustomerController;
 import edu.colostate.cs.cs414.tba.controllers.EquipmentController;
-import edu.colostate.cs.cs414.tba.controllers.ExerciseController;
-import edu.colostate.cs.cs414.tba.controllers.ManagerController;
 import edu.colostate.cs.cs414.tba.controllers.QualificationController;
 import edu.colostate.cs.cs414.tba.controllers.TrainerController;
 import edu.colostate.cs.cs414.tba.controllers.WorkoutRoutineController;
