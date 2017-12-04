@@ -1,4 +1,4 @@
-package edu.colostate.cs.cs414.tba.services;
+package edu.colostate.cs.cs414.tba.ui;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,6 +10,7 @@ import edu.colostate.cs.cs414.tba.domain.Equipment;
 import edu.colostate.cs.cs414.tba.domain.Exercise;
 import edu.colostate.cs.cs414.tba.domain.Trainer;
 import edu.colostate.cs.cs414.tba.domain.WorkoutRoutine;
+import edu.colostate.cs.cs414.tba.services.GymSystem;
 
 public class WorkoutCreator {
 	private ExerciseBuilder exerciseBuilder;

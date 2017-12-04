@@ -1,10 +1,7 @@
 package edu.colostate.cs.cs414.tba.application;
 
-import edu.colostate.cs.cs414.tba.domain.Address;
 import edu.colostate.cs.cs414.tba.domain.Customer;
-import edu.colostate.cs.cs414.tba.domain.Insurance;
 import edu.colostate.cs.cs414.tba.domain.Manager;
-import edu.colostate.cs.cs414.tba.domain.PersonalInformation;
 import edu.colostate.cs.cs414.tba.domain.Trainer;
 
 /**

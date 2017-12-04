@@ -5,21 +5,30 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import edu.colostate.cs.cs414.tba.controllers.CustomerController;
+import edu.colostate.cs.cs414.tba.controllers.EquipmentController;
+import edu.colostate.cs.cs414.tba.controllers.ExerciseController;
+import edu.colostate.cs.cs414.tba.controllers.ManagerController;
+import edu.colostate.cs.cs414.tba.controllers.TrainerController;
+import edu.colostate.cs.cs414.tba.controllers.WorkoutRoutineController;
 import edu.colostate.cs.cs414.tba.domain.Customer;
 import edu.colostate.cs.cs414.tba.domain.Equipment;
 import edu.colostate.cs.cs414.tba.domain.Manager;
 import edu.colostate.cs.cs414.tba.domain.Trainer;
 import edu.colostate.cs.cs414.tba.domain.WorkoutRoutine;
-import edu.colostate.cs.cs414.tba.services.CustomerCreator;
 import edu.colostate.cs.cs414.tba.services.GymSystem;
-import edu.colostate.cs.cs414.tba.services.TrainerCreator;
-import edu.colostate.cs.cs414.tba.services.WorkoutCreator;
 
 /**
  * Simple Command line interface
  */
 public class CLI {
 	private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+	private TrainerController trainerController;
+	private CustomerController customerController;
+	private EquipmentController equipmentController;
+	private ManagerController managerController;
+	private ExerciseController exerciseController;
+	private WorkoutRoutineController workoutRoutineController;
 	private Manager manager;
 	private GymSystem gymSystem;
 	private Object user;		
@@ -47,6 +56,8 @@ public class CLI {
 	}
 	
 	public void start() throws IOException {
+		trainerController = new TrainerController();
+		
 		System.out.println("Login as manager to start");
 		String username = "";
 		String password = "";
@@ -79,7 +90,7 @@ public class CLI {
 				this.user = this.manager;
 				loggedIn = true;
 			} else {
-				for (Trainer trainer : gymSystem.getTrainers()) {
+				for (Trainer trainer : trainerController.getAll()) {
 					if (trainer.getUsername().equals(username) && trainer.getPassword().equals(password)) {
 						this.user = trainer;
 						loggedIn = true;
@@ -198,7 +209,7 @@ public class CLI {
 		}
 		
 		System.out.println("Customers:\n");
-		for (Customer customer : gymSystem.getCustomers()) {
+		for (Customer customer : customerController.getAll()) {
 			System.out.println(customer.toString() + "\n");
 		}
 	}
@@ -219,7 +230,7 @@ public class CLI {
 		}
 		
 		System.out.println("Workout Routines:\n");
-		for (WorkoutRoutine workoutRoutine : gymSystem.getWorkoutRoutines()) {
+		for (WorkoutRoutine workoutRoutine : workoutRoutineController.getAll()) {
 			System.out.println(workoutRoutine.toString() + "\n");
 		}
 	}
@@ -257,8 +268,7 @@ public class CLI {
 			quality = "";
 		}
 		
-		Equipment equipment = new Equipment(name, new File(file), quality);
-		manager.addEquipment(equipment);
+		equipmentController.create(name, new File(file), quality);
 		System.out.println("\n ***Equipment added to system*** \n");
 	}
 
@@ -298,7 +308,7 @@ public class CLI {
 		System.out.println("Enter name of equipment");
 		String name = reader.readLine();
 		
-		for (Equipment equipment : gymSystem.getEquipment()) {
+		for (Equipment equipment : equipmentController.getAll()) {
 			if (equipment.getName().equals(name)) {
 				System.out.println("\nEnter name of equipment");
 				String newName = reader.readLine();

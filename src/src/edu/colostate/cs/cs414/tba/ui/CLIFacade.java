@@ -1,10 +1,9 @@
-package edu.colostate.cs.cs414.tba.application;
+package edu.colostate.cs.cs414.tba.ui;
 
 import java.io.IOException;
 
 import edu.colostate.cs.cs414.tba.domain.Manager;
 import edu.colostate.cs.cs414.tba.services.GymSystem;
-import edu.colostate.cs.cs414.tba.ui.CLI;
 
 /**
  * handles setting up CLI for running the app

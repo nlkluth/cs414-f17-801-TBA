@@ -1,4 +1,4 @@
-package edu.colostate.cs.cs414.tba.services;
+package edu.colostate.cs.cs414.tba.ui;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,6 +10,8 @@ import edu.colostate.cs.cs414.tba.domain.Insurance;
 import edu.colostate.cs.cs414.tba.domain.Manager;
 import edu.colostate.cs.cs414.tba.domain.PersonalInformation;
 import edu.colostate.cs.cs414.tba.domain.Trainer;
+import edu.colostate.cs.cs414.tba.services.GymSystem;
+import edu.colostate.cs.cs414.tba.services.TrainerInfo;
 
 public class TrainerCreator {
 	private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
