@@ -107,7 +107,7 @@ public class CLI {
 		this.inputLoop();
 	}
 	
-	public void inputLoop() throws IOException {
+	private void inputLoop() throws IOException {
 		System.out.println("***************");
 		System.out.println("\n");
 		System.out.println("Welcome to Gym Management System");
@@ -163,7 +163,7 @@ public class CLI {
 		}
 	}
 
-	public void printHelp() {
+	private void printHelp() {
 		String commandsForUser = "";
 		
 		if (this.manager.equals(this.user)) {

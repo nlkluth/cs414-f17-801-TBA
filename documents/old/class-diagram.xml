@@ -1,246 +1,233 @@
-<diagram program="umletino" version="14.2"><zoom_level>10</zoom_level><help_text>Space for d&lt; iagr notes</help_text><element><id>UMLClass</id><coordinates><x>1860</x><y>770</y><w>530</w><h>160</h></coordinates><panel_attributes>*Trainer*
-(from edu.colostate.cs.cs414.tba.domain)
+<diagram program="umletino" version="14.2"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>350</x><y>310</y><w>230</w><h>90</h></coordinates><panel_attributes>*CLIFacade*
+(from edu.colostate.cs.cs414.tba.ui)
 --
--id : int
 
 --
-+update(name, lastName, address, phoneNumber, email, healthInsuranceProvider, id, availability)
-+addQualification(Qualification)
-+getAvailability() : Availability
-+getQualifications() : Qualification[*]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>640</x><y>780</y><w>510</w><h>160</h></coordinates><panel_attributes>*Manager*
-(from edu.colostate.cs.cs414.tba.domain)
++start()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>690</x><y>250</y><w>280</w><h>170</h></coordinates><panel_attributes>*CLI*
+(from edu.colostate.cs.cs414.tba.ui)
 --
--id : int
 
 --
-+registerCustomer(name, lastName, address, phoneNumber, email, healthInsuranceProvider)
-+modifyCustomer(name, lastName, address, phoneNumber, email, healthInsuranceProvider)
-+hireTrainer(name, lastName, address, phoneNumber, email, healthInsuranceProvider)
-+modifyTrainer(name, lastName, address, phoneNumber, email, healthInsuranceProvider)
-+addEquipment(name, picture, quantity)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1270</x><y>790</y><w>450</w><h>160</h></coordinates><panel_attributes>*Customer*
-(from edu.colostate.cs.cs414.tba.domain)
++setManager(Manager manager)
++setGymSystem(GymSystem gymSystem)
++start()
+-promtForLogin()
+-inputLoop()
+-printHelp()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>690</x><y>0</y><w>280</w><h>170</h></coordinates><panel_attributes>*WorkoutCreator*
+(from edu.colostate.cs.cs414.tba.ui)
 --
--id : int
 
 --
-+update(name, lastName, address, phoneNumber, email, healthInsuranceProvider)
-+getMembership() : Membership
-+getRoutines() : WorkoutRoutine[*]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1480</x><y>1250</y><w>280</w><h>130</h></coordinates><panel_attributes>*Equipment*
-(from edu.colostate.cs.cs414.tba.domain
---
--id : int
--name : String
--picture : File(PNG)
--quality : int
---
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>640</x><y>510</y><w>510</w><h>140</h></coordinates><panel_attributes>*Gym*
-(from edu.colostate.cs.cs414.tba.gymmanagement)
---
--id : int
--name : String
---
-+handleInput()
-+handlelogin()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1980</x><y>1010</y><w>280</w><h>120</h></coordinates><panel_attributes>*WorkoutRoutine*
-(from edu.colostate.cs.cs414.tba.domain)
---
--id : int
--name : String
---
-+getExercises() : Exercise[*]
-+getAssignedCustomers() : Customer[*]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2480</x><y>770</y><w>280</w><h>120</h></coordinates><panel_attributes>*Qualification*
-(from edu.colostate.cs.cs414.tba.domain)
---
--id : int
--description : String
---
-+addTrainer()
-+toString() : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2370</x><y>580</y><w>280</w><h>130</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
-*Availability*
-(from edu.colostate.cs.cs414.tba.gymmanagement)
---
-FULLTIME
-PARTTIME
-SEASONAL_FULLTIME
-SEASONAL_PARTTIME
-UNAVAILABLE
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1900</x><y>1240</y><w>300</w><h>220</h></coordinates><panel_attributes>*Exercise*
-(from edu.colostate.cs.cs414.tba.domain)
---
--id : int
--name : String
--duration : Time
--numberOfSet : int
--numberOfRep : int
---
-+update(name, duration, numberOfSet, numberofRep)
-+getName() : String
-+getDuration() : Time
-+getNumberOfSets() : int
-+getNumberOfReps() : int
-+toString() : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1790</x><y>540</y><w>280</w><h>90</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
-*Membership*
-(from edu.colostate.cs.cs414.tba.gymmanagement)
---
-ACTIVE
-INACTIVE</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2190</x><y>640</y><w>200</w><h>150</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
--has &gt;</panel_attributes><additional_attributes>180;10;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>2380</x><y>830</y><w>120</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
--has &gt;
-m1=*
-m2=1..*
-</panel_attributes><additional_attributes>100;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1190</x><y>500</y><w>480</w><h>180</h></coordinates><panel_attributes>PersonalInformation
-(from edu.colostate.cs.cs414.tba.gymmanagement)
---
--id : int
--name : String
--lastName : String
--phoneNumber : String
--email : String
---
-+getName() : String
-+getPhoneNumber() : String
-+getEmail() : String
-+toString() : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>850</y><w>910</w><h>450</h></coordinates><panel_attributes>lt=&lt;-
-m1=0..n
--creates v
-m1=*
-m2=1</panel_attributes><additional_attributes>890;420;10;420;10;10;50;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2090</x><y>920</y><w>90</w><h>110</h></coordinates><panel_attributes>lt=&lt;-
-m1=*
-m2=1
--creates v</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2090</x><y>1120</y><w>70</w><h>140</h></coordinates><panel_attributes>lt=&lt;-
-m1=*
-m2=1..*
--has v</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>870</x><y>640</y><w>90</w><h>160</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
--creates v</panel_attributes><additional_attributes>10;140;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1020</x><y>700</y><w>1080</w><h>100</h></coordinates><panel_attributes>lt=&lt;-
-m1=*
-m2=1..*
--creates &gt;</panel_attributes><additional_attributes>1060;70;1060;20;10;20;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>1750</x><y>1330</y><w>170</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
-&lt; -uses
-m1=*
-m2=*</panel_attributes><additional_attributes>10;20;150;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1300</x><y>1080</y><w>480</w><h>120</h></coordinates><panel_attributes>Insurance
-(from edu.colostate.cs.cs414.tba.domain)
---
--id : int
--name : String
---
-+getName() : String
-+getAddress() : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>710</x><y>1020</y><w>480</w><h>210</h></coordinates><panel_attributes>Address
-(from edu.colostate.cs.cs414.tba.domain)
---
--street : String
--street2 : String
--city : String
--state : String
--zip : String
---
-+getStreet() : String
-+getCity() : String
-+getState() : String
-+getZip() : String
-+toString() : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1460</x><y>617</y><w>480</w><h>190</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
--has ^</panel_attributes><additional_attributes>460;10;10;170</additional_attributes></element><element><id>Relation</id><coordinates><x>1140</x><y>860</y><w>150</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
-m1=*
-m2=1..*
--creates &gt;</panel_attributes><additional_attributes>130;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>900</x><y>927</y><w>70</w><h>120</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
--has v
-</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1050</x><y>927</y><w>430</w><h>170</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
--has &gt;
-</panel_attributes><additional_attributes>410;150;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1180</x><y>1127</y><w>140</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
-&lt; -has
-</panel_attributes><additional_attributes>10;20;120;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1180</x><y>937</y><w>320</w><h>160</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
-&lt; -has
-</panel_attributes><additional_attributes>10;140;300;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1540</x><y>937</y><w>70</w><h>160</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
--has v
-</panel_attributes><additional_attributes>10;140;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1180</x><y>867</y><w>700</w><h>390</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
--has v
-</panel_attributes><additional_attributes>10;360;630;360;630;10;680;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1690</x><y>807</y><w>190</w><h>290</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
--has v
-</panel_attributes><additional_attributes>10;270;10;210;70;210;70;10;170;10</additional_attributes></element><element><id>Relation</id><coordinates><x>950</x><y>667</y><w>410</w><h>130</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
--has &gt;
-</panel_attributes><additional_attributes>380;10;380;30;10;30;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>1430</x><y>667</y><w>70</w><h>140</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
--has ^
-</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>1660</x><y>597</y><w>280</w><h>190</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
--has ^
-</panel_attributes><additional_attributes>10;10;260;170</additional_attributes></element><element><id>Relation</id><coordinates><x>1710</x><y>907</y><w>290</w><h>170</h></coordinates><panel_attributes>lt=&lt;-
-m1=*
-m2=*
--assignedTo &gt;
-</panel_attributes><additional_attributes>270;150;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>650</x><y>190</y><w>510</w><h>110</h></coordinates><panel_attributes>*CLIController*
++modifyRoutine()
++createRoutine()
+-buildWorkout()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>330</x><y>140</y><w>280</w><h>80</h></coordinates><panel_attributes>*GymSystem*
 (from edu.colostate.cs.cs414.tba.services)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1070</x><y>1330</y><w>280</w><h>70</h></coordinates><panel_attributes>*CustomerModel*
+(from edu.colostate.cs.cs414.tba.models)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1070</x><y>1530</y><w>280</w><h>70</h></coordinates><panel_attributes>*EquipmentModel*
+(from edu.colostate.cs.cs414.tba.models)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1070</x><y>1090</y><w>280</w><h>70</h></coordinates><panel_attributes>*ExerciseModel*
+(from edu.colostate.cs.cs414.tba.models)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2610</x><y>940</y><w>280</w><h>150</h></coordinates><panel_attributes>*Address*
+(from edu.colostate.cs.cs414.tba.domain)
 --
--id : int
--name : String
---</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>880</x><y>430</y><w>90</w><h>100</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
--creates ^</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>650</x><y>380</y><w>510</w><h>60</h></coordinates><panel_attributes>*CLIControllerFacade*
-(from edu.colostate.cs.cs414.tba.gymmanagement)
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>880</x><y>290</y><w>90</w><h>110</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
--creates ^</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1050</x><y>0</y><w>510</w><h>110</h></coordinates><panel_attributes>*CustomerCreator*
-(from edu.colostate.cs.cs414.tba.services)
+-String street
+-String street2
+-String city
+-String state
+-String zip
 --
-
---
-+ createCustomer()
-+ modifyCustomer()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>440</x><y>0</y><w>510</w><h>110</h></coordinates><panel_attributes>*TrainerCreator*
-(from edu.colostate.cs.cs414.tba.services)
---
-
---
-+ createTrainer()
-+ modifyTrainer()
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>200</y><w>510</w><h>110</h></coordinates><panel_attributes>*WorkoutCreator*
-(from edu.colostate.cs.cs414.tba.services)
---
-
---
-+ createWorkout()
-+ assignWorkout()
-+ modifyWorkout()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>980</x><y>100</y><w>210</w><h>110</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
--delegates to ^</panel_attributes><additional_attributes>190;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>500</x><y>220</y><w>170</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
-&lt; -delegates to</panel_attributes><additional_attributes>10;40;150;10</additional_attributes></element><element><id>Relation</id><coordinates><x>690</x><y>100</y><w>140</w><h>110</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
--delegates to ^</panel_attributes><additional_attributes>10;10;70;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2370</x><y>1230</y><w>300</w><h>220</h></coordinates><panel_attributes>*ExerciseBuilder*
-(from edu.colostate.cs.cs414.tba.gymmanagement)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1070</x><y>920</y><w>280</w><h>70</h></coordinates><panel_attributes>*QualificationModel*
+(from edu.colostate.cs.cs414.tba.models)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1070</x><y>510</y><w>280</w><h>70</h></coordinates><panel_attributes>*WorkoutRoutineModel*
+(from edu.colostate.cs.cs414.tba.models)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1050</x><y>300</y><w>280</w><h>70</h></coordinates><panel_attributes>*Model*
+&lt;&lt;Interface&gt;&gt;
+(from edu.colostate.cs.cs414.tba.models)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1070</x><y>710</y><w>280</w><h>70</h></coordinates><panel_attributes>*TrainerModel*
+(from edu.colostate.cs.cs414.tba.models)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1590</x><y>1350</y><w>280</w><h>110</h></coordinates><panel_attributes>*Customer*
+(from edu.colostate.cs.cs414.tba.domain)
 --
 
 --
-+addEquipment()
-+setName()
-+setSets()
-+setDuration()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2190</x><y>1340</y><w>200</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
-&lt; -creates</panel_attributes><additional_attributes>10;20;180;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1680</x><y>40</y><w>480</w><h>100</h></coordinates><panel_attributes>UserFactory
-(from edu.colostate.cs.cs414.tba.gymmanagement)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1590</x><y>1580</y><w>280</w><h>150</h></coordinates><panel_attributes>*Equipment*
+(from edu.colostate.cs.cs414.tba.domain)
+--
+-String name
+-File img
+-String quality
+-UID id
+--
++addExercise()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1590</x><y>1120</y><w>280</w><h>160</h></coordinates><panel_attributes>*Exercise*
+(from edu.colostate.cs.cs414.tba.domain)
+--
+-String name
+-String duration
+-int seps
+-int reps
+-Equipment equipment
+-UID id
+--
++setExercise()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2670</x><y>1250</y><w>280</w><h>150</h></coordinates><panel_attributes>*Insurance*
+(from edu.colostate.cs.cs414.tba.domain)
+--
+-String name
+-Address address
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1440</x><y>250</y><w>280</w><h>150</h></coordinates><panel_attributes>*Manager*
+(from edu.colostate.cs.cs414.tba.domain)
+--
+-boolean isManager
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2630</x><y>1540</y><w>280</w><h>150</h></coordinates><panel_attributes>*PersonalInformation*
+(from edu.colostate.cs.cs414.tba.domain)
+--
+-String name
+-String lastName
+-String phone
+-String email
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1600</x><y>920</y><w>280</w><h>150</h></coordinates><panel_attributes>*Qualification*
+(from edu.colostate.cs.cs414.tba.domain)
+--
+-String name
+-UID id
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1590</x><y>700</y><w>280</w><h>110</h></coordinates><panel_attributes>*Trainer*
+(from edu.colostate.cs.cs414.tba.domain)
+--
+
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1590</x><y>470</y><w>280</w><h>170</h></coordinates><panel_attributes>*WorkoutRoutine*
+(from edu.colostate.cs.cs414.tba.domain)
+--
+-String name
+-Exercise[] exercises
+-UID id
+--
++resetExercises()
++assignCustomer()
++addExercise() 
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>480</x><y>500</y><w>280</w><h>110</h></coordinates><panel_attributes>*WorkoutRoutineController*
+(from edu.colostate.cs.cs414.tba.controllers)
+--
+-WorkoutRoutineModel model
+
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>720</y><w>280</w><h>150</h></coordinates><panel_attributes>*Controller*
+&lt;&lt;Interface&gt;&gt;
+(from edu.colostate.cs.cs414.tba.controllers)
 --
 
 --
-+ createUser(type)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1680</x><y>200</y><w>480</w><h>160</h></coordinates><panel_attributes>User
-&lt;&lt;interface&gt;&gt;
-(from edu.colostate.cs.cs414.tba.gymmanagement)
+-getAll()
+-get(UID id)
+-get(item)
+-delete(item)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>480</x><y>670</y><w>280</w><h>110</h></coordinates><panel_attributes>*TrainerController*
+(from edu.colostate.cs.cs414.tba.controllers)
+--
+-TrainerModel model
+
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>850</y><w>280</w><h>110</h></coordinates><panel_attributes>*QualificationController*
+(from edu.colostate.cs.cs414.tba.controllers)
+--
+-QualificationModel model
+
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>1020</y><w>280</w><h>110</h></coordinates><panel_attributes>*ExerciseController*
+(from edu.colostate.cs.cs414.tba.controllers)
+--
+-ExerciseModel model
+
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>1500</y><w>280</w><h>110</h></coordinates><panel_attributes>*EquipmentController*
+(from edu.colostate.cs.cs414.tba.controllers)
+--
+-EquipmentModel model
+
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>1290</y><w>280</w><h>110</h></coordinates><panel_attributes>*CustomerController*
+(from edu.colostate.cs.cs414.tba.controllers)
+--
+-CustomerModel model
+
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>460</x><y>211</y><w>90</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- creates v
+m1=1</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>570</x><y>341</y><w>140</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- creates &gt;
+m1=1</panel_attributes><additional_attributes>120;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>820</x><y>161</y><w>80</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- uses ^
+m1=1</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>530</y><w>230</w><h>240</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;220;210;10</additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>720</y><w>230</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;50;210;10</additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>800</y><w>240</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;220;110</additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>830</y><w>240</w><h>270</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;220;250</additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>860</y><w>300</w><h>510</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;280;490</additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>860</y><w>350</w><h>730</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;330;710</additional_attributes></element><element><id>Relation</id><coordinates><x>960</x><y>261</y><w>500</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- creates &gt;
+m1=1</panel_attributes><additional_attributes>480;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>860</x><y>360</y><w>260</w><h>420</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>240;10;240;100;10;100;10;400;210;400</additional_attributes></element><element><id>Relation</id><coordinates><x>860</x><y>530</y><w>230</w><h>30</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;210;10</additional_attributes></element><element><id>Relation</id><coordinates><x>860</x><y>750</y><w>230</w><h>230</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;10;210;210;210</additional_attributes></element><element><id>Relation</id><coordinates><x>860</x><y>920</y><w>230</w><h>230</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;10;210;210;210</additional_attributes></element><element><id>Relation</id><coordinates><x>860</x><y>1120</y><w>230</w><h>270</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;10;250;210;250</additional_attributes></element><element><id>Relation</id><coordinates><x>860</x><y>1330</y><w>230</w><h>270</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;10;250;210;250</additional_attributes></element><element><id>Relation</id><coordinates><x>750</x><y>551</y><w>340</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- calls &gt;
+m1=1</panel_attributes><additional_attributes>320;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>750</x><y>721</y><w>340</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- calls &gt;
+m1=1</panel_attributes><additional_attributes>320;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>760</x><y>911</y><w>330</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- calls &gt;
+m1=1</panel_attributes><additional_attributes>310;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>760</x><y>1081</y><w>330</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- calls &gt;
+m1=1</panel_attributes><additional_attributes>310;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>760</x><y>1331</y><w>330</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- calls &gt;
+m1=1</panel_attributes><additional_attributes>310;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1340</x><y>531</y><w>270</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- stores &gt;
+m1=1</panel_attributes><additional_attributes>250;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1340</x><y>731</y><w>270</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- stores &gt;
+m1=1</panel_attributes><additional_attributes>250;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1340</x><y>951</y><w>280</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- stores &gt;
+m1=1</panel_attributes><additional_attributes>260;30;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1340</x><y>1121</y><w>270</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- stores &gt;
+m1=1</panel_attributes><additional_attributes>250;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1340</x><y>1361</y><w>270</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- stores &gt;
+m1=1</panel_attributes><additional_attributes>250;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1340</x><y>1581</y><w>270</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- stores &gt;
+m1=1</panel_attributes><additional_attributes>250;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1860</x><y>1191</y><w>190</w><h>510</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- uses v
+m1=*
+m2=*</panel_attributes><additional_attributes>10;480;120;480;120;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1860</x><y>541</y><w>240</w><h>890</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- assigned to ^
+m1=*
+m2=*</panel_attributes><additional_attributes>10;10;140;10;140;860;10;860</additional_attributes></element><element><id>Relation</id><coordinates><x>1860</x><y>511</y><w>360</w><h>680</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- has v
+m1=*
+m2=*</panel_attributes><additional_attributes>10;650;300;650;300;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1730</x><y>801</y><w>70</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- has v
+m1=1..*
+m2=*</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1280</x><y>820</y><w>280</w><h>80</h></coordinates><panel_attributes>*Availability*
+&lt;&lt;Enumeration&gt;
+(from edu.colostate.cs.cs414.tba.application)
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1550</x><y>801</y><w>100</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- has v
+m1=1</panel_attributes><additional_attributes>10;70;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1560</x><y>1451</y><w>130</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+&lt; - has
+m1=1</panel_attributes><additional_attributes>10;60;110;60;110;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1290</x><y>1440</y><w>280</w><h>80</h></coordinates><panel_attributes>*Membership*
+&lt;&lt;Enumeration&gt;
+(from edu.colostate.cs.cs414.tba.application)
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2210</x><y>1240</y><w>280</w><h>150</h></coordinates><panel_attributes>/User/
+(from edu.colostate.cs.cs414.tba.application)
+--
+-UID id
+-String username
+-String password
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2210</x><y>250</y><w>280</w><h>150</h></coordinates><panel_attributes>UserFactory
+(from edu.colostate.cs.cs414.tba.application)
 --
 
 --
-+ getInsurance();
-+ getAddress();
-+ update(personalInformation, address, insurance);
-+ getPersonalInformation();</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1900</x><y>130</y><w>90</w><h>90</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
-- creates v</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1650</x><y>350</y><w>180</w><h>460</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
-- implements ^</panel_attributes><additional_attributes>150;10;10;440</additional_attributes></element><element><id>Relation</id><coordinates><x>2070</x><y>350</y><w>160</w><h>440</h></coordinates><panel_attributes>lt=&lt;-
-m1=1
-- implements ^</panel_attributes><additional_attributes>10;10;110;420</additional_attributes></element></diagram>
++createUser(String type)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1710</x><y>291</y><w>520</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+&lt; - creates </panel_attributes><additional_attributes>10;20;500;20</additional_attributes></element><element><id>Relation</id><coordinates><x>940</x><y>181</y><w>1430</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- creates &gt;
+m1=1</panel_attributes><additional_attributes>1400;70;1400;20;10;20;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>1860</x><y>321</y><w>370</w><h>450</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+&lt; - creates </panel_attributes><additional_attributes>10;430;350;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1840</x><y>391</y><w>410</w><h>980</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+&lt; - creates </panel_attributes><additional_attributes>10;960;390;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1860</x><y>1350</y><w>370</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>350;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>1860</x><y>780</y><w>370</w><h>540</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>350;520;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1710</x><y>370</y><w>650</w><h>890</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>630;870;630;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2400</x><y>1001</y><w>230</w><h>260</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- has &gt;
+m1=1</panel_attributes><additional_attributes>210;10;10;240</additional_attributes></element><element><id>Relation</id><coordinates><x>2480</x><y>1311</y><w>210</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- has &gt;
+m1=1</panel_attributes><additional_attributes>190;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>2370</x><y>1381</y><w>280</w><h>230</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- has &gt;
+m1=1</panel_attributes><additional_attributes>260;210;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2740</x><y>1081</y><w>70</w><h>190</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- has ^
+m1=1</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element></diagram>
