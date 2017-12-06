@@ -5,6 +5,9 @@ import java.util.Set;
 
 import edu.colostate.cs.cs414.tba.domain.Equipment;
 
+/**
+ * Handles persistence and retrieval of equipment
+ */
 public class EquipmentModel implements Model<Equipment>{
 	private Set<Equipment> equipment = new HashSet<Equipment>();
 	private static EquipmentModel model;

@@ -6,6 +6,10 @@ import java.util.Set;
 import edu.colostate.cs.cs414.tba.domain.WorkoutRoutine;
 import edu.colostate.cs.cs414.tba.models.WorkoutRoutineModel;
 
+
+/**
+ * Manages WorkoutRoutine domain and WorkoutRoutineModel classes
+ */
 public class WorkoutRoutineController implements Controller<WorkoutRoutine> {
 	private WorkoutRoutineModel model;
 	

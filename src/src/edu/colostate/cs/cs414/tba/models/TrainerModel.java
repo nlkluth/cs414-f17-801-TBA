@@ -5,6 +5,9 @@ import java.util.Set;
 
 import edu.colostate.cs.cs414.tba.domain.Trainer;
 
+/**
+ * Handles persistence and retrieval of trainer
+ */
 public class TrainerModel implements Model<Trainer> {
 	private static Set<Trainer> trainers = new HashSet<Trainer>();
 	private static TrainerModel model;

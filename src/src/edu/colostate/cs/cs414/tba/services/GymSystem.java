@@ -8,6 +8,7 @@ import edu.colostate.cs.cs414.tba.ui.CLIFacade;
 
 /**
  * GymSystem represents the overall system
+ * Starting the application runs main()
  */
 public class GymSystem {
 	private static UserFactory userFactory = new UserFactory();

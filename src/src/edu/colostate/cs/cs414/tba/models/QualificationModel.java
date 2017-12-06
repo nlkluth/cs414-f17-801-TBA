@@ -5,6 +5,9 @@ import java.util.Set;
 
 import edu.colostate.cs.cs414.tba.domain.Qualification;
 
+/**
+ * Handles persistence and retrieval of qualification
+ */
 public class QualificationModel implements Model<Qualification> {
 	private static QualificationModel model;
 	private Set<Qualification> qualifications = new HashSet<Qualification>();

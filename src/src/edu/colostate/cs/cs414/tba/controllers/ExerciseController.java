@@ -7,6 +7,9 @@ import edu.colostate.cs.cs414.tba.domain.Equipment;
 import edu.colostate.cs.cs414.tba.domain.Exercise;
 import edu.colostate.cs.cs414.tba.models.ExerciseModel;
 
+/**
+ * Manages Exercise domain and ExerciseModel classes
+ */
 public class ExerciseController implements Controller<Exercise> {
 	private ExerciseModel model;
 	

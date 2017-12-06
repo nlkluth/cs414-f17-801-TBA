@@ -5,6 +5,10 @@ import java.util.Set;
 
 import edu.colostate.cs.cs414.tba.domain.Customer;
 
+
+/**
+ * Handles persistence and retrieval of customers
+ */
 public class CustomerModel implements Model<Customer> {
 	private Set<Customer> customers = new HashSet<Customer>();
 	private static CustomerModel model;

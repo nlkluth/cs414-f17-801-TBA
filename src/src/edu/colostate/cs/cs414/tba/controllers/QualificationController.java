@@ -7,6 +7,10 @@ import edu.colostate.cs.cs414.tba.domain.Qualification;
 import edu.colostate.cs.cs414.tba.domain.Trainer;
 import edu.colostate.cs.cs414.tba.models.QualificationModel;
 
+
+/**
+ * Manages Qualification domain and QualificationModel classes
+ */
 public class QualificationController implements Controller<Qualification> {
 	private QualificationModel model;
 	

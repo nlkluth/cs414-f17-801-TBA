@@ -26,7 +26,8 @@ import edu.colostate.cs.cs414.tba.domain.WorkoutRoutine;
 import edu.colostate.cs.cs414.tba.services.GymSystem;
 
 /**
- * Simple Command line interface
+ * Simple Command line interface 
+ * enters into a loop to listen to input from user
  */
 public class CLI {
 	private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));

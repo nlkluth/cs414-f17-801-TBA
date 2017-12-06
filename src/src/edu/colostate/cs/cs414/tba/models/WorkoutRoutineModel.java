@@ -5,6 +5,9 @@ import java.util.Set;
 
 import edu.colostate.cs.cs414.tba.domain.WorkoutRoutine;
 
+/**
+ * Handles persistence and retrieval of workout routines
+ */
 public class WorkoutRoutineModel implements Model<WorkoutRoutine> {
 	private Set<WorkoutRoutine> workoutRoutines = new HashSet<WorkoutRoutine>();
 	private static WorkoutRoutineModel model;

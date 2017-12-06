@@ -6,6 +6,10 @@ import java.util.Set;
 import edu.colostate.cs.cs414.tba.domain.Trainer;
 import edu.colostate.cs.cs414.tba.models.TrainerModel;
 
+
+/**
+ * Manages Trainer domain and TrainerModel classes
+ */
 public class TrainerController implements Controller<Trainer> {
 	private TrainerModel model;
 	

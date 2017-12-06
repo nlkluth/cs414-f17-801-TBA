@@ -7,6 +7,9 @@ import java.util.Set;
 import edu.colostate.cs.cs414.tba.domain.Equipment;
 import edu.colostate.cs.cs414.tba.models.EquipmentModel;
 
+/**
+ * Manages Equipment domain and EquipmentModel classes
+ */
 public class EquipmentController implements Controller<Equipment> {
 	private EquipmentModel model;
 	

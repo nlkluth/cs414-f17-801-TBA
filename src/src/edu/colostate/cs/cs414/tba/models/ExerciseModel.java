@@ -5,6 +5,9 @@ import java.util.Set;
 
 import edu.colostate.cs.cs414.tba.domain.Exercise;
 
+/**
+ * Handles persistence and retrieval of Exercise
+ */
 public class ExerciseModel implements Model<Exercise> {
 	private static ExerciseModel model;
 	private Set<Exercise> exercises = new HashSet<Exercise>();
