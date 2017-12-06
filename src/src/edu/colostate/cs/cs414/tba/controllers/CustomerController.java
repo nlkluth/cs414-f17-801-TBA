@@ -6,6 +6,9 @@ import java.util.Set;
 import edu.colostate.cs.cs414.tba.domain.Customer;
 import edu.colostate.cs.cs414.tba.models.CustomerModel;
 
+/**
+ * Manages Customer domain and ComsterModel classes
+ */
 public class CustomerController implements Controller<Customer> {
 	private CustomerModel model;
 	
