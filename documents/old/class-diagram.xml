@@ -108,10 +108,9 @@
 +resetExercises()
 +assignCustomer()
 +addExercise() 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>480</x><y>500</y><w>280</w><h>110</h></coordinates><panel_attributes>*WorkoutRoutineController*
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>480</x><y>500</y><w>280</w><h>90</h></coordinates><panel_attributes>*WorkoutRoutineController*
 (from edu.colostate.cs.cs414.tba.controllers)
 --
--WorkoutRoutineModel model
 
 --
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>720</y><w>280</w><h>150</h></coordinates><panel_attributes>*Controller*
@@ -123,34 +122,29 @@
 -getAll()
 -get(UID id)
 -get(item)
--delete(item)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>480</x><y>670</y><w>280</w><h>110</h></coordinates><panel_attributes>*TrainerController*
+-delete(item)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>480</x><y>670</y><w>280</w><h>90</h></coordinates><panel_attributes>*TrainerController*
 (from edu.colostate.cs.cs414.tba.controllers)
 --
--TrainerModel model
 
 --
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>850</y><w>280</w><h>110</h></coordinates><panel_attributes>*QualificationController*
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>850</y><w>280</w><h>90</h></coordinates><panel_attributes>*QualificationController*
 (from edu.colostate.cs.cs414.tba.controllers)
 --
--QualificationModel model
 
 --
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>1020</y><w>280</w><h>110</h></coordinates><panel_attributes>*ExerciseController*
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>1020</y><w>280</w><h>90</h></coordinates><panel_attributes>*ExerciseController*
 (from edu.colostate.cs.cs414.tba.controllers)
 --
--ExerciseModel model
 
 --
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>1500</y><w>280</w><h>110</h></coordinates><panel_attributes>*EquipmentController*
 (from edu.colostate.cs.cs414.tba.controllers)
 --
--EquipmentModel model
 
 --
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>1290</y><w>280</w><h>110</h></coordinates><panel_attributes>*CustomerController*
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>1290</y><w>280</w><h>90</h></coordinates><panel_attributes>*CustomerController*
 (from edu.colostate.cs.cs414.tba.controllers)
 --
--CustomerModel model
 
 --
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>460</x><y>211</y><w>90</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
@@ -230,4 +224,6 @@ m1=1</panel_attributes><additional_attributes>190;20;10;20</additional_attribute
 - has &gt;
 m1=1</panel_attributes><additional_attributes>260;210;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2740</x><y>1081</y><w>70</w><h>190</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
 - has ^
-m1=1</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element></diagram>
+m1=1</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>Relation</id><coordinates><x>760</x><y>1531</y><w>330</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+- calls &gt;
+m1=1</panel_attributes><additional_attributes>310;20;10;20</additional_attributes></element></diagram>

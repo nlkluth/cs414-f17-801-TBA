@@ -1,125 +1,68 @@
-<diagram program="umletino" version="14.2"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>70</x><y>620</y><w>210</w><h>120</h></coordinates><panel_attributes>Address
-
+<diagram program="umletino" version="14.2"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>240</x><y>8</y><w>210</w><h>70</h></coordinates><panel_attributes>GymSystem
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>240</x><y>188</y><w>210</w><h>70</h></coordinates><panel_attributes>CLI
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>100</x><y>348</y><w>210</w><h>70</h></coordinates><panel_attributes>Manager
 --
-street
-street2
-city
-state
-zip
-
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>750</x><y>280</y><w>210</w><h>110</h></coordinates><panel_attributes>Trainer
-
+Id</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>390</x><y>348</y><w>210</w><h>80</h></coordinates><panel_attributes>Trainer
 --
-ID
-workHours
-username
-password
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>70</x><y>290</y><w>210</w><h>110</h></coordinates><panel_attributes>Manager
-
+Id
+Qualifications
+Availability
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>670</x><y>348</y><w>210</w><h>70</h></coordinates><panel_attributes>Customer
 --
-ID
-username
-password</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>450</x><y>640</y><w>210</w><h>80</h></coordinates><panel_attributes>Insurance
-
---
-ID
-name
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>740</x><y>530</y><w>210</w><h>80</h></coordinates><panel_attributes>Qualification
-
---
-ID
-name
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1100</x><y>710</y><w>210</w><h>110</h></coordinates><panel_attributes>Equipment
-
---
-ID
-name
-picture
-quantity
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1100</x><y>300</y><w>210</w><h>80</h></coordinates><panel_attributes>WorkoutRoutine
-
---
-ID
-name
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1100</x><y>500</y><w>210</w><h>120</h></coordinates><panel_attributes>Exercise
-
---
-ID
-name
-duration
-numberOfSet
-numberOfRep
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>50</y><w>210</w><h>120</h></coordinates><panel_attributes>GymSystem
-
---
-
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>661</y><w>200</w><h>50</h></coordinates><panel_attributes>lt=-
-&lt; has
-m1=1
-m2=1..*</panel_attributes><additional_attributes>10;20;180;20</additional_attributes></element><element><id>Relation</id><coordinates><x>170</x><y>392</y><w>60</w><h>250</h></coordinates><panel_attributes>lt=-
-has v
-m1=1.,*
-m2=1</panel_attributes><additional_attributes>10;10;10;230</additional_attributes></element><element><id>Relation</id><coordinates><x>840</x><y>380</y><w>60</w><h>170</h></coordinates><panel_attributes>lt=-
-has v
-m1=*
-m2=1..*</panel_attributes><additional_attributes>10;150;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>430</x><y>10</y><w>210</w><h>120</h></coordinates><panel_attributes>PersonalInformation
-
---
-name
-lastName
-phoneNumber
-email
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>630</x><y>380</y><w>160</w><h>280</h></coordinates><panel_attributes>lt=-
-has v
-m1=1
-m2=1..*</panel_attributes><additional_attributes>10;260;10;70;120;70;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>550</x><y>120</y><w>60</w><h>190</h></coordinates><panel_attributes>lt=-
-has ^
-m1=1..*
-m2=1</panel_attributes><additional_attributes>10;170;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>440</x><y>290</y><w>210</w><h>80</h></coordinates><panel_attributes>Customer
-
---
-ID
-active
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>620</x><y>0</y><w>160</w><h>360</h></coordinates><panel_attributes>lt=-
-&lt; has
-m1=1
-m2=1..*</panel_attributes><additional_attributes>10;10;130;340</additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>40</y><w>180</w><h>340</h></coordinates><panel_attributes>lt=-
-has &gt;
-m1=1..*
-m2=1</panel_attributes><additional_attributes>10;320;160;10</additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>300</y><w>190</w><h>60</h></coordinates><panel_attributes>lt=-
-creates &gt;
-m1=1
-m2=*</panel_attributes><additional_attributes>10;30;170;20</additional_attributes></element><element><id>Relation</id><coordinates><x>170</x><y>230</y><w>710</w><h>80</h></coordinates><panel_attributes>lt=-
-creates &gt;
-m1=1
-m2=*</panel_attributes><additional_attributes>10;60;10;20;690;20;690;50</additional_attributes></element><element><id>Relation</id><coordinates><x>950</x><y>310</y><w>170</w><h>50</h></coordinates><panel_attributes>lt=-
-creates &gt;
-m1=1
-m2=*</panel_attributes><additional_attributes>10;20;150;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1200</x><y>370</y><w>60</w><h>150</h></coordinates><panel_attributes>lt=-
-has v
-m1=1..*
-m2=*</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>1200</x><y>610</y><w>70</w><h>120</h></coordinates><panel_attributes>lt=-
-uses v
-m1=*
-m2=*</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>0</x><y>340</y><w>1120</w><h>470</h></coordinates><panel_attributes>lt=-
+Id
+Active</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>470</x><y>138</y><w>210</w><h>70</h></coordinates><panel_attributes>Qualification
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>950</x><y>338</y><w>210</w><h>70</h></coordinates><panel_attributes>WorkoutRoutine
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>950</x><y>518</y><w>210</w><h>70</h></coordinates><panel_attributes>Exercise
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>950</x><y>698</y><w>210</w><h>70</h></coordinates><panel_attributes>Equipment
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>400</x><y>568</y><w>210</w><h>70</h></coordinates><panel_attributes>Insurance
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>680</x><y>568</y><w>210</w><h>70</h></coordinates><panel_attributes>Address
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>90</x><y>568</y><w>210</w><h>70</h></coordinates><panel_attributes>PersonalInformation
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>67</y><w>80</w><h>140</h></coordinates><panel_attributes>m1=1
 creates v
-m1=*
 m2=1
-</panel_attributes><additional_attributes>1100;440;10;440;10;10;70;10</additional_attributes></element><element><id>Relation</id><coordinates><x>140</x><y>160</y><w>80</w><h>150</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>247</y><w>170</w><h>120</h></coordinates><panel_attributes>m1=1
 creates v
-m1=1
-m2=1</panel_attributes><additional_attributes>10;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>640</x><y>210</y><w>590</w><h>150</h></coordinates><panel_attributes>assigned to ^
-m1=1..*
-m2=*</panel_attributes><additional_attributes>10;120;60;120;60;10;570;10;570;90</additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>352</y><w>280</w><h>290</h></coordinates><panel_attributes>lt=-
+m2=1
+</panel_attributes><additional_attributes>150;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>300</x><y>357</y><w>110</w><h>50</h></coordinates><panel_attributes>m1=1
+creates &gt;
+m2=*
+</panel_attributes><additional_attributes>10;20;90;20</additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>287</y><w>440</w><h>80</h></coordinates><panel_attributes>m1=1
+creates &gt;
+m2=*
+</panel_attributes><additional_attributes>10;60;10;20;420;20;420;60</additional_attributes></element><element><id>Relation</id><coordinates><x>530</x><y>197</y><w>60</w><h>170</h></coordinates><panel_attributes>m1=1
+has ^
+m2=*
+</panel_attributes><additional_attributes>10;150;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>490</x><y>417</y><w>60</w><h>170</h></coordinates><panel_attributes>m1=1
 has v
-m1=1.,*
-m2=1</panel_attributes><additional_attributes>250;10;10;270</additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>382</y><w>560</w><h>400</h></coordinates><panel_attributes>lt=-
+m2=1
+</panel_attributes><additional_attributes>10;150;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>407</y><w>60</w><h>180</h></coordinates><panel_attributes>m1=1
 has v
-m1=1.,*
-m2=1</panel_attributes><additional_attributes>520;10;520;100;440;100;440;380;10;380;10;360</additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>360</y><w>60</w><h>300</h></coordinates><panel_attributes>lt=-
+m2=1
+</panel_attributes><additional_attributes>10;160;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>417</y><w>230</w><h>170</h></coordinates><panel_attributes>m1=1
 has v
-m1=1
-m2=1..*</panel_attributes><additional_attributes>10;280;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>220</x><y>390</y><w>250</w><h>290</h></coordinates><panel_attributes>lt=-
+m2=1
+</panel_attributes><additional_attributes>10;150;210;10</additional_attributes></element><element><id>Relation</id><coordinates><x>570</x><y>417</y><w>200</w><h>170</h></coordinates><panel_attributes>m1=1
 has v
-m1=1
-m2=1..*</panel_attributes><additional_attributes>230;270;10;10</additional_attributes></element></diagram>
+m2=1
+</panel_attributes><additional_attributes>180;150;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>600</x><y>587</y><w>100</w><h>50</h></coordinates><panel_attributes>m1=1
+has &gt;
+m2=1
+</panel_attributes><additional_attributes>80;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>260</x><y>397</y><w>430</w><h>190</h></coordinates><panel_attributes>m1=1
+has v
+m2=1
+</panel_attributes><additional_attributes>10;170;410;10</additional_attributes></element><element><id>Relation</id><coordinates><x>750</x><y>407</y><w>60</w><h>180</h></coordinates><panel_attributes>m1=1
+has v
+m2=1
+</panel_attributes><additional_attributes>10;160;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>570</x><y>227</y><w>480</w><h>140</h></coordinates><panel_attributes>m1=1
+creates &gt;
+m2=*
+</panel_attributes><additional_attributes>10;120;10;20;460;20;460;110</additional_attributes></element><element><id>Relation</id><coordinates><x>1040</x><y>397</y><w>60</w><h>140</h></coordinates><panel_attributes>m1=1..*
+has v
+m2=1
+</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1040</x><y>577</y><w>70</w><h>140</h></coordinates><panel_attributes>m1=*
+uses v
+m2=1
+</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>30</x><y>217</y><w>940</w><h>550</h></coordinates><panel_attributes>m1=1
+creates v
+m2=*
+</panel_attributes><additional_attributes>210;10;10;10;10;520;920;520</additional_attributes></element></diagram>
