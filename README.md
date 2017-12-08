@@ -2,7 +2,7 @@
 
 ## DEMO pt5 - [https://youtu.be/B--8MVoSlUE](https://youtu.be/B--8MVoSlUE)
 
-[![Build Status](https://travis-ci.org/nlkluth/cs414-f17-801-TBA.svg?branch=master)](https://travis-ci.org/nlkluth/cs414-f17-801-TBA)
+[![Build Status](https://travis-ci.org/nlkluth/cs414-f17-801-TBA.svg?branch=master)](https://travis-ci.org/nlkluth/cs414-f17-801-TBA) <-- click to see Travis build status (forgot to mention in demo)
 
 ### Run test
 ##### with ant
